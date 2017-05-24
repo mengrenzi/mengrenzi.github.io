@@ -10,6 +10,8 @@
     
     <title>
         
+            归档 | 
+        
         MRZ&#39;s Blog
     </title>
 
@@ -56,7 +58,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="MRZ&#39;s Blog">
+    <meta property="og:title" content="归档 | MRZ&#39;s Blog">
     <meta property="og:description" content="null">
     
 
@@ -219,228 +221,100 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
+    
+    <div class="locate-thumbnail-symbol"></div>
 
+    <!-- Pin on top -->
+    
 
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+    <!-- Normal Post -->
     
         
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script>
-    var randomNum = Math.floor(Math.random() * 19 + 1);
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/post/63.jpg">
+    
 
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2015/11/22/vim使用 /">vim个性化配置</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            修改vim配置文件,对vim主题进行个性化定制
+
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2015/11/22/vim使用 /" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="MengRZ's avatar">
+            </div>
+            <div>
+                <strong>MengRZ</strong>
+                <span>11月 22, 2015</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/技术向/">技术向</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+
+    
+    <!-- Index nav -->
+        <nav class="material-nav mdl-cell mdl-cell--12-col">
+            <a class="extend prev" rel="prev" href="/archives/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+        </nav>
+    
+
+    
+        <script>
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
 </script>
 
-        
-    
-            <p class="article-headline-p">
-                
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>MengRZ</strong>
-        <span>5月 23, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://yoursite.com//readme.html&pic=&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com//readme.html&via=MengRZ" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//readme.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//readme.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=MRZ&#39;s Blog&title=&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/readme.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <p><img src="https://qiniu.viosey.com/img/Material-Phone-Render.png" alt=""></p>
-<h1 id="Material-ԭ��"><a href="#Material-ԭ��" class="headerlink" title="Material ԭ��"></a>Material ԭ��</h1><p><a href="https://material.viosey.com" target="_blank" rel="external">Material Theme</a></p>
-<blockquote>
-<p>Nature, Source | ԭ֮�ʣ���֮Ԩ</p>
-</blockquote>
-<h2 id="Contents-L¼"><a href="#Contents-L¼" class="headerlink" title="Contents Ŀ¼"></a>Contents Ŀ¼</h2><ul>
-<li><a href="#general-����">General ����</a></li>
-<li><a href="#demo-��ʾ">Demo ��ʾ</a></li>
-<li><a href="#quick-start-���ٿ�ʼ">Quick start ���ٿ�ʼ</a></li>
-<li><a href="#docs-�ĵ�">Docs �ĵ�</a></li>
-<li><a href="#contributing-����">Contributing ����</a></li>
-<li><a href="#license-����֤">License ����֤</a></li>
-<li><a href="#support-֧��">Support ֧��</a></li>
-<li><a href="#render-��Ⱦ">Render ��Ⱦ</a></li>
-<li><a href="https://github.com/viosey/hexo-theme-material/releases" target="_blank" rel="external">Changelog ������־</a></li>
-</ul>
-<h2 id="General-����"><a href="#General-����" class="headerlink" title="General ����"></a>General ����</h2><p><a href=""><img src="https://img.shields.io/badge/version-1.3.4-green.svg?style=flat-square" alt="Version"></a><br><a href="https://hexo.io" target="_blank" rel="external"><img src="https://img.shields.io/badge/hexo-3.0+-green.svg?style=flat-square" alt="Hexo"></a><br><a href="https://nodejs.org/" target="_blank" rel="external"><img src="https://img.shields.io/badge/node.js-6.0%2B-green.svg?style=flat-square" alt="node.js"></a></p>
-<p><a href="https://travis-ci.org/viosey/hexo-theme-material" target="_blank" rel="external"><img src="https://img.shields.io/travis/viosey/hexo-theme-material.svg?style=flat-square" alt="Build Status"></a><br><a href="https://www.npmjs.com/package/hexo-material" target="_blank" rel="external"><img src="https://img.shields.io/npm/dt/hexo-material.svg?style=flat-square" alt="npm"></a></p>
-<p><a href="https://viosey.com" target="_blank" rel="external"><img src="https://img.shields.io/badge/author-Viosey-blue.svg?style=flat-square" alt="Author"></a><br><a href="http://jq.qq.com/?_wv=1027&amp;k=40Vdy24" target="_blank" rel="external"><img src="https://img.shields.io/badge/QQ%20%E7%BE%A4-566308505-blue.svg?style=flat-square" alt="QQ Group"></a></p>
-<h2 id="Demo-��ʾ"><a href="#Demo-��ʾ" class="headerlink" title="Demo ��ʾ"></a>Demo ��ʾ</h2><p><a href="https://blog.viosey.com" target="_blank" rel="external">Viosey’s Blog</a></p>
-<h2 id="Quick-start-���ٿ�ʼ"><a href="#Quick-start-���ٿ�ʼ" class="headerlink" title="Quick start ���ٿ�ʼ"></a>Quick start ���ٿ�ʼ</h2><p><a href="https://material.viosey.com/en/start/#install-material" target="_blank" rel="external">Install Material</a></p>
-<p><a href="https://material.viosey.com/start/#install-material" target="_blank" rel="external">��װ Material</a></p>
-<h2 id="Docs-�j�"><a href="#Docs-�j�" class="headerlink" title="Docs �ĵ�"></a>Docs �ĵ�</h2><p><a href="https://material.viosey.com/en/" target="_blank" rel="external">Material Theme Docs</a></p>
-<p><a href="https://material.viosey.com" target="_blank" rel="external">Material �����ĵ�</a></p>
-<blockquote>
-<p><a href="https://github.com/viosey/material-theme-docs" target="_blank" rel="external">Docs Markdown Files</a></p>
-</blockquote>
-<h2 id="Contributing-����"><a href="#Contributing-����" class="headerlink" title="Contributing ����"></a>Contributing ����</h2><p>All kinds of contributions (enhancements, new features, documentation &amp; code improvements, issues &amp; bugs reporting) are welcome.</p>
-<p>Before you start your contributing, please read the <a href="https://github.com/viosey/hexo-theme-material/wiki" target="_blank" rel="external">Contributing Rules Wiki</a> first.</p>
-<p>��ӭ������ʽ�Ĺ��ף��������������Ż������ӹ��ܣ��ĵ� &amp; �����ĸĽ��������� bugs �ı��档�ڴ����� <code>Pull Request</code>��</p>
-<p>�ڲ��빱��֮ǰ�����Ķ�<a href="https://github.com/viosey/hexo-theme-material/wiki" target="_blank" rel="external">��Ŀ���� Wiki</a>���˽�����Ϊ Material ���⹱�ס�</p>
-<h2 id="License-����֤"><a href="#License-����֤" class="headerlink" title="License ����֤"></a>License ����֤</h2><p><a href="https://github.com/viosey/hexo-theme-material/blob/master/LICENSE" target="_blank" rel="external"><img src="https://img.shields.io/github/license/viosey/hexo-theme-material.svg?style=flat-square" alt="license"></a></p>
-<p>Open sourced under the GPL v3.0 license.</p>
-<p>���� GPL V3.0 ����֤��Դ��</p>
-<h2 id="Support-֧��"><a href="#Support-֧��" class="headerlink" title="Support ֧��"></a>Support ֧��</h2><p><img src="https://www.browserstack.com/automate/badge.svg?badge_key=V1VkWmJMRjJqcHBjN1BIVFRlNzExM05XUk5hemcydEpZTHRBdGd5V244ST0tLTlvNklDT1NuVXFDaTh0RDBnQ3RCdXc9PQ==--c986c45d7c10a3264f46b414944d6393ba74ea22%" alt="BrowserStack Status"></p>
-<p>Proudly using BrowserStack.</p>
-<p><a href="https://www.browserstack.com/" target="_blank" rel="external"><img src="https://qiniu.viosey.com/img/browserstack_logo.png" alt=""></a></p>
-<blockquote>
-<p><strong>BrowserStack</strong> is a cloud-based cross-browser testing tool that enables developers to test their websites across various browsers on different operating systems and mobile devices, without requiring users to install virtual machines, devices or emulators.</p>
-</blockquote>
-<h2 id="Render-��T"><a href="#Render-��T" class="headerlink" title="Render ��Ⱦ"></a>Render ��Ⱦ</h2><p><img src="https://qiniu.viosey.com/img/Materia-overview-tiny.png" alt=""></p>
-
-    
-
     
 </div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-
-
-
-
-
-
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-</nav>
-
-        </div>
-    </div>
-
 
 
                     
@@ -516,7 +390,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -588,7 +462,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">10</span>
+                <span class="sidebar-badge">11</span>
             </a>
         </li>
         
@@ -636,6 +510,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
