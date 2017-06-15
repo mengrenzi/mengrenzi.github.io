@@ -419,6 +419,12 @@ ERROR Deployer not found: git
 <p>才能渲染成功：$F_a = F_b + F_c + F_{\mu}$</p>
 <h2 id="LaTex-公式新写法"><a href="#LaTex-公式新写法" class="headerlink" title="LaTex 公式新写法"></a>LaTex 公式新写法</h2><p>有一种更简单的、不用大规模改动 LaTex 公式的解法：使用 <code>{% raw %}{% math %}LaTex Formula{% endmath %}{% endraw %}</code>来替代 <code>$LaTex Formula$</code> 的表达，即：</p>
 <p>公式是这样的 <span>$F_a = F_b + F_c + F_{\mu}$</span><!-- Has MathJax -->，你必须理解它，才能看懂下面这些公式：</p>
+<span>$$\begin{aligned}
+\dot{x} &amp; = \sigma(y-x) \\
+\dot{y} &amp; = \rho x - y - xz \\
+\dot{z} &amp; = -\beta z + xy
+\end{aligned}$$</span><!-- Has MathJax -->
+<p>by wirtten this:</p>
 <pre class=" language-shell"><code class="language-shell">{% math %}
 \begin{aligned}
 \dot{x} & = \sigma(y-x) \\
@@ -427,11 +433,6 @@ ERROR Deployer not found: git
 \end{aligned}
 {% endmath %}
 </code></pre>
-<span>$$\begin{aligned}
-\dot{x} &amp; = \sigma(y-x) \\
-\dot{y} &amp; = \rho x - y - xz \\
-\dot{z} &amp; = -\beta z + xy
-\end{aligned}$$</span><!-- Has MathJax -->
 
     
 
@@ -457,6 +458,14 @@ ERROR Deployer not found: git
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2017/06/15/Mathjax与LaTex公式简介/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -552,7 +561,7 @@ ERROR Deployer not found: git
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -570,7 +579,7 @@ ERROR Deployer not found: git
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -624,7 +633,7 @@ ERROR Deployer not found: git
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">14</span>
+                <span class="sidebar-badge">15</span>
             </a>
         </li>
         
