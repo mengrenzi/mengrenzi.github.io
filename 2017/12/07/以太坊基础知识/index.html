@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.3 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            以太坊基础知识 | 
+        
+        MRZ&#39;s Blog
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="MengRZ">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null,区块链,以太坊">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MRZ&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="以太坊基础知识 | MRZ&#39;s Blog">
+    <meta property="og:description" content="null">
+    <meta property="og:article:tag" content="区块链"> <meta property="og:article:tag" content="以太坊"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#以太坊是什么"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">以太坊是什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#比特币和以太坊区别"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">比特币和以太坊区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、Homestead文档及以太坊路线图"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、Homestead文档及以太坊路线图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Homestead-的发布"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Homestead 的发布</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#以太坊开发路线图中的里程碑"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">以太坊开发路线图中的里程碑</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、Web-3-0去中心化应用"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、Web 3.0去中心化应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Web-3：去中心化应用平台"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Web 3：去中心化应用平台</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#智能合约"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">智能合约</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DAO"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">DAO</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/post/20.jpg)">
+    
+            <p class="article-headline-p">
+                以太坊基础知识
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>MengRZ</strong>
+        <span>12月 07, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/以太坊/">以太坊</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/区块链/">区块链</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=以太坊基础知识&url=http://yoursite.com//2017/12/07/以太坊基础知识/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=以太坊基础知识&url=http://yoursite.com//2017/12/07/以太坊基础知识/index.html&via=MengRZ" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/12/07/以太坊基础知识/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/12/07/以太坊基础知识/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=MRZ&#39;s Blog&title=以太坊基础知识&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/12/07/以太坊基础知识/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><h3 id="以太坊是什么"><a href="#以太坊是什么" class="headerlink" title="以太坊是什么"></a><strong>以太坊是什么</strong></h3><p>以太坊是一个全新开放的区块链平台，它允许任何人在平台中建立和使用通过区块链技术运行的去中心化应用。就像比特币一样，以太坊不受任何人控制，也不归任何人所有——它是一个开放源代码项目，由全球范围内的很多人共同创建。和比特币协议有所不同的是，以太坊的设计十分灵活，极具适应性。在以太坊平台上创立新的应用十分简便，随着Homestead的发布，任何人都可以安全地使用该平台上的应用。</p>
+<h3 id="比特币和以太坊区别"><a href="#比特币和以太坊区别" class="headerlink" title="比特币和以太坊区别"></a><strong>比特币和以太坊区别</strong></h3><p>区块链技术是比特币的底层技术。一个区块链是一个分布式计算架构，里面的每个网络节点执行并记录相同的交易，交易被分组为区块。一次只能增加一个区块，每个区块有一个数学证明来保证新的区块与之前的区块保持先后顺序。这样一来，区块链的“分布式数据库”就能和整个网络保持一致。个体用户与总账的互动（交易）受到安全的密码保护。由数学执行并编码到协议中的经济激励因素刺激着维持和验证网络的节点。</p>
+<p>在<strong>比特币</strong>中，分布式数据库被设想为一个账户余额表，一个总账，交易就是通过比特币的转移以实现个体之间无需信任基础的金融活动。但是随着比特币吸引了越来越多开发者和技术专家的注意，新的项目开始将比特币网络用于有价代币转移之外的其他用途。其中很多都采用了“代币”的形式——以原始比特币协议为基础，增加了新的特征或功能，采用各自加密货币的独立区块链。在2013年末，以太坊的发明者Vitalik Buterin建议能够通过程序重组来运行任意复杂运算的单个区块链应该包含其他的程序。2014年，以太坊的创始人Vitalik Buterin, Gavin Wood和Jeffrey Wilcke开始研究新一代区块链，试图实现一个总体上完全无需信任基础的<strong>智能合约平台</strong>。</p>
+<p>以太坊合并了很多对比特币用户来说十分熟悉的特征和技术，同时自己也进行了很多修正和创新。比特币区块链纯粹是一个关于交易的列表，而以太坊的基础单元是账户。以太坊区块链跟踪每个账户的状态，所有以太坊区块链上的状态转换都是账户之间价值和信息的转移。账户分为两类：</p>
+<p><strong>外部账户（EOA）</strong>，由私人密码控制<strong>合约账户</strong>，由它们的合约编码控制，只能由外部账户“激活”对于大部分用户来说，两者基本的区别在于外部账户是由人类用户掌控——因为他们能够控制私钥，进而控制外部账户。而合约账户则是由内部编码管控。如果他们是被人类用户“控制”的，那也是因为程序设定它们被具有特定地址的外部账户控制，进而被持有私钥控制外部账户的人控制着。“智能合约”这个流行的术语指的是在合约账户中编码——交易被发送给该账户时所运行的程序。用户可以通过在区块链中部署编码来创建新的合约。</p>
+<p>只有当外部账户发出指令时，合约账户才会执行相应的操作。所以合约账户不可能自发地执行诸如任意数码生成或应用程序界面调用等操作—只有受外部账户提示时，它才会做这些事。这是因为以太坊要求节点能够与运算结果保持一致，这就要求保证严格确定执行。</p>
+<h2 id="二、Homestead文档及以太坊路线图"><a href="#二、Homestead文档及以太坊路线图" class="headerlink" title="二、Homestead文档及以太坊路线图"></a>二、Homestead文档及以太坊路线图</h2><h3 id="Homestead-的发布"><a href="#Homestead-的发布" class="headerlink" title="Homestead 的发布"></a><strong>Homestead 的发布</strong></h3><p>Homestead是以太坊平台的第二个主要版本，也是以太坊发布的第一个正式版本。它包括几处协议变更和网络设计变更，使网络进一步升级成为可能。以太坊的第一个版本Frontier实际上是测试版，供开发者学习、试验并开始建立以太坊去中心化的应用和工具。</p>
+<h3 id="以太坊开发路线图中的里程碑"><a href="#以太坊开发路线图中的里程碑" class="headerlink" title="以太坊开发路线图中的里程碑"></a><strong>以太坊开发路线图中的里程碑</strong></h3><ul>
+<li>预发布：Olympic testnet —— 2015年5月发布</li>
+<li>发布第一个版本：Frontier —— 2015年7月30日发布</li>
+<li>发布第二个版本： Homestead —— 2016年3月14日发布（π日）</li>
+<li>发布第三个版本： Metropolis —— 即将宣布</li>
+<li>发布第四个版本：Serenity –—— 即将宣布</li>
+</ul>
+<h2 id="三、Web-3-0去中心化应用"><a href="#三、Web-3-0去中心化应用" class="headerlink" title="三、Web 3.0去中心化应用"></a>三、Web 3.0去中心化应用</h2><h3 id="Web-3：去中心化应用平台"><a href="#Web-3：去中心化应用平台" class="headerlink" title="Web 3：去中心化应用平台"></a><strong>Web 3：去中心化应用平台</strong></h3><p>很多人相信像以太坊这样一个公开、无需信任的区块链平台十分适合作为Web 3.0的共享”后端”，像Web3.0这样去中心化、安全的互联网，它的核心服务，比如DNS和数字身份是去中心化的，个体可以参与到经济互动中。</p>
+<p>正如以太坊开发者希望的那样，以太坊是一张空白的帆布，你可以在上面创建任何你想要的东西。以太坊协议的目的是普遍化，以使其核心特征能够以任意方式结合。理想状态下，以太坊上的数据采集和处理程序会利用以太坊区块链来建立解决方案，这些解决方案依靠去中心化的一致性提供以往无法实现的新产品和服务。</p>
+<p>称以太坊为一个生态系统再合适不过了：核心协议由不同的基础设施、编码和社群支持，他们共同构成了以太坊项目。你也可以通过观察使用以太坊的项目来理解以太坊。现在已经有很多基于以太坊的项目已经非常引人注目了，比如Augur，Digix，Maker和其他很多项目（参见数据采集和处理程序）。此外，还有开发团队建立了人人皆可使用的开源组件。尽管这些组织都独立于以太坊基金之外，有各自的组织目标，但他们无疑对整个以太坊生态系统是有益的。</p>
+<p>拓展观看/阅读：</p>
+<ul>
+<li>Vitalik Buterin – TNABC 2015：<a href="https://www.youtube.com/watch?v=Fjhe0MVRHO4" target="_blank" rel="external">https://www.youtube.com/watch?v=Fjhe0MVRHO4</a><br>Gavin Wood – DEVCON 1 </li>
+<li>给小白讲解以太坊：<a href="https://www.youtube.com/watch?v=U_LK0t_qaPo" target="_blank" rel="external">https://www.youtube.com/watch?v=U_LK0t_qaPo</a></li>
+<li>以太坊伦敦聚会（详尽细节在这里）：<a href="https://www.youtube.com/watch?v=GJGIeSCgskc" target="_blank" rel="external">https://www.youtube.com/watch?v=GJGIeSCgskc</a></li>
+</ul>
+<h3 id="智能合约"><a href="#智能合约" class="headerlink" title="智能合约"></a><strong>智能合约</strong></h3><p>你愿意和从未谋面的人签合约吗？你会同意把钱借给埃塞俄比亚的农民吗？你愿意投资一个战乱地区由少数人管理的报纸吗？你会不嫌麻烦为了网上一次5美元的购买签一个有法律效力的合约吗？</p>
+<p>大多数的答案都是否定的，原因是合约需要的基础太多了：有时需要双方之间互相信任的工作关系，有时要依靠合法的工作体系、警察和律师费用。</p>
+<p>在以太坊这些都不需要：如果合约所必需的要求都能放在区块链中，那么就会放在区块链中，这是一个无需信任基础也几乎不用任何成本的环境。</p>
+<p>不要想将你现有的合约转移到区块链中会麻烦，想一想那些因为经济上不可行或是没有足够法律保护而被你拒绝的成千上万的小合约吧。</p>
+<h3 id="DAO"><a href="#DAO" class="headerlink" title="DAO"></a><strong>DAO</strong></h3><p>这里简单地举个例子：想象一下你和朋友有个小生意。律师和会计很贵，完全信任让一个单独的合伙人来看管账簿可能让你精神很紧张（这甚至可能是个诈骗的机会）。你可以尝试一下多个合伙人共同看管账簿，但只要协议没有被严格遵守，就可能导致诈骗发生。</p>
+<p>使用智能合约，公司的所有权和基金分配的条款可以在一开始就详细规定。智能合约签署的方式是，只有大部分拥有者批准，合约才可以变更。 这样的智能合约可以像开源软件一样获取，你甚至都不必雇佣自己的程序员来代替会计和律师。</p>
+<p>这样的智能合约可以立即按比例决定分配。几个年轻人分配柠檬水站收入，可以像主权基金给拥有基金的亿万公民分配收益一样透明。在这两个案例中，这种透明性带来的花费可能每美元连一美分都不到。</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/07/比特币简介/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="MengRZ's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        mengrenzi@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="https://github.com/mengrenzi" target="_blank" title="Email Me">
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/gallery" title="映像">
+                
+                    <i class="material-icons sidebar-material-icons">photo</i>
+                
+                映像
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                友情链接
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">21</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/renzi.meng" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.svg);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;MRZ's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setTimeout(function(){
+            setInterval(function(){
+                queue.execNext();
+            },200);
+        },3000);
+    });
+</script>
+
+                </main>
+            </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+        </body>
+    
+</html>

@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.3 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            比特币基础知识 | 
+        
+        MRZ&#39;s Blog
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="MengRZ">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null,区块链,比特币">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MRZ&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="比特币基础知识 | MRZ&#39;s Blog">
+    <meta property="og:description" content="null">
+    <meta property="og:article:tag" content="区块链"> <meta property="og:article:tag" content="比特币"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、比特币基础概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、比特币基础概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、密钥"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、密钥</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、比特币地址和钱包"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、比特币地址和钱包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四、比特币网络"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、比特币网络</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#五、区块链"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、区块链</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/post/19.jpg)">
+    
+            <p class="article-headline-p">
+                比特币基础知识
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>MengRZ</strong>
+        <span>12月 07, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/区块链/">区块链</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/比特币/">比特币</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=比特币基础知识&url=http://yoursite.com//2017/12/07/比特币简介/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=比特币基础知识&url=http://yoursite.com//2017/12/07/比特币简介/index.html&via=MengRZ" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/12/07/比特币简介/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/12/07/比特币简介/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=MRZ&#39;s Blog&title=比特币基础知识&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/12/07/比特币简介/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>本书参考代码参见：<a href="https://github.com/bitcoinbook/bitcoinbook" target="_blank" rel="external">Github主代码库</a></p>
+<h2 id="一、比特币基础概念"><a href="#一、比特币基础概念" class="headerlink" title="一、比特币基础概念"></a>一、比特币基础概念</h2><p>比特币是由一系列概念和技术作为基础构建的数字货币生态系统，是一个分布式的点对点网络系统。</p>
+<p>比特币创新点：<br>▷ 一个去中心化的点对点网络（比特币协议）<br>▷ 一个公共的交易账簿（区块链）<br>▷ 一个去中心化的数学的和确定性的货币发行（分布式挖矿）<br>▷ 一个去中心化的交易验证系统（交易脚本）</p>
+<ol>
+<li>我能相信这钱是真实可信的，而不是伪造的吗？</li>
+<li>我能确定没人说这笔钱是他们的，而不是我的吗？（又名“双重支付”问题） </li>
+</ol>
+<blockquote>
+<p>对于数字货币来说，密码学为用户所主张的合法性价值提供了信任的基础。具体地来说，加密数字签名能够使一个用户签署一项能够提供其资产所有权证明的数字资产或数字交易。采用适当的结构，数字签名也可以用于解决双重支付的问题。</p>
+</blockquote>
+<p><img src="http://zhibimo.com/read/wang-miao/mastering-bitcoin/Images/Fig201.png" alt="比特币概述"></p>
+<h2 id="二、密钥"><a href="#二、密钥" class="headerlink" title="二、密钥"></a>二、密钥</h2><p>一个比特币钱包中包含一系列的密钥对，每个密钥对包括一个私钥和一个公钥。私钥（k）是一个数字，通常是随机选出的。有了私钥，我们就可以使用椭圆曲线乘法这个单向加密函数产生一个公钥（K）。有了公钥（K），我们就可以使用一个单向加密哈希函数生成比特币地址（A）。在本节中，我们将从生成私钥开始，讲述如何使用椭圆曲线运算将私钥生成公钥，并最终由公钥生成比特币地址。私钥、公钥和比特币地址之间的关系如下图所示。</p>
+<p><img src="http://zhibimo.com/read/wang-miao/mastering-bitcoin/Images/Fig401.png" alt="公钥与私钥"></p>
+<p><strong>私钥：</strong> 高度随机性。更准确地说，私钥可以是1和n-1之间的任何数字，其中n是一个常数（$n=1.158<em>10^{77}$，略小于$2^{256}$），并由比特币所使用的<em>*椭圆曲线的阶所定义</em></em>。要生成这样的一个私钥，我们随机选择一个256位的数字，并检查它是否小于n-1。从编程的角度来看，一般是通过在一个密码学安全的随机源中取出一长串随机字节，对其使用SHA256哈希算法进行运算，这样就可以方便地产生一个256位的数字。如果运算结果小于n-1，我们就有了一个合适的私钥。否则，我们就用另一个随机数再重复一次。</p>
+<p><strong>公钥：</strong>通过椭圆曲线算法可以从私钥计算得到公钥，这是不可逆转的过程：$K = k * G$。其中k是私钥，G是被称为生成点的常数点，而K是所得公钥。其反向运算，被称为“寻找离散对数”——已知公钥K来求出私钥k——是非常困难的，就像去试验所有可能的k值，即暴力搜索。在演示如何从私钥生成公钥之前，我们先稍微详细学习下椭圆曲线加密学。</p>
+<p><strong>椭圆曲线密码学:</strong>椭圆曲线加密法是一种基于离散对数问题的非对称（或公钥）加密法，可以用对椭圆曲线上的点进行加法或乘法运算来表达。<br><img src="http://zhibimo.com/read/wang-miao/mastering-bitcoin/Images/Fig402.png" alt=""></p>
+<p>比特币使用了secp256k1标准所定义的一条特殊的椭圆曲线和一系列数学常数。该标准由美国国家标准与技术研究院（NIST）设立。secp256k1曲线由下述函数定义，该函数可产生一条椭圆曲线：</p>
+<p>$$y^2 = {(x^3 + 7) \over (Fp)}$$</p>
+<p>or</p>
+<p>$$ y^2 \pmod p = (x^3 + 7) \pmod p $$</p>
+<h2 id="三、比特币地址和钱包"><a href="#三、比特币地址和钱包" class="headerlink" title="三、比特币地址和钱包"></a>三、比特币地址和钱包</h2><p><strong>比特币地址</strong>是一个由数字和字母组成的字符串，可以与任何想给你比特币的人分享。由公钥（一个同样由数字和字母组成的字符串）生成的比特币地址以数字“1”开头。下面是一个比特币地址的例子：</p>
+<blockquote>
+<p>1J7mdg5rbQyUHENYdx39WVWK7fsLpEoXZy</p>
+</blockquote>
+<p>在交易中，比特币地址通常以收款方出现。如果把比特币交易比作一张支票，比特币地址就是收款人，也就是我们要写入收款人一栏的内容。一张支票的收款人可能是某个银行账户，也可能是某个公司、机构，甚至是现金支票。支票不需要指定一个特定的账户，而是用一个普通的名字作为收款人，这使它成为一种相当灵活的支付工具。与此类似，比特币地址的使用也使比特币交易变得很灵活。比特币地址可以代表一对公钥和私钥的所有者，也可以代表其它东西。</p>
+<p>比特币地址可由公钥经过单向的加密哈希算法得到。哈希算法是一种单向函数，接收任意长度的输入产生指纹摘要。加密哈希函数在比特币中被广泛使用：比特币地址、脚本地址以及在挖矿中的工作量证明算法。由公钥生成比特币地址时使用的算法是Secure Hash Algorithm (SHA)和the RACE Integrity Primitives Evaluation Message Digest (RIPEMD)，特别是SHA256和RIPEMD160。</p>
+<p>以公钥 K 为输入，计算其SHA256哈希值，并以此结果计算RIPEMD160 哈希值，得到一个长度为160比特（20字节）的数字：</p>
+<blockquote>
+<p>A = RIPEMD160(SHA256(K))</p>
+</blockquote>
+<p>公式中，K是公钥，A是生成的比特币地址。</p>
+<p><img src="http://zhibimo.com/read/wang-miao/mastering-bitcoin/Images/Fig405.png" alt="公钥生成比特币地址"></p>
+<p><strong>比特币钱包</strong>是私钥的容器，通常通过有序文件或者简单的数据库实现。另外一种制作私钥的途径是确定性密钥生成。在这里你可以用原先的私钥，通过单向哈希函数来生成每一个新的私钥，并将新生成的密钥按顺序连接。只要你可以重新创建这个序列，你只需要第一个私钥（称作种子、主私钥）来生成它们。</p>
+<h2 id="四、比特币网络"><a href="#四、比特币网络" class="headerlink" title="四、比特币网络"></a>四、比特币网络</h2><p>比特币采用了基于国际互联网（Internet）的<strong>P2P（peer-to-peer）网络架构</strong>。P2P是指位于同一网络中的每台计算机都彼此对等，各个节点共同提供网络服务，不存在任何“特殊”节点。每个网络节点以“扁平（flat）”的拓扑结构相互连通。在P2P网络中不存在任何服务端（server）、中央化的服务、以及层级结构。P2P网络的节点之间交互运作、协同处理：每个节点在对外提供服务的同时也使用网络中其他节点所提供的服务。</p>
+<p>比特币P2P网络中的各个节点相互对等，但是根据所提供的功能不同,各节点可能具有不同的分工。每个比特币节点都是路由、区块链数据库、挖矿、钱包服务的功能集合。扩展比特币网络中最为常见的节点类型:</p>
+<p><img src="http://zhibimo.com/read/wang-miao/mastering-bitcoin/Images/Fig602.png" alt="节点类型"></p>
+<p><strong>扩展比特币网络：</strong>它包括了多种类型的节点、网关服务器、边缘路由器、钱包客户端以及它们相互连接所需的各类协议。</p>
+<p><img src="http://zhibimo.com/read/wang-miao/mastering-bitcoin/Images/Fig603.png" alt="扩展比特币网络"></p>
+<h2 id="五、区块链"><a href="#五、区块链" class="headerlink" title="五、区块链"></a>五、区块链</h2><p>区块链是由包含交易信息的区块从后向前有序链接起来的数据结构。它可以被存储为flat file（一种包含没有相对关系记录的文件），或是存储在一个简单数据库中。比特币核心客户端使用Google的LevelDB数据库存储区块链元数据。区块被从后向前有序地链接在这个链条里，每个区块都指向前一个区块。区块链经常被视为一个垂直的栈，第一个区块作为栈底的首区块，随后每个区块都被放置在其他区块之上。用栈来形象化表示区块依次堆叠这一概念后，我们便可以使用一些术语，例如：“高度”来表示区块与首区块之间的距离；以及“顶部”或“顶端”来表示最新添加的区块。</p>
+<p><strong>区块结构</strong>：区块是一种被包含在公开账簿（区块链）里的聚合了交易信息的容器数据结构。它由一个包含元数据的区块头和紧跟其后的构成区块主体的一长串交易组成。区块头是80字节，而平均每个交易至少是250字节，而且平均每个区块至少包含超过500个交易。因此，一个包含所有交易的完整区块比区块头的1000倍还要大。</p>
+<p>下表描述了一个区块结构</p>
+<table>
+<thead>
+<tr>
+<th>大小</th>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4字节</td>
+<td>区块大小</td>
+<td>用字节表示的该字段之后的区块大小</td>
+</tr>
+<tr>
+<td>80字节</td>
+<td>区块头</td>
+<td>组成区块头的几个字段</td>
+</tr>
+<tr>
+<td>1-9 （可变整数）</td>
+<td>交易计数器</td>
+<td>交易的数量</td>
+</tr>
+<tr>
+<td>可变的</td>
+<td>交易</td>
+<td>记录在区块里的交易信息</td>
+</tr>
+</tbody>
+</table>
+<p>下表描述了一个区块头结构</p>
+<table>
+<thead>
+<tr>
+<th>大小</th>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4字节</td>
+<td>版本</td>
+<td>版本号，用于跟踪软件/协议的更新</td>
+</tr>
+<tr>
+<td>32字节</td>
+<td>父区块哈希值</td>
+<td>引用区块链中父区块的哈希值</td>
+</tr>
+<tr>
+<td>32字节</td>
+<td>Merkle根</td>
+<td>该区块中交易的merkle树根的哈希值</td>
+</tr>
+<tr>
+<td>4字节</td>
+<td>时间戳</td>
+<td>该区块产生的近似时间（精确到秒的Unix时间戳）</td>
+</tr>
+<tr>
+<td>4字节</td>
+<td>难度目标</td>
+<td>该区块工作量证明算法的难度目标</td>
+</tr>
+<tr>
+<td>4字节</td>
+<td>Nonce</td>
+<td>用于工作量证明算法的计数器</td>
+</tr>
+</tbody>
+</table>
+<p>引用：<br>Andreas•M•Antonopoulos (O’Reilly) “精通比特币”，(c) 2015 Andreas•M•Antonopoulos<br>A. Back, “Hashcash – a denial of service counter-measure,”（哈希现金——拒绝服务式攻击的克制方法）<a href="http://www.hashcash.org/papers/hashcash.pdf" target="_blank" rel="external">http://www.hashcash.org/papers/hashcash.pdf</a>, 2002.↵<br>R.C. Merkle, “Protocols for public key cryptosystems,” （公钥密码系统的协议）In Proc. 1980 Symposium on Security and Privacy, IEEE Computer Society, pages 122-133, April 1980.<br>David Youd 数字签名是什么？ <a href="http://www.youdzone.com/signature.html" target="_blank" rel="external">http://www.youdzone.com/signature.html</a> (c) 1996, David Youd </p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/12/07/以太坊基础知识/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/07/区块链基础/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="MengRZ's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        mengrenzi@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="https://github.com/mengrenzi" target="_blank" title="Email Me">
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/gallery" title="映像">
+                
+                    <i class="material-icons sidebar-material-icons">photo</i>
+                
+                映像
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                友情链接
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">21</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/renzi.meng" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.svg);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;MRZ's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setTimeout(function(){
+            setInterval(function(){
+                queue.execNext();
+            },200);
+        },3000);
+    });
+</script>
+
+                </main>
+            </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+        </body>
+    
+</html>
