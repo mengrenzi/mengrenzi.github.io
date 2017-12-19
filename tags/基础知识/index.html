@@ -10,7 +10,7 @@
     
     <title>
         
-            代码重构 | 
+            标签: 基础知识 | 
         
         MRZ&#39;s Blog
     </title>
@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="MengRZ">
     <meta name="description" content="null">
-    <meta name="keywords" content="null,SoftwareTesting,重构">
+    <meta name="keywords" content="null">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -58,9 +58,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="代码重构 | MRZ&#39;s Blog">
+    <meta property="og:title" content="标签: 基础知识 | MRZ&#39;s Blog">
     <meta property="og:description" content="null">
-    <meta property="og:article:tag" content="SoftwareTesting"> <meta property="og:article:tag" content="重构"> 
+    
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -221,249 +221,94 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
-
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+    <div class="locate-thumbnail-symbol"></div>
 
-    <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
+    <!-- Pin on top -->
+    
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、Refactoring，the-first-case"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、Refactoring，the first case</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-起始程序缺陷"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.起始程序缺陷</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-重构（refactor）第一步，建立测试方式，边测试边修改"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.重构（refactor）第一步，建立测试方式，边测试边修改</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-分解Statement"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3.分解Statement()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-修改变量名称"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4.修改变量名称</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-搬移变量从属类"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">5.搬移变量从属类</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、重构原则"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、重构原则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-重构定义"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.重构定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-为何重构"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.为何重构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-何时重构"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3.何时重构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-间接层和重构"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4.间接层和重构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-重构与性能"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">5.重构与性能</span></a></li></ol></li></ol>
-
-        <!--
-        <li class="mdl-menu__item">
-            Some Action
-        </li>
-        -->
-    </ul>
-
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/post/14.jpg)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/post/21.jpg">
     
-            <p class="article-headline-p">
-                代码重构
-            </p>
-        </div>
 
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>MengRZ</strong>
-        <span>5月 23, 2017</span>
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/12/19/网络原理常用知识/">网络原理常用知识</a></p>
     </div>
 
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/SoftwareTesting/">SoftwareTesting</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/重构/">重构</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=代码重构&url=http://yoursite.com//2017/05/23/代码重构/index.html&pic=&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=代码重构&url=http://yoursite.com//2017/05/23/代码重构/index.html&via=MengRZ" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/05/23/代码重构/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/05/23/代码重构/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=MRZ&#39;s Blog&title=代码重构&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/05/23/代码重构/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <p>重构就是在不改变软件系统外部行为的前提下，改善它的内部结构。</p>
-<h2 id="一、Refactoring，the-first-case"><a href="#一、Refactoring，the-first-case" class="headerlink" title="一、Refactoring，the first case"></a>一、Refactoring，the first case</h2><h3 id="1-起始程序缺陷"><a href="#1-起始程序缺陷" class="headerlink" title="1.起始程序缺陷"></a>1.起始程序缺陷</h3><p>源程序方法无法复用<br>计费方式修改，无法保持一致性<br>分类规则修改，无法修改影片分类</p>
-<h3 id="2-重构（refactor）第一步，建立测试方式，边测试边修改"><a href="#2-重构（refactor）第一步，建立测试方式，边测试边修改" class="headerlink" title="2.重构（refactor）第一步，建立测试方式，边测试边修改"></a>2.重构（refactor）第一步，建立测试方式，边测试边修改</h3><p>输入几个用户，让他们租用影片，预期结果与最后结果相比较</p>
-<h3 id="3-分解Statement"><a href="#3-分解Statement" class="headerlink" title="3.分解Statement()"></a>3.分解Statement()</h3><p>找出逻辑谜团，运用Extract Method（110）。<br>本例中将Switch提取成独立的函数<br>怎么提炼？找到局部变量和参数，each和thisAmount，会修改的要格外小心，例如后者。</p>
-<h3 id="4-修改变量名称"><a href="#4-修改变量名称" class="headerlink" title="4.修改变量名称"></a>4.修改变量名称</h3><h3 id="5-搬移变量从属类"><a href="#5-搬移变量从属类" class="headerlink" title="5.搬移变量从属类"></a>5.搬移变量从属类</h3><h2 id="二、重构原则"><a href="#二、重构原则" class="headerlink" title="二、重构原则"></a>二、重构原则</h2><h3 id="1-重构定义"><a href="#1-重构定义" class="headerlink" title="1.重构定义"></a>1.重构定义</h3><p>对软件内部结构的一种调整，目的是在不改变软件可观察行为的前提下，提高其可理解性，降低其修改成本。</p>
-<h3 id="2-为何重构"><a href="#2-为何重构" class="headerlink" title="2.为何重构"></a>2.为何重构</h3><p>重构改进软件设计<br>重构使软件更容易理解<br>重构帮助找到bug<br>重构提高编程速度</p>
-<h3 id="3-何时重构"><a href="#3-何时重构" class="headerlink" title="3.何时重构"></a>3.何时重构</h3><p>三次法则<br>理解别人代码，添加新功能重构<br>修改补充错误重构<br>复审代码重构</p>
-<h3 id="4-间接层和重构"><a href="#4-间接层和重构" class="headerlink" title="4.间接层和重构"></a>4.间接层和重构</h3><p>重构为程序引入了更多间接层，重构把大型对象拆成多个小型对象，把大型函数拆成了小型函数。</p>
-<blockquote>
-<p>间接层价值：</p>
-<ul>
-<li>允许逻辑共享</li>
-<li>分开解释意图和实现</li>
-<li>隔离变化</li>
-<li>封装条件逻辑</li>
-</ul>
-</blockquote>
-<h3 id="5-重构与性能"><a href="#5-重构与性能" class="headerlink" title="5.重构与性能"></a>5.重构与性能</h3><p>1.时间预算法：给某个组件预先分配一定资源。包括时间与执行轨迹。每个组件不能超出自己的预算。</p>
-<p>2.持续关注法：边写边优化。</p>
-<p>3.性能提升发：大半时间浪费往往在一小半代码上，开发结束后，找出那个害群之马。</p>
-
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-
-
-
-
-
-
-
-                
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/12/19/网络原理常用知识/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="MengRZ's avatar">
             </div>
+            <div>
+                <strong>MengRZ</strong>
+                <span>12月 19, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/技术向/">技术向</a>
+            </span>
 
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2017/05/23/中国企业家应该尝试的15件事/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
+            
 
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
+            
 
-    <!-- Next Nav -->
-    
-        <a href="/2017/05/23/EquivalencePartitioning/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
         </div>
     </div>
+</div>
 
+            
+            
+        
+    
+
+    
+
+    
+        <script>
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
+</div>
 
 
                     
@@ -659,14 +504,6 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
-
-                    
-                        <!-- Footer Top Button -->
-                        <div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 
                     
 
