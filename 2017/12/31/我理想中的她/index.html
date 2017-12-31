@@ -10,7 +10,7 @@
     
     <title>
         
-            标签: 线性代数 | 
+            我理想中的她 | 
         
         MRZ&#39;s Blog
     </title>
@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="MengRZ">
     <meta name="description" content="null">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,她">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -58,9 +58,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: 线性代数 | MRZ&#39;s Blog">
+    <meta property="og:title" content="我理想中的她 | MRZ&#39;s Blog">
     <meta property="og:description" content="null">
-    
+    <meta property="og:article:tag" content="她"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -221,94 +221,234 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
-    
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/post/16.jpg">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/post/cb2.jpg)">
+    
+            <p class="article-headline-p">
+                我理想中的她
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>MengRZ</strong>
+        <span>12月 31, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/06/17/linearalegebra/">Essence of Linear Alegebra</a></p>
-    </div>
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/她/">她</a>
+    </ul>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            以下内容通过
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/06/17/linearalegebra/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="MengRZ's avatar">
-            </div>
-            <div>
-                <strong>MengRZ</strong>
-                <span>6月 17, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/技术向/">技术向</a>
-            </span>
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
 
-            
+    
 
-            
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=我理想中的她&url=http://yoursite.com//2017/12/31/我理想中的她/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=我理想中的她&url=http://yoursite.com//2017/12/31/我理想中的她/index.html&via=MengRZ" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/12/31/我理想中的她/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/12/31/我理想中的她/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=MRZ&#39;s Blog&title=我理想中的她&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/12/31/我理想中的她/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-            
-            
-        
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
+        <p>对于追寻理想，我不希望让人生看起来无比励志，我努力只想让我的人生看起来自然而然，就像河流一样，自然流淌，只为了到最后可以做到我喜欢做的那件事，成为我想成为的那个人。</p>
+<p>对于追寻理想中的那个她，我开始意识到想要的家庭和另一半是怎样的。而对于另一半我会一路颠簸的去寻找，经历了失败也不改变初心，明明知道可以选择一份安心可靠的情感，却一定固执的要那个对的人。因为我对另一半全部的期许是找到我爱的那个人，全心全意的去爱她。</p>
+<p>心之所向，素履可往，我希望我一直在追寻理想的路上。</p>
+<p>那么你理想中的那个她是什么样的呢？</p>
+<p>她像一片开遍野花的原野，一条清澈欢跃的小溪，一只抬头凝视你的小鹿。就和照片中的程璧一样，冯程程的程，和氏璧的璧，她的美可以有缺憾，但一点也不能刻意，有女儿态，无脂粉气。</p>
+<p>在我孤单和寂寞的时候，她不会给你说那些人生的至理名言，她会告诉你，“别怕，不管多么遥远的距离，我都和你一起走”。</p>
+<p>在我们聊天时，她会和我传达藏在温柔背后的理性，和一些关于生活的思考，用浅浅的字句描摹内心，去探索话题更深层次的意义。</p>
+<p>在我们一起的时候，我能忽略拥挤的街道，忘记城市的车水马龙，穿过悠远的时间，只需要在那一刻闭上眼睛，慢慢地静下来，就像在明媚的日子里放空自己。</p>
+<p>苏轼有句诗：“人间有味是清欢”，可在浮华躁动的尘世，总有万千纷扰，内心也常常不能安稳。 我希望和她在一起的日子能做到清水煮岁月，不悲不喜。</p>
+<p>最后一首我最喜爱的诗献给未来的她：</p>
+<div align="center"><br><br>It doesn’t interest me what you do for a living.<br>I want to know what you ache for,<br>and if you dare to dream of meeting your heart’s longing.<br><br>你为生存做些什么，我不关心；<br>我想知道，你的渴求，<br>你是否敢于梦想，那内心的渴望。<br><br>It doesn’t interest me how old you are.<br>I want to know if you will risk looking like a fool for love, for your dream, for the adventure of being alive.<br><br>你的年龄有多大，我不关心；<br>我想知道，为了爱，为了梦，为了生机勃勃的奇遇，<br>你是否愿意像傻瓜一样冒险。<br><br>It doesn’t interest me what planets are squaring your moon.<br>I want to know if you have touched the center of your own sorrow,<br> if you have been opened by life’s betrayals<br> or have become shriveled and closed from fear of further pain!<br><br>我不关心，是什么行星使你的月亮位于方照，<br>我想知道，你是否已触及自己悲哀的中心，<br>是否因生活的种种背叛而心胸开阔，<br>抑或因为害怕更多的痛苦而变得消沉和封闭！<br><br>I want to know if you can sit with pain, mine or your own,<br>without moving to hide it or fade it, or fix it.<br><br>我想知道，你是否能面对痛苦——我的或者你自己的，<br>用不着去掩饰，使其消退或使其凝固。<br><br>I want to know if you can be with joy, mine or your own,<br>if you can dance with wildness and let the ecstasy fill you to the tips of your fingers<br>and toes without cautioning us to be careful,to be realistic,to remember the limitations of being human.<br><br>我想知道，你是否能安享快乐——我的或者你自己的，<br>你是否能充满野性地舞蹈，让狂喜注满你的指尖和足尖，<br>而不告诫我们要小心 、要现实、要记住人的存在的局限。<br><br>It doesn’t interest me if the story you are telling me is true.<br>I want to know if you can disappoint another to be true to yourself;<br>if you can bear the accusation of betrayal and not betray your own soul;<br>if you can be faithless and therefore trust worthy.<br><br>我并不关心你告诉我的故事是否真实，<br>我想知道，你是否能为了真实地对待自己而不怕别人失望，<br>你是否能承受背叛的指责而不出卖自己的灵魂。<br>我想知道，你是否能忠心耿耿从而值得信赖；<br><br>I want to know if you can see beauty<br>even when it’s not pretty,every day,<br>and if you can source your own life from its presence.<br><br>我想知道，你是否能保持精神饱满的状态，<br>——即使每天的生活并不舒心，<br>你是否能从上帝的存在中寻求自己生命的来源。<br><br>I want to know if you can live with failure, yours and mine,<br>and still stand on the edge of the lake and shout to the silver of the full moon, “Yes!”<br><br>我想知道，你能否身处颓境，却依然站立在湖边对着银色的月光喊一声“真美”！<br><br>It doesn’t interest me to know where you live or how much money youhave.<br>I want to know if you can get up, after the night of grief and despair,<br>weary and bruised to the bone, and do what needs to be done to feed the children.<br><br>我并不关心你在哪里生活或者你拥有多少金钱，<br>我想知道，在一个悲伤、绝望、厌烦、受到严重伤害的夜晚之后，<br>你能否重新站起，为孩子们做一些需要的事情。<br><br>It doesn’t interest me who you know or how you came to be here.<br>I want to know if you will stand in the center of the fire with me and not shrink back.<br><br>我并不关心你是谁，你是如何来到这里，<br>我想知道，你是否会同我一起站在火焰的中心，毫不退缩。<br><br>It doesn’t interest me where or what or with whom you have studied.<br>I want to know what sustains you, from the inside, when all else falls away.<br><br>我并不关心你在哪里受到教育、你学了什么或者你同谁一起学习，<br>我想知道，当一切都背弃了你时，是什么在内心支撑着你。<br><br>I want to know if you can be alone with yourself<br>and if you truly like the company you keep in the empty moments.<br><br>我想知道，你是否能孤独地面对你自己，<br>在空寂的时候，你是否真正喜欢你结交的朋友。<br><br></div>
+
+<div align="right">孟仁梓于杭城<br>2017年12月31日跨年夜<br></div>
 
     
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
 
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/19/网络原理常用知识/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -504,6 +644,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
