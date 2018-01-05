@@ -10,7 +10,7 @@
     
     <title>
         
-            标签: 她 | 
+            【译】Coding by the book | 
         
         MRZ&#39;s Blog
     </title>
@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="MengRZ">
     <meta name="description" content="null">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,翻译,编程书,入门">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -58,9 +58,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: 她 | MRZ&#39;s Blog">
+    <meta property="og:title" content="【译】Coding by the book | MRZ&#39;s Blog">
     <meta property="og:description" content="null">
-    
+    <meta property="og:article:tag" content="翻译"> <meta property="og:article:tag" content="编程书"> <meta property="og:article:tag" content="入门"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -221,94 +221,235 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#快速甄别"><span class="post-toc-number">1.</span> <span class="post-toc-text">快速甄别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#摒弃糟粕"><span class="post-toc-number">2.</span> <span class="post-toc-text">摒弃糟粕</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/post/cb2.jpg">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/post/25.jpg)">
+    
+            <p class="article-headline-p">
+                【译】Coding by the book
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>MengRZ</strong>
+        <span>1月 06, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/31/我理想中的她/">我理想中的她</a></p>
-    </div>
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/入门/">入门</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/编程书/">编程书</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/翻译/">翻译</a>
+    </ul>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            对于追寻理想，我不希望让人生看起来无比励志，我努力只想让我的人生看起来自然而然，就像河流一样，自然流淌，只为了到最后可以做到我喜欢做的那件事，成为我...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/31/我理想中的她/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="MengRZ's avatar">
-            </div>
-            <div>
-                <strong>MengRZ</strong>
-                <span>12月 31, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/自言语/">自言语</a>
-            </span>
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
 
-            
+    
 
-            
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=【译】Coding by the book&url=http://yoursite.com//2018/01/06/Coding-by-the-book/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=【译】Coding by the book&url=http://yoursite.com//2018/01/06/Coding-by-the-book/index.html&via=MengRZ" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2018/01/06/Coding-by-the-book/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2018/01/06/Coding-by-the-book/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=MRZ&#39;s Blog&title=【译】Coding by the book&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/01/06/Coding-by-the-book/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-            
-            
-        
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
+        <p>申明：本文由<a href="https://blog.newrelic.com/author/johnpaulmueller/" target="_blank" rel="external">John Paul Mueller</a>撰写，由孟仁梓翻译，转载自<a href="https://cloud.tencent.com/developer/user/1206541/articles" target="_blank" rel="external">孟仁梓的腾讯云+社区</a>，译作归孟仁梓和腾讯云+社区共同所有。</p>
+<p><em>本篇文章是“书中学编程”系列的第一篇文章，该系列下其他文章有</em>  <a href="http://blog.newrelic.com/2015/03/18/learn-code-programming-book/" target="_blank" rel="external"><em>书中学编程的5个注意事项</em></a><em>以及</em><a href="http://blog.newrelic.com/2015/03/19/best-books-software-developer/" target="_blank" rel="external"><em>每个软件开发者应读的7本书</em></a><em>。</em></p>
+<p>确实经典的编程书籍仍然是开发者学习编程和提升能力的不错的资源。</p>
+<p>真正的问题是，您该如何去挑选适合自己的编程书籍呢？我有几个忠告可以帮助您在市场上纷杂的编程书籍中，找到您所需要的编程书籍，我也会推荐几本经典的编程书籍给有兴趣学习计算机编程和软件开发的人。</p>
+<h3 id="快速甄别"><a href="#快速甄别" class="headerlink" title="快速甄别"></a>快速甄别</h3><p>衡量编程书籍质量的最佳方法是阅读TOC（目录）。如果TOC（目录）中没有囊括您特意寻求的内容，那么其正文部分很可能会粗制滥造，不会对您有太大的帮助。</p>
+<p><img src="https://blog.newrelic.com/wp-content/uploads/computer_books_shutterstock_213077896-300x222.jpg" alt="computer_books_shutterstock"></p>
+<p>随后，迅速浏览几个章节，观察文章的组织结构。无所裨益的书籍只会通过一到两种方式去解决问题；优质的书籍则会提供三到四种解决方案，这其中包括动手练习、源代码、详细说明以及程序。</p>
+<p>阅读章前引言。冗长并且沉闷的章前引言意味着书中会有过多冗文赘句；而另一方面，如果章前引言太过于简略以致于对事物没有一个完整的介绍，您可能会觉得这些解释缺乏必要的细节，会让您比开始阅读前更加困惑。</p>
+<p>优质的索引也同样重要。您可以尝试检索一些让您感兴趣的关键字，如果在索引中找不到您所感兴趣的关键字，那么在书中也很可能无法找到相关内容。一份卓越的索引不仅包含您所需要的关键字，而且编排得井井有条，方便您查阅其它相关信息。</p>
+<p>最后，书籍的作者是您甄别书籍质量高低的重要标准。专业的作者是书籍研究性高、条理性好和针对性强的保证，但凡事没有绝对，由三名及以上作者联名撰写的书籍偶尔会出现缺乏重点，文风不一，甚至自相矛盾的问题。</p>
+<h3 id="摒弃糟粕"><a href="#摒弃糟粕" class="headerlink" title="摒弃糟粕"></a>摒弃糟粕</h3><p>最糟糕的选书方式莫过于单单凭借标题或者封面去选购编程书籍，但是有很多程序员仍旧习惯以这种方式去选购编程书籍，可是能从封面上唯一得到的真正有用的信息是作者的资质和本书的主题。</p>
+<p>书评会帮助您衡量一本书的价值，但是请您记住书评只能代表一种观点，而这个观点可能并不适用于您，同样值得引起注意的是书评不一定可信，评论者可能没有真正阅读过该书，而只是挂名而已。</p>
+<p>根据编程书籍的美誉度进行甄选也相当重要，但书籍的质量和出版商或丛书的声誉并不会有直接的关系，任何出版商都可能会生产出劣质的书籍，甚至精品丛书中也难免会出现个别劣质的书籍，购买编程书籍只根据出版商的声誉很少能保证质量或满足您的需求。</p>
+<p>最后，要提防畅销书。无论是在线上还是线下的选书过程中，畅销书总是会出现在显眼的位置。书可能会因为本身的高质量，被列在畅销书榜单中，但有时也因为出版商已经投入的巨额营销资金而霸占畅销榜，所以单靠畅销书排行榜选书并不能分辨一本书能否满足您的需要，一定要结合自己的优秀的判断能力和思考能力去甄别书籍的优劣。</p>
 
     
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
 
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/01/05/MBTI/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -504,6 +645,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
