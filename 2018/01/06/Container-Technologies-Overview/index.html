@@ -10,7 +10,7 @@
     
     <title>
         
-            Equivalence Partitioning | 
+            【译】Container Technologies Overview | 
         
         MRZ&#39;s Blog
     </title>
@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="MengRZ">
     <meta name="description" content="null">
-    <meta name="keywords" content="null,SoftwareTesting">
+    <meta name="keywords" content="null,翻译,入门,容器,虚拟机">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -58,9 +58,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Equivalence Partitioning | MRZ&#39;s Blog">
+    <meta property="og:title" content="【译】Container Technologies Overview | MRZ&#39;s Blog">
     <meta property="og:description" content="null">
-    <meta property="og:article:tag" content="SoftwareTesting"> 
+    <meta property="og:article:tag" content="翻译"> <meta property="og:article:tag" content="入门"> <meta property="og:article:tag" content="容器"> <meta property="og:article:tag" content="虚拟机"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -247,7 +247,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Equivalence-Partitioning"><span class="post-toc-number">1.</span> <span class="post-toc-text">Equivalence Partitioning</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Input-Domains"><span class="post-toc-number">2.</span> <span class="post-toc-text">Input Domains</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Partitioning-Domains"><span class="post-toc-number">3.</span> <span class="post-toc-text">Partitioning Domains</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Two-Approaches"><span class="post-toc-number">4.</span> <span class="post-toc-text">Two Approaches</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Interface-based-approach"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Interface-based approach</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Fucitionality-Based-Approach"><span class="post-toc-number">5.</span> <span class="post-toc-text">Fucitionality-Based Approach</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#虚拟机和容器的区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">虚拟机和容器的区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#容器解决了什么问题？"><span class="post-toc-number">2.</span> <span class="post-toc-text">容器解决了什么问题？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#容器的优点"><span class="post-toc-number">3.</span> <span class="post-toc-text">容器的优点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#容器的缺点"><span class="post-toc-number">4.</span> <span class="post-toc-text">容器的缺点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#容器的分类"><span class="post-toc-number">5.</span> <span class="post-toc-text">容器的分类</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -272,10 +272,10 @@
     <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/post/15.jpg)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/post/26.jpg)">
     
             <p class="article-headline-p">
-                Equivalence Partitioning
+                【译】Container Technologies Overview
             </p>
         </div>
 
@@ -294,7 +294,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>MengRZ</strong>
-        <span>5月 23, 2017</span>
+        <span>1月 06, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -318,7 +318,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/SoftwareTesting/">SoftwareTesting</a>
+        <a class="post_tag-link" href="/tags/入门/">入门</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/容器/">容器</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/翻译/">翻译</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/虚拟机/">虚拟机</a>
     </ul>
     
 
@@ -334,7 +334,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Equivalence Partitioning&url=http://yoursite.com//2017/05/23/EquivalencePartitioning/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=【译】Container Technologies Overview&url=http://yoursite.com//2018/01/06/Container-Technologies-Overview/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -343,7 +343,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Equivalence Partitioning&url=http://yoursite.com//2017/05/23/EquivalencePartitioning/index.html&via=MengRZ" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=【译】Container Technologies Overview&url=http://yoursite.com//2018/01/06/Container-Technologies-Overview/index.html&via=MengRZ" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -352,7 +352,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/05/23/EquivalencePartitioning/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2018/01/06/Container-Technologies-Overview/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -361,7 +361,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/05/23/EquivalencePartitioning/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2018/01/06/Container-Technologies-Overview/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -373,7 +373,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=MRZ&#39;s Blog&title=Equivalence Partitioning&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/05/23/EquivalencePartitioning/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=MRZ&#39;s Blog&title=【译】Container Technologies Overview&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/01/06/Container-Technologies-Overview/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -391,225 +391,36 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>等价类划分就是解决如何选择适当的数据子集来代表整个数据集的问题，通过降低测试的数目去实现“合理的”覆盖，覆盖了更多的可能数据，以发现更多的软件缺陷。</p>
-<p><a href="https://cs.gmu.edu/~offutt/softwaretest/" target="_blank" rel="external">Introduction to Software Testing</a></p>
-<p>content in the following  by Paul Ammann and Jeff Offutt is licensed under a Creative Commons Attribution 4.0 International License.</p>
-<h3 id="Equivalence-Partitioning"><a href="#Equivalence-Partitioning" class="headerlink" title="Equivalence Partitioning"></a>Equivalence Partitioning</h3><ul>
-<li><p>Can be equally applied at serveral levels of testing</p>
-<ul>
-<li>Unit</li>
-<li>Integreation</li>
-<li>System</li>
-</ul>
-</li>
-<li><p>Relatively easy to apply with no automation</p>
-</li>
-<li><p>Easy to adjust the procedure to get more fewer tests</p>
-</li>
-</ul>
-<h3 id="Input-Domains"><a href="#Input-Domains" class="headerlink" title="Input Domains"></a>Input Domains</h3><ul>
-<li><p>The input domain for a program contains all the possible inputs to that program.</p>
-</li>
-<li><p>For even small programs, the input domain is so larage that it might as well be infinate.</p>
-</li>
-<li><p>Testing is fundamentally about choosing finite sets of values from the input domain.</p>
-</li>
-<li><p>Input parameters define the scope of the input domain</p>
-<ul>
-<li>Patatmeters to a method</li>
-<li>Data read from a file</li>
-<li>Global variables</li>
-<li>User level inputs</li>
-</ul>
-</li>
-<li><p>Domain for each input parameter is partitioned into regions.</p>
-</li>
-<li><p>At least one value is chosen from each region.</p>
-</li>
-</ul>
-<h3 id="Partitioning-Domains"><a href="#Partitioning-Domains" class="headerlink" title="Partitioning Domains"></a>Partitioning Domains</h3><ul>
-<li>Domain D</li>
-<li>Partition schemep of D</li>
-<li>The partition p defines a set of blocks, <code>b_1, b_2, b_3, … b_n</code></li>
-<li>The partition must satisfy two properties:<ul>
-<li>bolcks must be pairwise disjoint(no overlap)</li>
-<li>together the blocks cover the domain D(complete)</li>
-</ul>
-</li>
-</ul>
-<h3 id="Two-Approaches"><a href="#Two-Approaches" class="headerlink" title="Two Approaches"></a>Two Approaches</h3><ul>
-<li><p>Interface-based approach</p>
-<ul>
-<li>Develops characteristics directly from individual input parameters</li>
-<li>Simplest application</li>
-<li>Can be partially automated in some situations</li>
-</ul>
-</li>
-<li><p>Functionality-based approach</p>
-<ul>
-<li>Develops characteristics from a behavioral view of the program under test.</li>
-<li>Harder to develop – requires more design effort.</li>
-<li>May result in better tests, or fewer tests are effective.</li>
-</ul>
-</li>
-</ul>
-<h4 id="Interface-based-approach"><a href="#Interface-based-approach" class="headerlink" title="Interface-based approach"></a>Interface-based approach</h4><ul>
-<li>Mechanically consider each parameter in isolation.</li>
-<li>This is an easy modeling technique and relies mostly on syntax.</li>
-<li>Ingnores ralationships among parameters.</li>
-</ul>
-<blockquote>
-<p>Example 1: TriTyp: three int parameters.<br>Reasonable characteristic: Relation of side with zero.<br>TriTyp has three integger inputs</p>
-</blockquote>
-<center>First Characterization of Trityp’s Inputs</center>
-
-<table>
-<thead>
-<tr>
-<th>Charateristic</th>
-<th>b1</th>
-<th>b2</th>
-<th>b3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>q_1</code> = “Relation of side 1 to 0”</td>
-<td>greater than zero</td>
-<td>equal to zero</td>
-<td>less than zero</td>
-</tr>
-<tr>
-<td><code>q_2</code> = “Relation of side 2 to 0”</td>
-<td>greater than zero</td>
-<td>equal to zero</td>
-<td>less than zero</td>
-</tr>
-<tr>
-<td><code>q_3</code> = “Relation of side 3 to 0”</td>
-<td>greater than zero</td>
-<td>equal to zero</td>
-<td>less than zero</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>A maximum of 3<em>3</em>3 = 27 tests<br>Some triangles are vaild, some are invaild<br>Refining the characterzation can lead to more test…</p>
-</blockquote>
-<center>Second Characterization of Trityp’s Inputs</center>
-
-<table>
-<thead>
-<tr>
-<th>Charateristic</th>
-<th>b1</th>
-<th>b2</th>
-<th>b3</th>
-<th>b4</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>q_1</code> = “Refinement of <code>q_2</code>“</td>
-<td>greater than 1</td>
-<td>equal to 1</td>
-<td>equal to 0</td>
-<td>less than 0</td>
-</tr>
-<tr>
-<td><code>q_2</code> = “Refinement of <code>q_2</code>“</td>
-<td>greater than 1</td>
-<td>equal to 1</td>
-<td>equal to 0</td>
-<td>less than 0</td>
-</tr>
-<tr>
-<td><code>q_3</code> = “Refinement of <code>q_3</code>“</td>
-<td>greater than 1</td>
-<td>equal to 1</td>
-<td>equal to 0</td>
-<td>less than 0</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>A maximum of 4<em>4</em>4 = 64 tests<br>There is only complete because the inputs are integers(0…1)</p>
-</blockquote>
-<center>Possible values for partition <code>q_1</code> </center>
-
-<table>
-<thead>
-<tr>
-<th>Charateristic</th>
-<th>b1</th>
-<th>b2</th>
-<th>b3</th>
-<th>b4</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>side 1</td>
-<td>2</td>
-<td>1</td>
-<td>0</td>
-<td>-1</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Fucitionality-Based-Approach"><a href="#Fucitionality-Based-Approach" class="headerlink" title="Fucitionality-Based Approach"></a>Fucitionality-Based Approach</h3><ul>
-<li>Identify characteristics that correspond to the intended functionality</li>
-<li>Requires more design effort from tester</li>
-<li>Can incorporate domain and semantic knowledge</li>
-<li>Can use relationships among parameters</li>
-<li>Modeling can be based on requirements, not implementation</li>
-<li>The same parameter may appear in multiple characteristics, so it’s harder to translate values to test cases</li>
-</ul>
-<p>Consider TriTyp again<br>The three parameters represent a triangle<br>Reasonable characteristic : Type of triangle</p>
-<center>Geometric Characterization of TriTyp’s Inputs</center>
-
-<table>
-<thead>
-<tr>
-<th>Charateristic</th>
-<th>b1</th>
-<th>b2</th>
-<th>b3</th>
-<th>b4</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>q_1 =</code> “Gcometric Classfication”</td>
-<td>scalnc</td>
-<td>isosceles，not equilateral</td>
-<td>equilateral</td>
-<td>invaild</td>
-</tr>
-</tbody>
-</table>
-<center>Geometric Characterization of TriTyp’s Inputs</center>
-
-<table>
-<thead>
-<tr>
-<th>Charateristic</th>
-<th>b1</th>
-<th>b2</th>
-<th>b3</th>
-<th>b4</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Triangle</td>
-<td>(4,5,6)</td>
-<td>(3,3,4)</td>
-<td>(3,3,3)</td>
-<td>(3,4,8)</td>
-</tr>
-</tbody>
-</table>
+        <p>申明：本文由<a href="https://dzone.com/users/1259881/jatin.aneja.html" target="_blank" rel="external">Jatin Aneja</a>撰写，由孟仁梓翻译，转载自<a href="https://cloud.tencent.com/developer/user/1206541/articles" target="_blank" rel="external">孟仁梓的腾讯云+社区</a>，译作版权归孟仁梓和腾讯云+社区共同所有。</p>
+<p><strong>容器 (<code>Container</code>)</strong> 是一种在资源隔离状态下，允许我们运行应用程序及其依赖项，操作系统层面的轻量级、虚拟化技术。在容器中，应用程序运行所依赖的必要组件都需要被打包为可被反复调用的单个镜像，镜像工作时运行在孤立的环境中，不共享 <code>主机操作系统</code> 的 <code>内存</code> 、 <code>CPU</code> 和 <code>磁盘</code> ，这保证了容器内的进程不能访问容器外的任何进程。</p>
+<p><img src="https://ask.qcloudimg.com/draft/1206541/jcpxewv4i9.jpg" alt="虚拟化"></p>
+<p>​</p>
+<h3 id="虚拟机和容器的区别"><a href="#虚拟机和容器的区别" class="headerlink" title="虚拟机和容器的区别"></a>虚拟机和容器的区别</h3><p>虚拟机 (<code>Virtual Machine</code>) 通常包括整个操作系统和其应用程序，并且需要一个虚拟机管理程序来控制 <code>VM</code> (虚拟机)。</p>
+<p>因为囊括了整个操作系统，虚拟机的大小会达到几千兆字节 (1千兆字节 = 1GB)，这样做的缺点之一是计算机会耗费几分钟去启动操作系统和初始化应用程序。另一方面，容器则是轻量级的且几乎只有几兆字节 (1兆字节 = 1MB)，容器相较于虚拟机有性能强和立即启动的优势。</p>
+<p>​</p>
+<p><img src="https://ask.qcloudimg.com/draft/1206541/zbixk8qntq.jpg" alt="virtual-machines-vs-containers.jpg"></p>
+<h3 id="容器解决了什么问题？"><a href="#容器解决了什么问题？" class="headerlink" title="容器解决了什么问题？"></a>容器解决了什么问题？</h3><p>应用程序在计算环境改变后会出现很多问题。问题可能会出现在开发环境变为测试环境之后，进一步执行程序的过程中，比如，一名开发者在  <code>Windows</code> 环境下编写了一个程序，但上层环境 ( <code>test</code> (测试)、 <code>stage</code> (准上线)或  <code>prod</code> (生产))却部署了在 <code>Linux</code> 上。在这种情况下，当操作系统发生变化后，应用程序部分功能会停止工作。所以，通常情况下，当配套软件不一致时，间歇性故障几率会更高。</p>
+<p>正如 <code>Docker</code> 之父 <code>Solomon Hykes</code> 所言:”您在 <code>Python 2.7</code> 进行测试而使用 <code>Python 3</code> 进行生产；或者说您安装了与程序依赖不同版本的 <code>SSL</code> 库；再比如你在 <code>Debian</code> 测试却在 <code>RedHat</code> 下生产，在这些情况下，会出现很多古怪的错误。”</p>
+<p>不止计算环境，网络环境也会发生改变。 <code>Hykes</code> 补充道：“网络拓扑结构，安全策略和存储都可能存在不同，但软件却不得不在上面运行。”</p>
+<h3 id="容器的优点"><a href="#容器的优点" class="headerlink" title="容器的优点"></a>容器的优点</h3><p><strong>敏捷环境</strong>: 容器技术最明显的优势是它比 <code>VM</code> (虚拟机)实例运行速度更快，容器轻量级的特点让它在性能和占用内存上开销更小。</p>
+<p><strong>提高生产力</strong>: 容器通过消除跨服务的依赖和冲突的方式提高开发人员的生产力。每个容器被看作一个微服务，因此可以在不需要考虑同步的条件下，彼此独立升级。</p>
+<p><strong>版本控制</strong>: 每一个容器镜像内含版本控制，因此能回溯到不同版本，注意版本之间的差别等。</p>
+<p><strong>可移植性高</strong>: 容器封装了针对应用程序的所有重要细节，比如程序依赖和操作系统，这帮助增强了容器镜像的可移植性，比如，相同镜像能被用来在 <code>Windows</code> / <code>Linux</code> 或者 <code>dev</code> (开发) / <code>test</code> (测试) / <code>stage</code> (准上线) 环境中。</p>
+<p><strong>标准化</strong>: 绝大多数容器基于开放标准，能在主流的 <code>Linux</code> 发行版, <code>Microsoft</code> 等操作系统中运行</p>
+<p><strong>安全</strong>: 容器分别在进程和架构上彼此独立，因此单个容器的升级和调整不会影响别的容器。</p>
+<h3 id="容器的缺点"><a href="#容器的缺点" class="headerlink" title="容器的缺点"></a>容器的缺点</h3><p><strong>复杂性增加</strong>：<code>n</code> 个容器同时运行应用程序时，复杂性因此增加，在生产环境中，管理这些容器是一个极具挑战的任务。 可以利用 <code>Kubernetes</code> 或者 <code>Mesos</code> 工具来管理 <code>n</code> 个容器。</p>
+<p><strong>本机需要 <code>Linux</code> 支持</strong>：绝大多数容器技术，比如 <code>Docker</code>, 基于 <code>Linux</code> 容器 (<code>LXC</code>), 与在 <code>Linux</code> 上运行这些实例相比，在 <code>Microsoft</code> 环境下运行这些容器会显得麻烦，它们的日常使用会带来复杂的问题。</p>
+<p><strong>不成熟</strong>：容器技术在市场中相对较新，因此进入市场的时间缓慢。可用资源的数量在开发人员中是有限的，如果遇到一些问题，可能需要一些时间才能找出解决方案。</p>
+<h3 id="容器的分类"><a href="#容器的分类" class="headerlink" title="容器的分类"></a>容器的分类</h3><p><strong>操作系统容器 (<code>OS Container</code>)</strong> ：根据维基百科，“操作系统级虚拟化是一种计算机虚拟化方法，其中操作系统的内核允许存在多个孤立的用户空间实例，而不仅仅是一个，这种实例有时被称为容器，虚拟化引擎（<code>VEs</code>）或监狱(<code>jails</code>)（<code>FreeBSD jail</code>或<code>Chroot jail</code>），从运行的程序角度来看，它们可能看起来就像真正的计算机。</p>
+<p>如上所述，它们共享主机操作系统的内核，但提供用户空间隔离。不同的应用程序可以被安装，配置，并且可以像我们在主机操作系统上运行应用程序一样运行。同样，分配给容器的资源只对该容器可见。任何其他来宾操作系统映像将无法访问另一来宾操作系统的资源。</p>
+<p>当需要配置一组具有相同配置的操作系统时，容器非常有效。因此，容器有助于创建与另一个操作系统具有类似风格的模板。</p>
+<p>要创建操作系统容器，我们可以利用容器技术，如 <code>LXC</code>，<code>OpenVZ</code> ，<code>Linux VServer</code>，<code>BSD Jails</code> 和 <code>Solaris zones</code>。</p>
+<p><img src="https://ask.qcloudimg.com/draft/1206541/r3oky1ivs6.jpg" alt="os-vs-app-containers.jpg"></p>
+<p>​</p>
+<p><strong>应用容器（<code>Application Container</code>）</strong>：根据维基百科，“应用程序虚拟化是一种软件技术，它将计算机程序从其执行的底层操作系统中进行封装。完全虚拟化的应用程序并不是按照传统的意义来安装的，尽管它仍然像以前一样被执行。应用程序在运行时表现得像直接与原始操作系统及其管理的所有资源进行交互，但可以在不同程度上进行隔离或沙箱化。</p>
+<p>在这种情况下，“虚拟化” (<code>Virtualization</code>) 是指被封装的工件（应用程序），它与硬件虚拟化中的含义完全不同，它指的是被抽象的物件（物理硬件）。</p>
+<p>应用程序容器被设计为打包和运行单个进程，而在操作系统容器中，可以运行多个服务和进程。</p>
+<p>像 <code>Docker</code> 和 <code>Rocket</code> 这样的容器就是应用程序容器的典型例子。</p>
 
     
 
@@ -636,21 +447,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/05/23/代码重构/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/05/22/Hexo常用命令/" id="post_nav-older" class="next-content">
+        <a href="/2018/01/06/Coding-by-the-book/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
