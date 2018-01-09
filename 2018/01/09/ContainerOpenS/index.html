@@ -10,7 +10,7 @@
     
     <title>
         
-            IT项目管理 Project 2007 实验报告二 | 
+            【译】Container Images for OpenShift Objectives | 
         
         MRZ&#39;s Blog
     </title>
@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="MengRZ">
     <meta name="description" content="null">
-    <meta name="keywords" content="null,项目管理,实验报告">
+    <meta name="keywords" content="null,翻译,容器,OpenShift">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -58,9 +58,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="IT项目管理 Project 2007 实验报告二 | MRZ&#39;s Blog">
+    <meta property="og:title" content="【译】Container Images for OpenShift Objectives | MRZ&#39;s Blog">
     <meta property="og:description" content="null">
-    <meta property="og:article:tag" content="项目管理"> <meta property="og:article:tag" content="实验报告"> 
+    <meta property="og:article:tag" content="翻译"> <meta property="og:article:tag" content="容器"> <meta property="og:article:tag" content="OpenShift"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -247,7 +247,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-实验目的"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.实验目的</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-实验内容"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.实验内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-实验要求"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.实验要求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-项目介绍"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.项目介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-心得体会"><span class="post-toc-number">5.</span> <span class="post-toc-text">5.心得体会</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考文件"><span class="post-toc-number">6.</span> <span class="post-toc-text">.参考文件</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#黄金镜像"><span class="post-toc-number">1.</span> <span class="post-toc-text">黄金镜像</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可重复"><span class="post-toc-number">2.</span> <span class="post-toc-text">可重复</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#敏捷的标准运行环境"><span class="post-toc-number">3.</span> <span class="post-toc-text">敏捷的标准运行环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可重用性"><span class="post-toc-number">4.</span> <span class="post-toc-text">可重用性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可维护性"><span class="post-toc-number">5.</span> <span class="post-toc-text">可维护性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#资源效率"><span class="post-toc-number">6.</span> <span class="post-toc-text">资源效率</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安全"><span class="post-toc-number">7.</span> <span class="post-toc-text">安全</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#弹性"><span class="post-toc-number">8.</span> <span class="post-toc-text">弹性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#易于消费"><span class="post-toc-number">9.</span> <span class="post-toc-text">易于消费</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -272,10 +272,10 @@
     <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/post/04.jpg)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/post/27.jpg)">
     
             <p class="article-headline-p">
-                IT项目管理 Project 2007 实验报告二
+                【译】Container Images for OpenShift Objectives
             </p>
         </div>
 
@@ -294,7 +294,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>MengRZ</strong>
-        <span>6月 06, 2017</span>
+        <span>1月 09, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -318,7 +318,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/实验报告/">实验报告</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/项目管理/">项目管理</a>
+        <a class="post_tag-link" href="/tags/OpenShift/">OpenShift</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/容器/">容器</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/翻译/">翻译</a>
     </ul>
     
 
@@ -334,7 +334,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=IT项目管理 Project 2007 实验报告二&url=http://yoursite.com//2017/06/06/experiment2-IT/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=【译】Container Images for OpenShift Objectives&url=http://yoursite.com//2018/01/09/ContainerOpenS/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -343,7 +343,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=IT项目管理 Project 2007 实验报告二&url=http://yoursite.com//2017/06/06/experiment2-IT/index.html&via=MengRZ" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=【译】Container Images for OpenShift Objectives&url=http://yoursite.com//2018/01/09/ContainerOpenS/index.html&via=MengRZ" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -352,7 +352,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/06/06/experiment2-IT/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2018/01/09/ContainerOpenS/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -361,7 +361,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/06/06/experiment2-IT/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2018/01/09/ContainerOpenS/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -373,7 +373,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=MRZ&#39;s Blog&title=IT项目管理 Project 2007 实验报告二&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/06/06/experiment2-IT/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=MRZ&#39;s Blog&title=【译】Container Images for OpenShift Objectives&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/01/09/ContainerOpenS/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -391,88 +391,52 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <table>
-<thead>
-<tr>
-<th>实验课程：IT项目管理</th>
-<th>实验名称：Project 2007的使用</th>
-<th>任课教师：卫伟</th>
-<th>软件版本：<strong>Project 2007</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>实验人：孟仁梓</td>
-<td>学号： 1401400118</td>
-<td>班级：14工科试点1班</td>
-<td>实验日期：2017/06/06</td>
-</tr>
-</tbody>
-</table>
-<h2 id="1-实验目的"><a href="#1-实验目的" class="headerlink" title="1.实验目的"></a>1.实验目的</h2><blockquote>
-<p>通过project管理软件掌握项目管理进度的管理方法</p>
-</blockquote>
-<h2 id="2-实验内容"><a href="#2-实验内容" class="headerlink" title="2.实验内容"></a>2.实验内容</h2><ol>
-<li>安装Project 2007</li>
-<li>熟悉和使用Project 2007</li>
-<li>为一个项目使用Project 2007进行项目进度管理</li>
-</ol>
-<h2 id="3-实验要求"><a href="#3-实验要求" class="headerlink" title="3.实验要求"></a>3.实验要求</h2><p>写出主要过程步骤及截图</p>
+        <p>申明：本文由<a href="https://dzone.com/users/1259881/jatin.aneja.html" target="_blank" rel="external">Jatin Aneja</a>撰写，由孟仁梓翻译，转载自<a href="https://cloud.tencent.com/developer/user/1206541/articles" target="_blank" rel="external">孟仁梓的腾讯云+社区</a>，译作版权归孟仁梓和腾讯云+社区共同所有。</p>
+<p>本篇文章来源于2017 <code>EMEA</code> （<code>Europe, the Middle East and Africa</code>，欧洲，中东和非洲） 红帽技术交流会议的会议记录，所有来自于欧洲、中东和非洲的红帽解决方案的架构师和顾问参与了本次会议，会议内容是关于 <code>OpenShift</code>上的镜像构建的思考和不错的实践案例，文章分为四个板块进行叙述：</p>
 <ul>
-<li><strong>主要步骤</strong><ul>
-<li>设置项目的开始和结束时间，2个月</li>
-<li>有5个项目成员，1个项目经理</li>
-<li>为项目制定详细的计划，项目要求输入3级大纲任务</li>
-<li>项目分4个阶段，每个阶段至少3-6项各级活动，设4个里程碑</li>
-<li>使用4种活动之间的关系标注活动的依赖关系</li>
+<li>对象</li>
+<li>构建您的镜像</li>
+<li>保证镜像的可用</li>
+<li>云就绪</li>
 </ul>
-</li>
-</ul>
-<hr>
+<p>本文是该系列的第一部分，在这一部分中我们将看到与使用容器 (<code>container</code>) 时相关的常规对象，我们会在镜像的设计阶段考虑这些对象。</p>
+<h2 id="黄金镜像"><a href="#黄金镜像" class="headerlink" title="黄金镜像"></a>黄金镜像</h2><p>我对容器感兴趣的原因之一是，容器允许将具有所有依赖项的应用程序打包到单个部署单元中，这个部署单元称为黄金镜像，方便从一个环境迁移到另一个环境。例如，您可以将其从集成 (<code>integration</code>) 迁移到 <code>UAT</code> (<code>User Acceptance Test</code>，用户验收测试) 或从准上线 (<code>staging</code>) 迁移到生产 (<code>production</code>)。因为单个单元中部署了所有依赖关系，所以可以保证前一个单元的内容在后一个单元仍然可以运行。</p>
+<p><img src="https://ask.qcloudimg.com/draft/1206541/p203wqhdtu.jpg" alt=""></p>
+<p>在容器崛起之前，很多公司困于应用推广上，其中有些人为此写了详细的安装步骤说明，应用必须手动安装和严格遵守安装步骤，另外的人则为此投入了大量的精力开发 <code>Puppet</code> ， <code>Chef</code> 或 <code>Python</code> 编写软件自动化构建脚本，此外，除了初始的投入，还需要大量的维护工作来应对软件的升级和变更。大多数人曾遇到过各种各样的问题。容器带来的是一个简单的标准化方法，应用程序的依赖关系（操作系统，运行时环境（<code>JVM</code> (<code>Java Virtual Machine</code>, Java虚拟机)等），库以及一些配置）是容器镜像的一部分，通过启动容器镜像实例，可以将应用程序部署于不同的环境。</p>
+<h2 id="可重复"><a href="#可重复" class="headerlink" title="可重复"></a>可重复</h2><p>在以后构建相同镜像会产生相同的结果，这对于获得可用于补丁、升级和进一步演进的稳定参考非常重要，这要求用于创建容器映像的依赖项（库或其他镜像）被唯一引用和版本化。</p>
+<h2 id="敏捷的标准运行环境"><a href="#敏捷的标准运行环境" class="headerlink" title="敏捷的标准运行环境"></a>敏捷的标准运行环境</h2><p>?<img src="https://ask.qcloudimg.com/draft/1206541/44mw864fjd.png" alt=""></p>
+<p>同质化的企业软件环境具有以下鲜明的优势：</p>
 <ul>
-<li><strong>截图</strong>（五张）<ul>
-<li>项目甘特图</li>
-<li>资源列表</li>
-<li>资源使用状况 </li>
+<li>通过限制可能需要支持的软件运行环境的数量，来节省维护的时间和成本。</li>
+<li>方便业务部门的软件运行环境，这对于及时解决突发事件是至关重要的。</li>
+<li>在几个不同的环境下，合规 (<code>Compliance</code>) 更容易。</li>
+<li>方便工作人员更容易，因为软件运行环境相同，有利于员工适应岗位地变更。</li>
 </ul>
-</li>
-</ul>
-<h2 id="4-项目介绍"><a href="#4-项目介绍" class="headerlink" title="4.项目介绍"></a>4.项目介绍</h2><p>项目以中国计量大学教务软件开发为背景，首先，项目设立一个六人团队，团队由一名项目经理直接领导，其中包含五名项目组成员，分别是分析人员，开发人员，测试人员，技术联络人员和部署小组，如图1所示:</p>
-<p><img src="http://7xoiu4.com1.z0.glb.clouddn.com/xmcy.png" alt="项目成员"></p>
-<center>图1 项目成员</center>
-
-<p>其次，添加项目成员之后，对项目任务进行分配，主要设置四个大任务，分别是，分析软件需求阶段，开发阶段，测试阶段，部署阶段，四个大阶段分别设为里程碑任务，每个大阶段任务下辖3~6个小任务，甘特图如图2所示：</p>
-<p><img src="http://7xoiu4.com1.z0.glb.clouddn.com/e2gtt.png" alt="甘特图"></p>
-<center>图2 甘特图</center>
-
-<p>里程碑是在项目内部完成的重要事件(如某工作阶段的结束)或强加于项目的重要事件(如申请资金的最后期限)。因为里程碑本身通常不包括任何工作，所以它表示为工期为0的任务。</p>
-<p>根据视图的变换，其中产生了以下报表，日历如图3所示：</p>
-<p><img src="http://7xoiu4.com1.z0.glb.clouddn.com/e2rl.png" alt="日历"></p>
-<center>图3 日历</center>
-
-<p>Project要求任务以特定顺序执行。例如，拍摄电影场景的任务必须在编辑电影场景的任务执行之前完成。这两个任务之间存在完成-开始关系(也称为链接或依赖关系)。此种关系有两类：</p>
-<p>网络图如图4所示：</p>
-<p><img src="http://7xoiu4.com1.z0.glb.clouddn.com/e2wlt.png" alt="网络图"></p>
-<center>图4 网络图</center>
-
+<p>在定义镜像格局时，应该考虑上述优势带来的便利性，有时严格执行和缓慢发展 <code>SOE</code> (<code>Server Object Extension</code>, 服务对象扩展)会造成企业反应迟缓，容器镜像可以帮助解决高可重用性和方便对多个目标进行集中更改的问题。</p>
+<h2 id="可重用性"><a href="#可重用性" class="headerlink" title="可重用性"></a>可重用性</h2><p>It is important to limit the number of places where components get injected into images like frameworks, application servers, drivers, and scripts. These may be used for ground functionality, connectivity, monitoring, asset tracking and management, security, etc. The idea is that the components of the SOE are created once. Layering approaches with inheritance and composition may support this. Considering the global image landscape rather than single image individual is important in this respect.</p>
+<p>限制能被组件注入的框架、应用程序服务器、驱动程序和脚本等的镜像的数量是非常重要的，这些可以用于基础功能、连接性、监听、资源跟踪管理、安全性等，以上指的就是第一次创建 <code>SOE</code> (<code>Server Object Extension</code>, 服务对象扩展) ，分层的方法的继承和组合可能支持这一点，考虑到全局镜像而不是单一镜像在个人方面是重要的。</p>
+<h2 id="可维护性"><a href="#可维护性" class="headerlink" title="可维护性"></a>可维护性</h2><p>上一节提到的中央注入点也是修补和升级的中心点。这些更改（可能由软件提供商作为容器映像提供）需要自动级联，以便维护变得简单。</p>
+<p>在集装箱前时代，我看到很多公司都在努力保持Java或应用服务器的最新补丁和安全修复。容器技术结合了在中心位置应用变更的可能性，并使他们在软件环境中毫不费力，也没有停机的情况下推出。这在安全性和可靠性方面会产生巨大的影响。因此，图像需要设计时考虑可维护性。</p>
+<h2 id="资源效率"><a href="#资源效率" class="headerlink" title="资源效率"></a>资源效率</h2><p>在创建应用程序时，资源（RAM，CPU，存储等）的最小消耗是显而易见的目标，因此也是用于其包装的图像。这意味着密度更高，成本更低。与虚拟机相比，容器具有共享相同内核而不是创建额外实例的优势。这可以通过容器共享层来进一步推动。遵循已经提到的一些目标，这是可能的：国有企业和可重用性。尽管尺寸确实影响推拉图像所需的时间，但它在最终的RAM和存储使用方面起着比图像尺寸本身更大的作用。</p>
+<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><p>除了保持操作系统，应用程序服务器和其他库及时修补最新的安全性修补程序之外，在创建映像时还需要考虑安全性方面的一些其他重要方面：</p>
 <ul>
-<li>第2个任务的执行必须晚于第1个任务，称为序列；</li>
+<li>减少攻击面：这可以通过将图像内部安装的内容限制在运行容器所需的内容来完成。</li>
+<li>限制功能：特权容器应该是执行特定安全措施的例外。其他功能，如安装主机文件系统，绑定主机端口，或使用可能与主机上的用户相匹配的特定用户标识运行，应仅在没有其他选项可用时才被授予，并且在仔细检查安全性影响之后风险得到缓解。</li>
+<li>有限的资源：容器映像应该以能够在有限资源（CPU，RAM，网络，存储）下运行的方式构建，以便它不会成为拒绝服务攻击主机和其他容器在同一台主机上运行。</li>
 </ul>
-<p>资源使用图如图5所示：</p>
-<p><img src="http://7xoiu4.com1.z0.glb.clouddn.com/e2zysyb.png" alt="资源使用图"></p>
-<center>图5 资源使用图</center>
-
+<h2 id="弹性"><a href="#弹性" class="headerlink" title="弹性"></a>弹性</h2><p>像Kubernetes和OpenShift这样的PaaS平台提供了监控和自我修复机制。准备和活性探测确保：</p>
 <ul>
-<li>第2个任务只能在完成第1个任务后执行，称为依赖。</li>
+<li>当没有准备好时，没有请求被发送到容器，实际上，这意味着它没有完成启动，它正在终止，或者它的一个依赖项（数据库，服务）不可用。</li>
+<li>活性探测不成功时，容器将重新启动。重新启动一个容器将其恢复到初始状态，类似于工厂重置。</li>
 </ul>
-<h2 id="5-心得体会"><a href="#5-心得体会" class="headerlink" title="5.心得体会"></a>5.心得体会</h2><ul>
-<li>项目计划中有关任务的重要内容包括任务工期和任务执行的顺序。</li>
-<li>任务链接或关系会导致一个任务的开始或完成影响另一个任务的开始或完成。常见的任务关系是完成-开始关系。在此关系中，一个任务的完成控制另一任务的开始。</li>
-<li>在Project中，项目的阶段表示为摘要任务。</li>
-<li>可以使用任务备注记录附加的细节信息，也可以创建到因特网的超链接。</li>
-<li>“项目信息”对话框(“项目”菜单)是查看项目计划关键值(如预定的完成日期和工期)的绝佳途径。</li>
+<p>作为一名图像设计师，您的责任是提供可用的声音准备度和生命力探测器。</p>
+<p>另一个方面是，当OpenShift想要终止一个容器时，它首先将容器从请求处理旋转中移出并发送一个SIGTERM信号。它为应用程序在结束之前正常关闭提供了时间。如果允许的期限已过，则使用SIGKILL信号。在这方面，图像内的应用程序应完成处理正在进行的请求，释放资源，并在接收到SIGTERM信号时终止。</p>
+<h2 id="易于消费"><a href="#易于消费" class="headerlink" title="易于消费"></a>易于消费</h2><p>可复用性已经被提及作为一个目标。但是，只有在图像易于使用的情况下才能达到较好的水平，其中包括以下几个方面：</p>
+<ul>
+<li>通过继承，组成或利用扩展点来扩展。但是扩展点需要首先考虑。作为一名图像设计师，您有责任思考如何添加功能或自定义图像，并以简单的方式实现。</li>
+<li>文档：这包括记录图像的目的，使用情况以及运行它的重要方面，例如它的入口点，使用的端口，应用程序可以写入数据的目录等。为图像快速启动也是一种方法帮助最终用户了解应该如何使用图像。</li>
 </ul>
-<h2 id="参考文件"><a href="#参考文件" class="headerlink" title=".参考文件"></a>.参考文件</h2><p>[1] Project 2007 教程</p>
+<p>我希望您发现这第一部分有趣。在下面的文章中，我们将看到有什么技术和方法可以实现这里已经提到的目标。敬请关注！</p>
 
     
 
@@ -499,21 +463,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/06/15/Hexo添加MathJax支持/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/06/05/ITmanagementExperiment1/" id="post_nav-older" class="next-content">
+        <a href="/2018/01/07/nippon/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
