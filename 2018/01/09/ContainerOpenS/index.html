@@ -247,7 +247,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#黄金镜像"><span class="post-toc-number">1.</span> <span class="post-toc-text">黄金镜像</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可重复"><span class="post-toc-number">2.</span> <span class="post-toc-text">可重复</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#敏捷的标准运行环境"><span class="post-toc-number">3.</span> <span class="post-toc-text">敏捷的标准运行环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可重用性"><span class="post-toc-number">4.</span> <span class="post-toc-text">可重用性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可维护性"><span class="post-toc-number">5.</span> <span class="post-toc-text">可维护性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#资源效率"><span class="post-toc-number">6.</span> <span class="post-toc-text">资源效率</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安全"><span class="post-toc-number">7.</span> <span class="post-toc-text">安全</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#弹性"><span class="post-toc-number">8.</span> <span class="post-toc-text">弹性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#易于消费"><span class="post-toc-number">9.</span> <span class="post-toc-text">易于消费</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#黄金镜像"><span class="post-toc-number">1.</span> <span class="post-toc-text">黄金镜像</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可重用性"><span class="post-toc-number">2.</span> <span class="post-toc-text">可重用性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#敏捷的标准运行环境"><span class="post-toc-number">3.</span> <span class="post-toc-text">敏捷的标准运行环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可重用性-1"><span class="post-toc-number">4.</span> <span class="post-toc-text">可重用性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可维护性"><span class="post-toc-number">5.</span> <span class="post-toc-text">可维护性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#资源利用效率"><span class="post-toc-number">6.</span> <span class="post-toc-text">资源利用效率</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安全"><span class="post-toc-number">7.</span> <span class="post-toc-text">安全</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#弹性"><span class="post-toc-number">8.</span> <span class="post-toc-text">弹性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#易于使用"><span class="post-toc-number">9.</span> <span class="post-toc-text">易于使用</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -391,52 +391,51 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>申明：本文由<a href="https://dzone.com/users/1259881/jatin.aneja.html" target="_blank" rel="external">Jatin Aneja</a>撰写，由孟仁梓翻译，转载自<a href="https://cloud.tencent.com/developer/user/1206541/articles" target="_blank" rel="external">孟仁梓的腾讯云+社区</a>，译作版权归孟仁梓和腾讯云+社区共同所有。</p>
-<p>本篇文章来源于2017 <code>EMEA</code> （<code>Europe, the Middle East and Africa</code>，欧洲，中东和非洲） 红帽技术交流会议的会议记录，所有来自于欧洲、中东和非洲的红帽解决方案的架构师和顾问参与了本次会议，会议内容是关于 <code>OpenShift</code>上的镜像构建的思考和不错的实践案例，文章分为四个板块进行叙述：</p>
+        <p>本篇文章来源于2017 <code>EMEA</code> （<code>Europe, the Middle East and Africa</code>，欧洲，中东和非洲） 红帽技术交流会议的会议记录，所有来自于欧洲、中东和非洲的红帽解决方案的架构师和顾问参与了本次会议，会议内容是关于对 <code>OpenShift</code>镜像的构建的思考和其不错的实践案例，文章分为以下四个板块进行叙述：</p>
 <ul>
-<li>对象</li>
+<li>目标</li>
 <li>构建您的镜像</li>
 <li>保证镜像的可用</li>
 <li>云就绪</li>
 </ul>
-<p>本文是该系列的第一部分，在这一部分中我们将看到与使用容器 (<code>container</code>) 时相关的常规对象，我们会在镜像的设计阶段考虑这些对象。</p>
+<p>本文是该系列的第一部分，在这一部分中我们将看到与使用容器 (<code>container</code>) 时相关的目标，我们会在镜像的设计阶段考虑这些目标。</p>
 <h2 id="黄金镜像"><a href="#黄金镜像" class="headerlink" title="黄金镜像"></a>黄金镜像</h2><p>我对容器感兴趣的原因之一是，容器允许将具有所有依赖项的应用程序打包到单个部署单元中，这个部署单元称为黄金镜像，方便从一个环境迁移到另一个环境。例如，您可以将其从集成 (<code>integration</code>) 迁移到 <code>UAT</code> (<code>User Acceptance Test</code>，用户验收测试) 或从准上线 (<code>staging</code>) 迁移到生产 (<code>production</code>)。因为单个单元中部署了所有依赖关系，所以可以保证前一个单元的内容在后一个单元仍然可以运行。</p>
 <p><img src="https://ask.qcloudimg.com/draft/1206541/p203wqhdtu.jpg" alt=""></p>
-<p>在容器崛起之前，很多公司困于应用推广上，其中有些人为此写了详细的安装步骤说明，应用必须手动安装和严格遵守安装步骤，另外的人则为此投入了大量的精力开发 <code>Puppet</code> ， <code>Chef</code> 或 <code>Python</code> 编写软件自动化构建脚本，此外，除了初始的投入，还需要大量的维护工作来应对软件的升级和变更。大多数人曾遇到过各种各样的问题。容器带来的是一个简单的标准化方法，应用程序的依赖关系（操作系统，运行时环境（<code>JVM</code> (<code>Java Virtual Machine</code>, Java虚拟机)等），库以及一些配置）是容器镜像的一部分，通过启动容器镜像实例，可以将应用程序部署于不同的环境。</p>
-<h2 id="可重复"><a href="#可重复" class="headerlink" title="可重复"></a>可重复</h2><p>在以后构建相同镜像会产生相同的结果，这对于获得可用于补丁、升级和进一步演进的稳定参考非常重要，这要求用于创建容器映像的依赖项（库或其他镜像）被唯一引用和版本化。</p>
-<h2 id="敏捷的标准运行环境"><a href="#敏捷的标准运行环境" class="headerlink" title="敏捷的标准运行环境"></a>敏捷的标准运行环境</h2><p>?<img src="https://ask.qcloudimg.com/draft/1206541/44mw864fjd.png" alt=""></p>
+<p>在容器崛起之前，很多公司困于应用推广上，其中有些人为此写了详细的安装步骤说明，应用必须手动安装和严格遵守安装步骤，另外的人则为此投入了大量的精力开发 <code>Puppet</code> ， <code>Chef</code> 或 <code>Python</code> 编写软件自动化构建脚本，此外，除了初始的投入，还需要大量的维护工作来应对软件的升级和变更，大多数人都曾遇到过各种各样的问题。容器带来的是一个简单的标准化方法，应用程序的依赖关系（操作系统，运行时环境（例如：<code>JVM</code> (<code>Java Virtual Machine</code>, Java虚拟机)），库以及一些配置）是容器镜像的一部分，通过启动容器镜像实例，可以将应用程序部署于不同的环境。</p>
+<h2 id="可重用性"><a href="#可重用性" class="headerlink" title="可重用性"></a>可重用性</h2><p>在以后构建相同镜像会产生相同的结果，这对于获得可用于补丁、升级和进一步演进的稳定参考非常重要，这要求用于创建容器映像的依赖项（库或其他镜像）被唯一引用和版本化。</p>
+<h2 id="敏捷的标准运行环境"><a href="#敏捷的标准运行环境" class="headerlink" title="敏捷的标准运行环境"></a>敏捷的标准运行环境</h2><p>​<img src="https://ask.qcloudimg.com/draft/1206541/44mw864fjd.png" alt=""></p>
 <p>同质化的企业软件环境具有以下鲜明的优势：</p>
 <ul>
 <li>通过限制可能需要支持的软件运行环境的数量，来节省维护的时间和成本。</li>
-<li>方便业务部门的软件运行环境，这对于及时解决突发事件是至关重要的。</li>
-<li>在几个不同的环境下，合规 (<code>Compliance</code>) 更容易。</li>
+<li>方便搭建适用于业务部门的软件运行环境，这对于及时解决突发事件是至关重要的。</li>
+<li>在几个不同的环境下，建立合规 (<code>Compliance</code>) 更容易。</li>
 <li>方便工作人员更容易，因为软件运行环境相同，有利于员工适应岗位地变更。</li>
 </ul>
-<p>在定义镜像格局时，应该考虑上述优势带来的便利性，有时严格执行和缓慢发展 <code>SOE</code> (<code>Server Object Extension</code>, 服务对象扩展)会造成企业反应迟缓，容器镜像可以帮助解决高可重用性和方便对多个目标进行集中更改的问题。</p>
-<h2 id="可重用性"><a href="#可重用性" class="headerlink" title="可重用性"></a>可重用性</h2><p>It is important to limit the number of places where components get injected into images like frameworks, application servers, drivers, and scripts. These may be used for ground functionality, connectivity, monitoring, asset tracking and management, security, etc. The idea is that the components of the SOE are created once. Layering approaches with inheritance and composition may support this. Considering the global image landscape rather than single image individual is important in this respect.</p>
-<p>限制能被组件注入的框架、应用程序服务器、驱动程序和脚本等的镜像的数量是非常重要的，这些可以用于基础功能、连接性、监听、资源跟踪管理、安全性等，以上指的就是第一次创建 <code>SOE</code> (<code>Server Object Extension</code>, 服务对象扩展) ，分层的方法的继承和组合可能支持这一点，考虑到全局镜像而不是单一镜像在个人方面是重要的。</p>
-<h2 id="可维护性"><a href="#可维护性" class="headerlink" title="可维护性"></a>可维护性</h2><p>上一节提到的中央注入点也是修补和升级的中心点。这些更改（可能由软件提供商作为容器映像提供）需要自动级联，以便维护变得简单。</p>
-<p>在集装箱前时代，我看到很多公司都在努力保持Java或应用服务器的最新补丁和安全修复。容器技术结合了在中心位置应用变更的可能性，并使他们在软件环境中毫不费力，也没有停机的情况下推出。这在安全性和可靠性方面会产生巨大的影响。因此，图像需要设计时考虑可维护性。</p>
-<h2 id="资源效率"><a href="#资源效率" class="headerlink" title="资源效率"></a>资源效率</h2><p>在创建应用程序时，资源（RAM，CPU，存储等）的最小消耗是显而易见的目标，因此也是用于其包装的图像。这意味着密度更高，成本更低。与虚拟机相比，容器具有共享相同内核而不是创建额外实例的优势。这可以通过容器共享层来进一步推动。遵循已经提到的一些目标，这是可能的：国有企业和可重用性。尽管尺寸确实影响推拉图像所需的时间，但它在最终的RAM和存储使用方面起着比图像尺寸本身更大的作用。</p>
-<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><p>除了保持操作系统，应用程序服务器和其他库及时修补最新的安全性修补程序之外，在创建映像时还需要考虑安全性方面的一些其他重要方面：</p>
+<p>在定义镜像格局时，应该考虑上述优势带来的便利性，有时严格执行和缓慢发展 <code>SOE</code> (<code>Server Object Extension</code>, 服务对象扩展), 服务对象扩展)会造成企业反应迟缓，容器镜像可以帮助解决高可重用性和方便对多个目标进行集中更改的问题。</p>
+<h2 id="可重用性-1"><a href="#可重用性-1" class="headerlink" title="可重用性"></a>可重用性</h2><p>第一次创建 <code>SOE</code> (<code>Server Object Extension</code>, 服务对象扩展) 时，限制能被组件注入的框架、应用程序服务器、驱动程序和脚本等的镜像的数量是非常重要的，这些可以用于基础功能、连接性、监听、资源跟踪管理、安全性等。分层的方法的继承和组合可能支持这一点，在这方面，重点考虑全局镜像而不是单一镜像。</p>
+<h2 id="可维护性"><a href="#可维护性" class="headerlink" title="可维护性"></a>可维护性</h2><p>上一节提到的中央注入点也是修补和升级的关键，这些更改（可能由软件提供商作为容器镜像提供）需要自动级联，以便维护变得简单。</p>
+<p>在前容器时代，我看到很多公司都在努力保持Java或应用服务器的拥有最新补丁和进行安全修复，容器技术具备在中心位置应用变更的可能性，并使容器在软件环境中推出既不费力，也不需要停机支持，这在安全性和可靠性方面会产生巨大的影响，因此，镜像设计时需要考虑可维护性。</p>
+<h2 id="资源利用效率"><a href="#资源利用效率" class="headerlink" title="资源利用效率"></a>资源利用效率</h2><p>在创建应用程序时，资源（<code>RAM</code>，<code>CPU</code>，存储等）的尽量小的消耗是显而易见的目标，因此使用镜像进行包装，这意味着密度更高，成本更低。与虚拟机相比，容器的优势是具有共享相同内核而不是创建额外实例，这可以通过容器共享层来进一步推动，遵循已经提到的一些目标，这让SOE (<code>Server Object Extension</code>, 服务对象扩展) 和可重用成为可能。尽管容量大小确实影响推拉镜像所需的时间，但它在最终的 <code>RAM</code> 和存储使用方面起着比镜像容量本身更大的作用。</p>
+<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><p>除了保持操作系统，应用程序服务器和其他库补丁及时修补保证最新的安全性之外，在创建映像时还需要考虑安全性方面的一些其他重要方面：</p>
 <ul>
-<li>减少攻击面：这可以通过将图像内部安装的内容限制在运行容器所需的内容来完成。</li>
-<li>限制功能：特权容器应该是执行特定安全措施的例外。其他功能，如安装主机文件系统，绑定主机端口，或使用可能与主机上的用户相匹配的特定用户标识运行，应仅在没有其他选项可用时才被授予，并且在仔细检查安全性影响之后风险得到缓解。</li>
-<li>有限的资源：容器映像应该以能够在有限资源（CPU，RAM，网络，存储）下运行的方式构建，以便它不会成为拒绝服务攻击主机和其他容器在同一台主机上运行。</li>
+<li>减少攻击面：这可以通过将镜像内部安装的内容限制在运行容器所需的内容来完成。</li>
+<li>限制功能：特权容器应该是执行特定安全措施的例外。其他功能，如安装主机文件系统，绑定主机端口，或使用可能与主机上的用户相匹配的特定用户标识运行，应仅在没有其他选项可用时才被授权，并且在仔细检查安全性影响风险之后得到缓解。</li>
+<li>有限的资源：容器映像应该以能够在有限资源（ <code>CPU</code> ， <code>RAM</code> ，网络，存储）下运行的方式构建，以便它不会成为拒绝服务攻击主机和其他容器在同一台主机上运行。</li>
 </ul>
-<h2 id="弹性"><a href="#弹性" class="headerlink" title="弹性"></a>弹性</h2><p>像Kubernetes和OpenShift这样的PaaS平台提供了监控和自我修复机制。准备和活性探测确保：</p>
+<h2 id="弹性"><a href="#弹性" class="headerlink" title="弹性"></a>弹性</h2><p>像 <code>Kubernetes</code> 和 <code>OpenShift</code> 这样的PaaS (<code>Platform-as-a-Service</code>, 平台即服务) 平台提供了监控和自我修复机制、就绪和容器监测探针 (<code>Liveness Probes</code>)确保以下行为：</p>
 <ul>
-<li>当没有准备好时，没有请求被发送到容器，实际上，这意味着它没有完成启动，它正在终止，或者它的一个依赖项（数据库，服务）不可用。</li>
-<li>活性探测不成功时，容器将重新启动。重新启动一个容器将其恢复到初始状态，类似于工厂重置。</li>
+<li>当容器没有准备好时，请求不会被发送到容器，实际上，这意味着容器没有完成启动，容器正在终止或者它的一个依赖项（数据库，服务）不可用。</li>
+<li>容器监测探针 (<code>Liveness Probes</code>) 失败时，容器将重新启动，重新启动后容器将恢复到初始状态，类似于返厂重置。</li>
 </ul>
-<p>作为一名图像设计师，您的责任是提供可用的声音准备度和生命力探测器。</p>
-<p>另一个方面是，当OpenShift想要终止一个容器时，它首先将容器从请求处理旋转中移出并发送一个SIGTERM信号。它为应用程序在结束之前正常关闭提供了时间。如果允许的期限已过，则使用SIGKILL信号。在这方面，图像内的应用程序应完成处理正在进行的请求，释放资源，并在接收到SIGTERM信号时终止。</p>
-<h2 id="易于消费"><a href="#易于消费" class="headerlink" title="易于消费"></a>易于消费</h2><p>可复用性已经被提及作为一个目标。但是，只有在图像易于使用的情况下才能达到较好的水平，其中包括以下几个方面：</p>
+<p>作为一名镜像设计师，您的责任是提供可用的就绪稳定和容器监测探针可用。</p>
+<p>像Kubernetes和OpenShift这样的PaaS平台提供了监控和自我修复机制。准备和活性探测确保：</p>
+<p>另一个方面是，当 <code>OpenShift</code> 想要终止一个容器时，它首先将容器从请求处理旋转中移出并发送一个 <code>SIGTERM</code> 信号，它为应用程序在结束之前正常关闭提供了时间，如果允许的期限已过，则使用 <code>SIGKILL</code> 信号，在这方面，镜像内的应用程序应完成处理正在进行的请求，释放资源，并在接收到 <code>SIGTERM</code> 信号时终止。</p>
+<h2 id="易于使用"><a href="#易于使用" class="headerlink" title="易于使用"></a>易于使用</h2><p>可复用性经常被作为一个目标提及，但是，只有在镜像易于使用的情况下才能达到较好的水平，其中包括以下几个方面：</p>
 <ul>
-<li>通过继承，组成或利用扩展点来扩展。但是扩展点需要首先考虑。作为一名图像设计师，您有责任思考如何添加功能或自定义图像，并以简单的方式实现。</li>
-<li>文档：这包括记录图像的目的，使用情况以及运行它的重要方面，例如它的入口点，使用的端口，应用程序可以写入数据的目录等。为图像快速启动也是一种方法帮助最终用户了解应该如何使用图像。</li>
+<li>可以通过继承，组成或利用扩展点来进行扩展，但是扩展点需要首先考虑，作为一名镜像设计师，您有责任思考如何以简单的方式添加功能或自定义镜像。</li>
+<li>文档：这包括记录镜像的目的，使用情况以及运行它的重要方面，例如它的入口点，使用的端口，应用程序可以写入数据的目录等，镜像快速启动也是一种有利于终端用户了解应该如何使用镜像的方法。</li>
 </ul>
-<p>我希望您发现这第一部分有趣。在下面的文章中，我们将看到有什么技术和方法可以实现这里已经提到的目标。敬请关注！</p>
+<p>我希望您会觉得第一部分是有趣的，在下面的文章中，我们将看到有什么技术和方法可以实现这里已经提到的目标。敬请关注！</p>
 
     
 
