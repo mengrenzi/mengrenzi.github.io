@@ -1,397 +1,74 @@
+
 <!DOCTYPE html>
-<html lang="zh">
-    <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.3.3 -->
-
-    <!-- Title -->
-    
-    <title>
-        
-            Building Complex Data Pipelines with Unified Analytics Platform | 
-        
-        MRZ&#39;s Blog
-    </title>
-
-    <!-- Meta & Info -->
-    <meta charset="utf-8">
-
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-    
-    
-    
-    
-    
-    
-
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="MengRZ">
-    <meta name="description" content="null">
-    <meta name="keywords" content="null,Data,机器学习">
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!--iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="MRZ&#39;s Blog">
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="Building Complex Data Pipelines with Unified Analytics Platform | MRZ&#39;s Blog">
-    <meta property="og:description" content="null">
-    <meta property="og:article:tag" content="Data"> <meta property="og:article:tag" content="机器学习"> 
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import CSS & jQuery -->
-    
-        <link rel="stylesheet" href="/css/material.min.css">
-        <link rel="stylesheet" href="/css/style.min.css">
-        <!-- Config CSS -->
+<html lang="zh-CN">
 
 
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  }
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#202020" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  a {
-    color: #00838F;
-  }
+  
+  <meta name="keywords" content="Data,机器学习," />
+  
 
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
-  }
+  
+  <meta name="description" content="Building Complex Data Pipelines with Unified Analytics Platform" />
+  
 
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/queue.js"></script>
-    
-
-    <!-- UC Browser Compatible -->
-    <script>
-        var agent = navigator.userAgent.toLowerCase();
-        if(agent.indexOf('ucbrowser')>0) {
-            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
-            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-        }
-    </script>
-
-    
-
-    
-
-
-    <!-- Bing Background -->
-    
-
-    <!-- Custom Head -->
-    
+  <link rel="icon" type="image/x-icon" href="/img/logo.png">
+  <title>
+    Building Complex Data Pipelines with Unified Analytics Platform [ 仁梓小舍 ]
+  </title>
+  
+  <!-- stylesheets list from config.yml -->
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css">
+  
+  <link rel="stylesheet" href="/css/microb.css">
+  
+  
 <link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
-
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+  <ul class="pure-menu-list float-r clearfix">
     
-        <body id="scheme-Paradox" class="lazy">
-            <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
-
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Post TOC -->
-
+    <li class="pure-menu-item toc-menu">
+      <a id="menu-main-post" class="pure-menu-link" href="javascript:;">
+        <img class="menu-icon" src="/img/logo.png" alt="MENU">
+      </a>
+    </li>
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+  </ul>
+  <a class="pure-menu-heading" href="/">
+    <h1 class="title">
+      仁梓小舍
+    </h1>
+    <!-- <span>null</span> -->
+  </a>
+  <!-- 
+  <img class="logo" id="logo" src="/logo.png" alt="logo">
+   -->
+</nav>
 
-    <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#亚马逊公共产品评级"><span class="post-toc-number">2.</span> <span class="post-toc-text">亚马逊公共产品评级</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Apache-Spark作业的数据流水线"><span class="post-toc-number">3.</span> <span class="post-toc-text">Apache Spark作业的数据流水线</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#探索数据"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">探索数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据是什么样的？"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">数据是什么样的？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#有多少个不同的品牌？"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">有多少个不同的品牌？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何保证公平地进行品牌评分？"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">如何保证公平地进行品牌评分？</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#培训机器学习模型"><span class="post-toc-number">4.</span> <span class="post-toc-text">培训机器学习模型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建机器学习管道"><span class="post-toc-number">5.</span> <span class="post-toc-text">创建机器学习管道</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建训练方式和测试数据"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">创建训练方式和测试数据</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实时模式"><span class="post-toc-number">6.</span> <span class="post-toc-text">实时模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建流"><span class="post-toc-number">7.</span> <span class="post-toc-text">创建流</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建服务，导入数据和评分模型"><span class="post-toc-number">8.</span> <span class="post-toc-text">创建服务，导入数据和评分模型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Databricks-Notebook工作流程编排"><span class="post-toc-number">9.</span> <span class="post-toc-text">Databricks Notebook工作流程编排</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下一步是什么"><span class="post-toc-number">10.</span> <span class="post-toc-text">下一步是什么</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#阅读更多"><span class="post-toc-number">11.</span> <span class="post-toc-text">阅读更多</span></a></li></ol>
-
-        <!--
-        <li class="mdl-menu__item">
-            Some Action
-        </li>
-        -->
-    </ul>
-
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+  <div class="container" id="content-outer">
+    <div class="inner" id="content-inner">
+      <article class="post" id="post">
+  <header class="post-header text-center">
+    <h1 class="title">
+      Building Complex Data Pipelines with Unified Analytics Platform
+    </h1>
     
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/post/33.jpg)">
+    <time class="time" datetime="2018-02-03T07:07:27.000Z">
+      2018-02-03
+    </time>
     
-            <p class="article-headline-p">
-                Building Complex Data Pipelines with Unified Analytics Platform
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>MengRZ</strong>
-        <span>2月 03, 2018</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Data/">Data</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/机器学习/">机器学习</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Building Complex Data Pipelines with Unified Analytics Platform&url=http://yoursite.com//2018/02/03/PiplinesWithPlatform/index.html&pic=&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Building Complex Data Pipelines with Unified Analytics Platform&url=http://yoursite.com//2018/02/03/PiplinesWithPlatform/index.html&via=MengRZ" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2018/02/03/PiplinesWithPlatform/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2018/02/03/PiplinesWithPlatform/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=MRZ&#39;s Blog&title=Building Complex Data Pipelines with Unified Analytics Platform&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/02/03/PiplinesWithPlatform/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在<code>Quora</code>上,大数据从业者经常会提出以下重复的问题：<a href="https://www.quora.com/What-is-the-use-of-Data-engineer-in-Apache-Spark" target="_blank" rel="external">什么是数据工程（<code>Data Engineering</code>）？</a> <a href="https://www.quora.com/How-can-I-become-a-data-scientist-1" target="_blank" rel="external">如何成为一名数据科学家（<code>Data Scientist</code>）？</a> <a href="https://www.quora.com/What-is-a-data-analyst-1" target="_blank" rel="external">什么是数据分析师（<code>Data Analyst</code>）？</a></p>
+    <hr>
+  </header>
+  <div class="post-content">
+    <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在<code>Quora</code>上,大数据从业者经常会提出以下重复的问题：<a href="https://www.quora.com/What-is-the-use-of-Data-engineer-in-Apache-Spark" target="_blank" rel="external">什么是数据工程（<code>Data Engineering</code>）？</a> <a href="https://www.quora.com/How-can-I-become-a-data-scientist-1" target="_blank" rel="external">如何成为一名数据科学家（<code>Data Scientist</code>）？</a> <a href="https://www.quora.com/What-is-a-data-analyst-1" target="_blank" rel="external">什么是数据分析师（<code>Data Analyst</code>）？</a></p>
 <p>除了理解上述三种职业及其职能之外，更重要的问题是：如何去促进这三种不同的职业、职能和其诉求之间的协作？或者怎样去帮助他们采用统一的平台来代替一次性定制解决方案？</p>
 <p>现在他们确实可以使用统一的平台进行协作了。上个月，我们发布了<a href="https://databricks.com/product/databricks" target="_blank" rel="external">统一数据块平台</a>。针对促进数据工程师，数据科学家和数据分析师之间的协作，其软件工件 <code>Databricks Workspace</code> 和 <code>Notebook Workflows</code> 实现了这令人梦寐以求的协作。</p>
 <p>在这篇博文中，我们将探讨每种角色以下三种赋能</p>
@@ -420,55 +97,18 @@
 <p>当涉及基于特定关键字的好（1）或差（0）结果的二元预测时，适合于该分类的最佳模型是<a href="https://spark.apache.org/docs/latest/mllib-linear-methods.html#logistic-regression" target="_blank" rel="external">Logistic回归模型</a>，这是一种预测有利结果概率的特殊情况的<a href="https://en.wikipedia.org/wiki/Generalized_linear_model" target="_blank" rel="external">广义线性模型</a>。</p>
 <p>在我们的案例中，我们希望用一些有利的关键词来预测评论的评分结果。我们不仅要使用 <code>MLlib</code> 提供的逻辑回归模型族的二项逻辑回归，还要使用<a href="https://databricks.com/blog/2015/01/07/ml-pipelines-a-new-high-level-api-for-mllib.html" target="_blank" rel="external"><em>spark.ml</em>管道</a>及其<a href="https://spark.apache.org/docs/2.0.0-preview/ml-guide.html" target="_blank" rel="external">变形和估计器</a>。</p>
 <h2 id="创建机器学习管道"><a href="#创建机器学习管道" class="headerlink" title="创建机器学习管道"></a>创建机器学习管道</h2><p>Python代码片段如何用变换器和估计器创建管道。</p>
-<pre><code>from pyspark.ml import *
-from pyspark.ml.feature import *
-from pyspark.ml.feature import Bucketizer
-from pyspark.ml.classification import *
-from pyspark.ml.tuning import *
-from pyspark.ml.evaluation import *
-from pyspark.ml.regression import *
-#
-# Bucketizer transforms a column of continuous features to a column of feature buckets, where the buckets are specified by users.
-# It takes the common parameters inputCol and outputCol, as well as the splits for bucketization.
-# Feature values greater than the threshold are bucketized to 1.0; values equal to or less than the threshold
-# are binarized to 0.0. Both Vector and Double types are supported for inputCol.
-# We will use rating as our input, and the output label will have value of 1 if &gt; 4.5
-#
-# For this model we will use two feature transformer extractors: Bucketizer and Tokenizer
-#
-splits = [-float(&quot;inf&quot;), 4.5, float(&quot;inf&quot;)]
-tok = Tokenizer(inputCol = &quot;review&quot;, outputCol = &quot;words&quot;)
-bucket = Bucketizer(splits=splits, inputCol = &quot;rating&quot;, outputCol = &quot;label&quot;)
-#
-# use HashingTF feature extractor, with its input as &quot;words&quot;
-#
-hashTF = HashingTF(inputCol = tok.getOutputCol(), numFeatures = 10000, outputCol = &quot;features&quot;)
-#
-# create a model instance with some parameters
-#
-lr = LogisticRegression(maxIter = 10, regParam = 0.0001, elasticNetParam = 1.0)
-#
-# Create the stages pipeline with all the feature transformers to create an Estimator
-#
-pipeline = Pipeline(stages = [bucket, tok, hashTF, lr])
-</code></pre><h3 id="创建训练方式和测试数据"><a href="#创建训练方式和测试数据" class="headerlink" title="创建训练方式和测试数据"></a>创建训练方式和测试数据</h3><p>接下来，我们使用我们的训练数据来拟合模型，最后用我们的测试框架 <code>perdictions</code> 进行预测和建立标签。</p>
-<pre><code># Create our model estimator
-#
-model = pipeline.fit(trainingData)
-
-#score the model with test data
-predictions = model.transform(testData)
-#convert dataframe into a table so we can easily query it using SQL
-predictions.createOrReplaceTempView(&#39;tmp_predictions&#39;)
-</code></pre><p><img src="https://databricks.com/wp-content/uploads/2017/10/image9.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">from pyspark.ml import *</div><div class="line">from pyspark.ml.feature import *</div><div class="line">from pyspark.ml.feature import Bucketizer</div><div class="line">from pyspark.ml.classification import *</div><div class="line">from pyspark.ml.tuning import *</div><div class="line">from pyspark.ml.evaluation import *</div><div class="line">from pyspark.ml.regression import *</div><div class="line">#</div><div class="line"># Bucketizer transforms a column of continuous features to a column of feature buckets, where the buckets are specified by users.</div><div class="line"># It takes the common parameters inputCol and outputCol, as well as the splits for bucketization.</div><div class="line"># Feature values greater than the threshold are bucketized to 1.0; values equal to or less than the threshold</div><div class="line"># are binarized to 0.0. Both Vector and Double types are supported for inputCol.</div><div class="line"># We will use rating as our input, and the output label will have value of 1 if &gt; 4.5</div><div class="line">#</div><div class="line"># For this model we will use two feature transformer extractors: Bucketizer and Tokenizer</div><div class="line">#</div><div class="line">splits = [-float(&quot;inf&quot;), 4.5, float(&quot;inf&quot;)]</div><div class="line">tok = Tokenizer(inputCol = &quot;review&quot;, outputCol = &quot;words&quot;)</div><div class="line">bucket = Bucketizer(splits=splits, inputCol = &quot;rating&quot;, outputCol = &quot;label&quot;)</div><div class="line">#</div><div class="line"># use HashingTF feature extractor, with its input as &quot;words&quot;</div><div class="line">#</div><div class="line">hashTF = HashingTF(inputCol = tok.getOutputCol(), numFeatures = 10000, outputCol = &quot;features&quot;)</div><div class="line">#</div><div class="line"># create a model instance with some parameters</div><div class="line">#</div><div class="line">lr = LogisticRegression(maxIter = 10, regParam = 0.0001, elasticNetParam = 1.0)</div><div class="line">#</div><div class="line"># Create the stages pipeline with all the feature transformers to create an Estimator</div><div class="line">#</div><div class="line">pipeline = Pipeline(stages = [bucket, tok, hashTF, lr])</div></pre></td></tr></table></figure>
+<h3 id="创建训练方式和测试数据"><a href="#创建训练方式和测试数据" class="headerlink" title="创建训练方式和测试数据"></a>创建训练方式和测试数据</h3><p>接下来，我们使用我们的训练数据来拟合模型，最后用我们的测试框架 <code>perdictions</code> 进行预测和建立标签。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># Create our model estimator</div><div class="line">#</div><div class="line">model = pipeline.fit(trainingData)</div><div class="line"></div><div class="line">#score the model with test data</div><div class="line">predictions = model.transform(testData)</div><div class="line">#convert dataframe into a table so we can easily query it using SQL</div><div class="line">predictions.createOrReplaceTempView(&apos;tmp_predictions&apos;)</div></pre></td></tr></table></figure>
+<p><img src="https://databricks.com/wp-content/uploads/2017/10/image9.png" alt=""></p>
 <p>正如您可能注意到, 通过上述的 <code>predictions</code> 函数查询后放入 <code>DataFrame</code> 保存为一个临时表, 在我们的测试数据的评论中出现的单词 <code>return</code> 的结果在价值0的 <code>Prediction</code> 和 <code>Label</code> 和低评级的预期。</p>
 <p>对于评估模型的结果感到满意，数据科学家可以将模型保存为与其他数据科学家共享，甚至进一步评估或与数据工程师共享，以便在生产中部署。</p>
 <p>这伴随着实时模型。</p>
 <h2 id="实时模式"><a href="#实时模式" class="headerlink" title="实时模式"></a>实时模式</h2><p>考虑一下数据科学家生成<code>ML</code>模型，并想要测试和迭代它，将其部署到生产中以进行实时预测服务或与另一位数据科学家共享以进行验证用例和场景。你怎么做到的？</p>
 <p><a href="https://databricks.com/blog/2016/05/31/apache-spark-2-0-preview-machine-learning-model-persistence.html" target="_blank" rel="external">坚持和序列化ML管道</a>是导出 <code>MLlib</code> 模型的一种方法。另一种方法是使用<a href="https://go.databricks.com/productionize-apache-spark-mllib-model-scoring" target="_blank" rel="external">Databricks dbml-local库</a>，这是实时服务的低延迟需求下的首选方式。<strong>一个重要的警告：</strong> 对于服务模型的低延迟要求，我们建议并倡导使用 <code>dbml-local</code>。然而对于这个例子，因为延迟不是定期产品评论的问题或要求，所以我们使用 <code>MLlib</code> 管线 <code>API</code> 来导出和导入模型。</p>
 <p>尽管 <code>dbml-local</code> 是我们首选的导出和导入模型的方式，但是由于很多原因，两种持久性机制都很重要。首先，它很容易和语言无关 - 模型导出为 <code>JSON</code>。其次，它可以从一个用 <code>Python</code> 编写的笔记本中导出，并导入（加载）到另一个用 <code>Scala</code> 写成的笔记本中，持久化和序列化一个 <code>ML</code> 管道，交换格式是独立于语言的。第三，序列化和坚持流水线封装了所有的功能，而不仅仅是模型。最后，如果您希望通过结构化流式传输来实时预测您的模型。</p>
-<pre><code>model.write().overwrite().save(&quot;/mnt/jules/amazon-model&quot;)
-</code></pre><p>在我们<a href="https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8599738367597028/327074921650486/3601578643761083/latest.html" target="_blank" rel="external"><em>TrainModel</em></a>笔记本工具，我们出口我们的模型，以便它可以由其他笔记本工具进口，<a href="https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8599738367597028/327074921650404/3601578643761083/latest.html" target="_blank" rel="external"><em>ServeModel</em></a>，在我们的笔记本工具链接的下游的工作流程（见下文）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">model.write().overwrite().save(&quot;/mnt/jules/amazon-model&quot;)</div></pre></td></tr></table></figure>
+<p>在我们<a href="https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8599738367597028/327074921650486/3601578643761083/latest.html" target="_blank" rel="external"><em>TrainModel</em></a>笔记本工具，我们出口我们的模型，以便它可以由其他笔记本工具进口，<a href="https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8599738367597028/327074921650404/3601578643761083/latest.html" target="_blank" rel="external"><em>ServeModel</em></a>，在我们的笔记本工具链接的下游的工作流程（见下文）。</p>
 <p>在下一节中，我们将讨论我们的第二个管道工具<a href="https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8599738367597028/327074921650526/3601578643761083/latest.html" target="_blank" rel="external"><em>CreateStream</em></a>。</p>
 <h2 id="创建流"><a href="#创建流" class="headerlink" title="创建流"></a>创建流</h2><p>考虑一下这种情况：我们可以访问产品评论的实时流，并且使用我们训练有素的模型，我们希望对我们的模型进行评分。数据工程师可以通过两种方式提供这种实时数据：一种是通过 <code>Kafka</code> 或 <code>Kinesis</code>，当用户在 <code>Amazon</code> 网站上评价产品时; 另一个通过插入到表中的新条目（不属于训练集），将它们转换成 <code>S3</code> 上的 <code>JSON</code> 文件。事实上，这只是起作用，因为结构化流式 <code>API</code>以相同的方式读取数据，无论您的数据源是 <code>Blob</code> ，<code>S3</code> 中的文件，还是来自 <code>Kinesis</code> 或 <code>Kafka</code> 的流。我们选择了<code>S3</code>分布式队列来实现低成本和低延迟。</p>
 <p><img src="https://ask.qcloudimg.com/draft/1206541/7s1nndfhvx.jpg" alt=""></p>
@@ -489,72 +129,13 @@ predictions.createOrReplaceTempView(&#39;tmp_predictions&#39;)
 <li>用输入流转换模型</li>
 <li>查询预测</li>
 </ol>
-<pre class=" language-scala"><code class="language-scala">···scala
-<span class="token comment" spellcheck="true">// load the model from S3 path</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>spark<span class="token punctuation">.</span>ml<span class="token punctuation">.</span>PipelineModel
-<span class="token keyword">val</span> model <span class="token operator">=</span> PipelineModel<span class="token punctuation">.</span>load<span class="token punctuation">(</span>model_path<span class="token punctuation">)</span>
-
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>spark<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>types<span class="token punctuation">.</span>_
-<span class="token comment" spellcheck="true">// define a the JSON schema for our stream of JSON files</span>
-<span class="token keyword">val</span> streamSchema <span class="token operator">=</span> <span class="token keyword">new</span> StructType<span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span>add<span class="token punctuation">(</span>StructField<span class="token punctuation">(</span><span class="token string">"rating"</span><span class="token punctuation">,</span>DoubleType<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span>add<span class="token punctuation">(</span>StructField<span class="token punctuation">(</span><span class="token string">"review"</span><span class="token punctuation">,</span>StringType<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span>add<span class="token punctuation">(</span>StructField<span class="token punctuation">(</span><span class="token string">"time"</span><span class="token punctuation">,</span>LongType<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span>add<span class="token punctuation">(</span>StructField<span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">,</span>StringType<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span>add<span class="token punctuation">(</span>StructField<span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span>StringType<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">//read streams</span>
-spark<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>set<span class="token punctuation">(</span><span class="token string">"spark.sql.shuffle.partitions"</span><span class="token punctuation">,</span> <span class="token string">"4"</span><span class="token punctuation">)</span>
-
-<span class="token keyword">val</span> inputStream <span class="token operator">=</span> spark
-  <span class="token punctuation">.</span>readStream
-  <span class="token punctuation">.</span>schema<span class="token punctuation">(</span>streamSchema<span class="token punctuation">)</span>
-  <span class="token punctuation">.</span>option<span class="token punctuation">(</span><span class="token string">"maxFilesPerTrigger"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span>json<span class="token punctuation">(</span>stream_path<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">// transform with the new data in the stream</span>
-<span class="token keyword">val</span> scoredStream <span class="token operator">=</span> model<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>inputStream<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">// and use the stream query for predictions</span>
-
-<span class="token keyword">val</span> queryStream <span class="token operator">=</span> scoredStream<span class="token punctuation">.</span>writeStream
-  <span class="token punctuation">.</span>format<span class="token punctuation">(</span><span class="token string">"memory"</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span>queryName<span class="token punctuation">(</span><span class="token string">"streamPrediction"</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">// query the transformed DataFrame with new predictions</span>
-</code></pre>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">···scala</div><div class="line"><span class="comment">// load the model from S3 path</span></div><div class="line"><span class="keyword">import</span> org.apache.spark.ml.<span class="type">PipelineModel</span></div><div class="line"><span class="keyword">val</span> model = <span class="type">PipelineModel</span>.load(model_path)</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.apache.spark.sql.types._</div><div class="line"><span class="comment">// define a the JSON schema for our stream of JSON files</span></div><div class="line"><span class="keyword">val</span> streamSchema = <span class="keyword">new</span> <span class="type">StructType</span>()</div><div class="line">  .add(<span class="type">StructField</span>(<span class="string">"rating"</span>,<span class="type">DoubleType</span>,<span class="literal">true</span>))</div><div class="line">  .add(<span class="type">StructField</span>(<span class="string">"review"</span>,<span class="type">StringType</span>,<span class="literal">true</span>))</div><div class="line">  .add(<span class="type">StructField</span>(<span class="string">"time"</span>,<span class="type">LongType</span>,<span class="literal">true</span>))</div><div class="line">  .add(<span class="type">StructField</span>(<span class="string">"title"</span>,<span class="type">StringType</span>,<span class="literal">true</span>))</div><div class="line">  .add(<span class="type">StructField</span>(<span class="string">"user"</span>,<span class="type">StringType</span>,<span class="literal">true</span>))</div><div class="line"></div><div class="line"><span class="comment">//read streams</span></div><div class="line">spark.conf.set(<span class="string">"spark.sql.shuffle.partitions"</span>, <span class="string">"4"</span>)</div><div class="line"></div><div class="line"><span class="keyword">val</span> inputStream = spark</div><div class="line">  .readStream</div><div class="line">  .schema(streamSchema)</div><div class="line">  .option(<span class="string">"maxFilesPerTrigger"</span>, <span class="number">1</span>)</div><div class="line">  .json(stream_path)</div><div class="line"></div><div class="line"><span class="comment">// transform with the new data in the stream</span></div><div class="line"><span class="keyword">val</span> scoredStream = model.transform(inputStream)</div><div class="line"></div><div class="line"><span class="comment">// and use the stream query for predictions</span></div><div class="line"></div><div class="line"><span class="keyword">val</span> queryStream = scoredStream.writeStream</div><div class="line">  .format(<span class="string">"memory"</span>)</div><div class="line">  .queryName(<span class="string">"streamPrediction"</span>)</div><div class="line">  .start()</div><div class="line"><span class="comment">// query the transformed DataFrame with new predictions</span></div></pre></td></tr></table></figure>
 <p>由于所有的特征都被封装在持久化的模型中，所以我们只需要从磁盘加载这个序列化的模型，并使用它来服务和评分我们的新数据。此外，请注意，我们在笔记本<a href="https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8599738367597028/327074921650486/3601578643761083/latest.html" target="_blank" rel="external"><em>TrainModel中</em></a>创建了这个模型，它是用 <code>Python</code> 编写的，我们在一个 <code>Scala</code> 笔记本中加载。这表明，无论每个角色用于创建笔记本的语言如何，他们都可以共享 <code>Apache Spark</code> 中支持的语言的持久化模型。</p>
 <h2 id="Databricks-Notebook工作流程编排"><a href="#Databricks-Notebook工作流程编排" class="headerlink" title="Databricks Notebook工作流程编排"></a>Databricks Notebook工作流程编排</h2><p>协作和协调的核心是<a href="https://docs.databricks.com/user-guide/notebooks/notebook-workflows.html" target="_blank" rel="external">Notebook Workflows的API</a>。使用这些API，数据工程师可以将所有上述管道作为 <em>单个执行单元</em> 串在一起。</p>
 <p><img src="https://databricks.com/wp-content/uploads/2017/10/Webp.net-gifmaker-1.gif" alt=""></p>
 <p>实现这一目标的一个途径是在笔记本电脑中分享输入和输出。也就是说，笔记本的输出和退出状态将作为流入下一个笔记本的输入。<a href="https://docs.databricks.com/user-guide/notebooks/widgets.html" target="_blank" rel="external">Notebook Widgets</a>允许参数化笔记本输入，而笔记本的退出状态可以将参数传递给流中的下一个参数。</p>
 <p>在我们的示例中，<a href="https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8599738367597028/327074921650520/3601578643761083/latest.html" target="_blank" rel="external"><em>RunNotebooks</em></a>使用参数化参数调用流中的每个笔记本。它将编排另外三个笔记本，每个笔记本都执行自己的数据管道，在其中创建自己的 <code>Spark</code> 作业，最后发出一个 <code>JSON</code> 文档作为退出状态。这个 <code>JSON</code> 文档然后作为管道中后续笔记本的输入参数。</p>
-<pre class=" language-javascrip"><code class="language-javascrip"># do the usual import packages
-import json
-import sys
-#
-#Run the notebook and get the path to the table
-#fetch the return value from the callee 001_TrainModel
-returned_json = json.loads(dbutils.notebook.run("001_TrainModel", 3600, {}))
-if returned_json['status'] == 'OK':
-  model_path = returned_json['model_path']
-  try:
-    #Create a Stream from the table
-    #Fetch the return value from the callee 002_CreateStream
-    returned_json = json.loads(dbutils.notebook.run("002_CreateStream", 3600, {}))
-    if returned_json ['status'] == 'OK':
-      stream_path = returned_json['stream_path']
-      map = {"model_path": model_path, "stream_path": stream_path }
-          #fetch the return value from the callee 003_ServeModelToStructuredStream
-      result = dbutils.notebook.run("003_ServeModelToStreaming", 7200, map)
-      print result
-    else:
-      raise "Notebook to create stream failed!"
-  except:
-    print("Unexpected error:", sys.exc_info()[0])
-    raise
-else:
-  print "Something went wrong " + returned_json['message']
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"># do the usual import packages</div><div class="line">import json</div><div class="line">import sys</div><div class="line">#</div><div class="line">#Run the notebook and get the path to the table</div><div class="line">#fetch the return value from the callee 001_TrainModel</div><div class="line">returned_json = json.loads(dbutils.notebook.run(&quot;001_TrainModel&quot;, 3600, &#123;&#125;))</div><div class="line">if returned_json[&apos;status&apos;] == &apos;OK&apos;:</div><div class="line">  model_path = returned_json[&apos;model_path&apos;]</div><div class="line">  try:</div><div class="line">    #Create a Stream from the table</div><div class="line">    #Fetch the return value from the callee 002_CreateStream</div><div class="line">    returned_json = json.loads(dbutils.notebook.run(&quot;002_CreateStream&quot;, 3600, &#123;&#125;))</div><div class="line">    if returned_json [&apos;status&apos;] == &apos;OK&apos;:</div><div class="line">      stream_path = returned_json[&apos;stream_path&apos;]</div><div class="line">      map = &#123;&quot;model_path&quot;: model_path, &quot;stream_path&quot;: stream_path &#125;</div><div class="line">          #fetch the return value from the callee 003_ServeModelToStructuredStream</div><div class="line">      result = dbutils.notebook.run(&quot;003_ServeModelToStreaming&quot;, 7200, map)</div><div class="line">      print result</div><div class="line">    else:</div><div class="line">      raise &quot;Notebook to create stream failed!&quot;</div><div class="line">  except:</div><div class="line">    print(&quot;Unexpected error:&quot;, sys.exc_info()[0])</div><div class="line">    raise</div><div class="line">else:</div><div class="line">  print &quot;Something went wrong &quot; + returned_json[&apos;message&apos;]</div></pre></td></tr></table></figure>
 <p>最后，不仅可以运行这个特定的笔记本执行一个简单的任务，而且你也可以使用<a href="https://docs.databricks.com/api/latest/jobs.html" target="_blank" rel="external">Job Scheduler</a>来安排流程。</p>
 <p><img src="https://databricks.com/wp-content/uploads/2017/09/Screen-Shot-2017-09-01-at-11.37.50-AM.png" alt=""></p>
 <h2 id="下一步是什么"><a href="#下一步是什么" class="headerlink" title="下一步是什么"></a>下一步是什么</h2><p>为了真正感受<a href="https://databricks.com/product/databricks" target="_blank" rel="external">统一分析平台中</a>三个人物角色之间的端到端协作，请在<a href="https://databricks.com/try-databricks" target="_blank" rel="external">Databricks平台</a>上试用这五款笔记本工具。</p>
@@ -576,433 +157,122 @@ else:
 <p><img src="https://databricks.com/wp-content/themes/databricks/assets/images/blog/Databricks-logo-bug.png?v=2.2.39" alt=""></p>
 <p> 免费试用 <code>Databricks</code>， <a href="https://databricks.com/try-databricks" target="_blank" rel="external">从今天开始</a></p>
 
+
+    <!-- 显示photos -->
     
 
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-
-
-
-
-
-
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2018/02/04/lifelist/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2018/01/21/manage/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
+  </div>
+  <div class="post-tags">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data/">Data</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+  </div>
+</article>
+  
+    <div class="post-nav">
+      <div class="post-nav-item post-nav-next">
+        
+          <a href="/2018/01/21/manage/" rel="next" title="管理学·书单">
+            <span>〈 </span> 管理学·书单
+          </a>
+        
+      </div>
+  
+      <div class="post-nav-item post-nav-prev">
+        
+          <a href="/2018/02/07/FeatureSelection/" rel="prev" title="特征选择引言">
+            特征选择引言 <span>〉</span>
+          </a>
+        
+      </div>
     </div>
+  
 
 
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#亚马逊公共产品评级"><span class="toc-text">亚马逊公共产品评级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Apache-Spark作业的数据流水线"><span class="toc-text">Apache Spark作业的数据流水线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#探索数据"><span class="toc-text">探索数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据是什么样的？"><span class="toc-text">数据是什么样的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有多少个不同的品牌？"><span class="toc-text">有多少个不同的品牌？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何保证公平地进行品牌评分？"><span class="toc-text">如何保证公平地进行品牌评分？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#培训机器学习模型"><span class="toc-text">培训机器学习模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建机器学习管道"><span class="toc-text">创建机器学习管道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建训练方式和测试数据"><span class="toc-text">创建训练方式和测试数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实时模式"><span class="toc-text">实时模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建流"><span class="toc-text">创建流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建服务，导入数据和评分模型"><span class="toc-text">创建服务，导入数据和评分模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Databricks-Notebook工作流程编排"><span class="toc-text">Databricks Notebook工作流程编排</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下一步是什么"><span class="toc-text">下一步是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阅读更多"><span class="toc-text">阅读更多</span></a></li></ol>
+  </div>
 
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="MengRZ's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        mengrenzi@qq.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="https://github.com/mengrenzi" target="_blank" title="Email Me">
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/" target="_self">
-                
-                主页
-            </a>
-        </li>
-        
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a>
-            </ul>
-        </li>
-        
-    
-
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                分类
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">6</span></a>
-            </ul>
-        </li>
-        
-            <li class="divider"></li>
-        
-    
-
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/gallery" title="映像">
-                
-                    <i class="material-icons sidebar-material-icons">photo</i>
-                
-                映像
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/about" title="关于我">
-                
-                    <i class="material-icons sidebar-material-icons">person</i>
-                
-                关于我
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/tags" title="标签云">
-                
-                标签云
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/links" title="友情链接">
-                
-                友情链接
-            </a>
-        </li>
-        
-            <li class="divider"></li>
-        
-    
-
-    <!-- Article Number  -->
-    
-        <li>
-            <a href="/archives">
-                文章总数
-                <span class="sidebar-badge">37</span>
-            </a>
-        </li>
-        
-    
-</ul>
-
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-
-<!-- Theme Material -->
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
 
     </div>
 
-    <!-- Sidebar Image -->
     
 
-</aside>
+  </div>
 
-                    
+  <footer class="footer text-center">
+    <div id="bottom-inner">
+      
+        <a href="http://hexo.io" target="_blank" class="footer-link">Hexo</a>
+      
+        <a href="https://github.com/microacup/hexo-theme-micorb" target="_blank" class="footer-link">Theme microb</a>
+      
+    </div>
+  </footer>
+  
 
-                    
-                        <!-- Footer Top Button -->
-                        <div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-
-    <!-- Facebook -->
-    
-        <a href="https://www.facebook.com/renzi.meng" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.svg);">
-                <span class="visuallyhidden">Facebook</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Google + -->
-    
-
-    <!-- Weibo -->
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-</div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;
-            <script type="text/javascript">
-                var fd = new Date();
-                document.write(fd.getFullYear());
-            </script>
-            &nbsp;MRZ's Blog
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
-
-
-                    <!-- Import File -->
-
-    <script src="/js/lazyload.min.js"></script>
-    <script src="/js/js.min.js"></script>
-
-
-
-    <script src="/js/nprogress.js"></script>
-
-
-<script type="text/javascript">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Window Load-->
-<script>
-    $(window).load(function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-</script>
-
-<!-- MathJax Load-->
+<!-- <script>
+  var titleTime,originTitle=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="[闷声发大财中...] "+originTitle,clearTimeout(titleTime)):(document.title="[+1s] "+originTitle,titleTime=setTimeout(function(){document.title=originTitle},2e3))});
+</script> -->
 
 <script>
-    <!-- Offer LazyLoad -->
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
+  (function (window, document) {
+    window.requestAnimationFrame = (function () {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback) {
+          setTimeout(callback, 1000 / 60);
+        }
+    })();
 
-    <!-- Start Queue -->
-    $(document).ready(function(){
-        setTimeout(function(){
-            setInterval(function(){
-                queue.execNext();
-            },200);
-        },3000);
-    });
-</script>
-
-                </main>
-            </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+    function init() {
+      addMenuEvent();
     }
-  });
-</script>
+    init();
 
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
-        </body>
-    
+    function addMenuEvent() {
+      var menu = document.getElementById('menu-main-post');
+      if (menu) {
+        var toc = document.getElementById('toc');
+        menu.title = toc ? '目录' : '回到顶部';
+        menu.onclick = function () {
+          if (toc) {
+            if (toc.style.display == 'block') {
+              toc.style.display = 'none';
+            } else {
+              toc.style.display = 'block';
+            }
+          } else {
+            returnTop();
+          }
+        };
+      }
+    }
+
+    var timer = null;
+
+    function returnTop() {
+      cancelAnimationFrame(timer);
+      timer = requestAnimationFrame(function fn() {
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (oTop > 0) {
+          document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+          timer = requestAnimationFrame(fn);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      });
+    }
+
+  })(window, document);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+
+</body>
 </html>

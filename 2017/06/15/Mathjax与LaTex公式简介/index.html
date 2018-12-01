@@ -1,397 +1,74 @@
+
 <!DOCTYPE html>
-<html lang="zh">
-    <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.3.3 -->
-
-    <!-- Title -->
-    
-    <title>
-        
-            Mathjax与LaTex公式简介 | 
-        
-        MRZ&#39;s Blog
-    </title>
-
-    <!-- Meta & Info -->
-    <meta charset="utf-8">
-
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-    
-    
-    
-    
-    
-    
-
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="MengRZ">
-    <meta name="description" content="null">
-    <meta name="keywords" content="null,Cmd-Markdown,Mathjax">
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!--iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="MRZ&#39;s Blog">
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="Mathjax与LaTex公式简介 | MRZ&#39;s Blog">
-    <meta property="og:description" content="null">
-    <meta property="og:article:tag" content="Cmd-Markdown"> <meta property="og:article:tag" content="Mathjax"> 
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import CSS & jQuery -->
-    
-        <link rel="stylesheet" href="/css/material.min.css">
-        <link rel="stylesheet" href="/css/style.min.css">
-        <!-- Config CSS -->
+<html lang="zh-CN">
 
 
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  }
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#202020" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  a {
-    color: #00838F;
-  }
+  
+  <meta name="keywords" content="Cmd-Markdown,Mathjax," />
+  
 
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
-  }
+  
+  <meta name="description" content="Mathjax与LaTex公式简介" />
+  
 
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/queue.js"></script>
-    
-
-    <!-- UC Browser Compatible -->
-    <script>
-        var agent = navigator.userAgent.toLowerCase();
-        if(agent.indexOf('ucbrowser')>0) {
-            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
-            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-        }
-    </script>
-
-    
-
-    
-
-
-    <!-- Bing Background -->
-    
-
-    <!-- Custom Head -->
-    
+  <link rel="icon" type="image/x-icon" href="/img/logo.png">
+  <title>
+    Mathjax与LaTex公式简介 [ 仁梓小舍 ]
+  </title>
+  
+  <!-- stylesheets list from config.yml -->
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css">
+  
+  <link rel="stylesheet" href="/css/microb.css">
+  
+  
 <link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
-
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+  <ul class="pure-menu-list float-r clearfix">
     
-        <body id="scheme-Paradox" class="lazy">
-            <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
-
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Post TOC -->
-
+    <li class="pure-menu-item toc-menu">
+      <a id="menu-main-post" class="pure-menu-link" href="javascript:;">
+        <img class="menu-icon" src="/img/logo.png" alt="MENU">
+      </a>
+    </li>
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+  </ul>
+  <a class="pure-menu-heading" href="/">
+    <h1 class="title">
+      仁梓小舍
+    </h1>
+    <!-- <span>null</span> -->
+  </a>
+  <!-- 
+  <img class="logo" id="logo" src="/logo.png" alt="logo">
+   -->
+</nav>
 
-    <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MathJax简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">MathJax简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础"><span class="post-toc-number">2.</span> <span class="post-toc-text">基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#公式标记与查看公式"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">公式标记与查看公式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#上标与下标"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">上标与下标</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#括号"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">括号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#求和与积分"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">求和与积分</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分式与根式"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">分式与根式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字体"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">字体</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#特殊函数与符号"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">特殊函数与符号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#空间"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">空间</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#顶部符号"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">顶部符号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#转义字符"><span class="post-toc-number">2.10.</span> <span class="post-toc-text">转义字符</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#表格"><span class="post-toc-number">3.</span> <span class="post-toc-text">表格</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#矩阵-Matrices"><span class="post-toc-number">4.</span> <span class="post-toc-text">矩阵(Matrices)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对齐的公式（Aligned-equations）"><span class="post-toc-number">5.</span> <span class="post-toc-text">对齐的公式（Aligned equations）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#符号查询-Symbols"><span class="post-toc-number">6.</span> <span class="post-toc-text">符号查询(Symbols)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方程组（System-of-equations）"><span class="post-toc-number">7.</span> <span class="post-toc-text">方程组（System of equations）</span></a></li></ol>
-
-        <!--
-        <li class="mdl-menu__item">
-            Some Action
-        </li>
-        -->
-    </ul>
-
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+  <div class="container" id="content-outer">
+    <div class="inner" id="content-inner">
+      <article class="post" id="post">
+  <header class="post-header text-center">
+    <h1 class="title">
+      Mathjax与LaTex公式简介
+    </h1>
     
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/post/03.jpg)">
+    <time class="time" datetime="2017-06-15T05:41:51.000Z">
+      2017-06-15
+    </time>
     
-            <p class="article-headline-p">
-                Mathjax与LaTex公式简介
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>MengRZ</strong>
-        <span>6月 15, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Cmd-Markdown/">Cmd-Markdown</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Mathjax/">Mathjax</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Mathjax与LaTex公式简介&url=http://yoursite.com//2017/06/15/Mathjax与LaTex公式简介/index.html&pic=&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Mathjax与LaTex公式简介&url=http://yoursite.com//2017/06/15/Mathjax与LaTex公式简介/index.html&via=MengRZ" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/06/15/Mathjax与LaTex公式简介/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/06/15/Mathjax与LaTex公式简介/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=MRZ&#39;s Blog&title=Mathjax与LaTex公式简介&summary=null&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/06/15/Mathjax与LaTex公式简介/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <p>感谢Ryan Zhao博客关于Mathjax的分享，本文摘自 <a href="http://mlworks.cn/posts/introduction-to-mathjax-and-latex-expression/" target="_blank" rel="external">Ryan Zhao的博客</a>。</p>
+    <hr>
+  </header>
+  <div class="post-content">
+    <p>感谢Ryan Zhao博客关于Mathjax的分享，本文摘自 <a href="http://mlworks.cn/posts/introduction-to-mathjax-and-latex-expression/" target="_blank" rel="external">Ryan Zhao的博客</a>。</p>
 <p>更详细的<a href="https://www.mathjax.org/" target="_blank" rel="external">mathJax</a> 使用方法参照 <a href="https://math.stackexchange.com/" target="_blank" rel="external">math.stackexchange.com</a>上名为<a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference/5044" target="_blank" rel="external">MathJax basic tutorial and quick reference</a>的问题。</p>
 <h2 id="MathJax简介"><a href="#MathJax简介" class="headerlink" title="MathJax简介"></a>MathJax简介</h2><p>MathJax是一款运行在浏览器中的开源的数学符号渲染引擎，使用MathJax可以方便的在浏览器中显示数学公式，不需要使用图片。目前，MathJax可以解析Latex、MathML和ASCIIMathML的标记语言。 MathJax项目于2009年开始，发起人有American Mathematical Society, Design Science等，还有众多的支持者，MathJax会成为今后数学符号渲染引擎中的主流，也许现在已经是了。 本文接下来会讲述MathJax的基础用法，但不涉及MathJax的安装及配置。</p>
 <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="公式标记与查看公式"><a href="#公式标记与查看公式" class="headerlink" title="公式标记与查看公式"></a>公式标记与查看公式</h3><p>使用MathJax时，需要用一些适当的标记告诉MathJax某段文本是公式代码。此外，MathJax中的公式排版有两种方式<code>inline</code>和<code>displayed</code>。inline表示公式嵌入到文本段中，displayed表示公式独自成为一个段落。例如$f(x)=3×x$这是一个inline公式，而下面:$$f(x)=3×x$$是一个displayed公式。</p>
@@ -527,26 +204,10 @@
 <h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><p>基础部分就是这些。需要注意的是一些MathJax使用的特殊字符，可以使用<code>\</code>转义为原来的含义。如<code>\$</code>表示<code>$</code>，<code>\backslash</code>表示下划线 $\backslash$。</p>
 <h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>It is often easier to read tables formatted in MathJax rather than plain text or a fixed width font. Arrays and tables are created with the <code>array</code> environment. Just after <code>\begin{array}</code> the format of each column should be listed, use <code>c</code> for a center aligned column, <code>r</code> for right aligned, <code>l</code> for left aligned and a <code>|</code> for a vertical line. Just as with matrices, cells are separated with <code>&amp;</code> and rows are broken using <code>\\</code>. A horizontal line spanning the array can be placed before the current line with <code>\hline</code>.</p>
 <p>$$<br>\begin{array}{c|lcr}<br>n &amp; \text{Left} &amp; \text{Center} &amp; \text{Right} \\<br>\hline<br>1 &amp; 0.24 &amp; 1 &amp; 125 \\<br>2 &amp; -1 &amp; 189 &amp; -8 \\<br>3 &amp; -20 &amp; 2000 &amp; 1+10i<br>\end{array}<br>$$</p>
-<pre class=" language-shell"><code class="language-shell">$$
-\begin{array}{c|lcr}
-n & \text{Left} & \text{Center} & \text{Right} \\\\
-\hline
-1 & 0.24 & 1 & 125 \\\\
-2 & -1 & 189 & -8 \\\\
-3 & -20 & 2000 & 1+10i
-\end{array}
-$$
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span>$</div><div class="line">\begin&#123;array&#125;&#123;c|lcr&#125;</div><div class="line">n &amp; \text&#123;Left&#125; &amp; \text&#123;Center&#125; &amp; \text&#123;Right&#125; \\\\</div><div class="line">\hline</div><div class="line">1 &amp; 0.24 &amp; 1 &amp; 125 \\\\</div><div class="line">2 &amp; -1 &amp; 189 &amp; -8 \\\\</div><div class="line">3 &amp; -20 &amp; 2000 &amp; 1+10i</div><div class="line">\end&#123;array&#125;</div><div class="line"><span class="meta">$</span>$</div></pre></td></tr></table></figure>
 <p>$$ \begin{array}{c}<br>\begin{array}{cc}<br>\begin{array}{c|cccc}<br>\text{min} &amp; 0 &amp; 1 &amp; 2 &amp; 3\\<br>\hline<br>0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\<br>1 &amp; 0 &amp; 1 &amp; 1 &amp; 1\\<br>2 &amp; 0 &amp; 1 &amp; 2 &amp; 2\\<br>3 &amp; 0 &amp; 1 &amp; 2 &amp; 3<br>\end{array}<br>&amp;<br>\begin{array}{c|cccc}<br>\text{max}&amp;0&amp;1&amp;2&amp;3\\<br>\hline<br>0 &amp; 0 &amp; 1 &amp; 2 &amp; 3\\<br>1 &amp; 1 &amp; 1 &amp; 2 &amp; 3\\<br>2 &amp; 2 &amp; 2 &amp; 2 &amp; 3\\<br>3 &amp; 3 &amp; 3 &amp; 3 &amp; 3<br>\end{array}<br>\end{array}<br>\\<br>\\<br>\begin{array}{c|cccc}<br>\Delta&amp;0&amp;1&amp;2&amp;3\\<br>\hline<br>0 &amp; 0 &amp; 1 &amp; 2 &amp; 3\\<br>1 &amp; 1 &amp; 0 &amp; 1 &amp; 2\\<br>2 &amp; 2 &amp; 1 &amp; 0 &amp; 1\\<br>3 &amp; 3 &amp; 2 &amp; 1 &amp; 0<br>\end{array}<br>\end{array}<br>$$</p>
 <h2 id="矩阵-Matrices"><a href="#矩阵-Matrices" class="headerlink" title="矩阵(Matrices)"></a>矩阵(Matrices)</h2><p>1.Use <code>$$\begin{matrix}…\end{matrix}$$</code> In between the <code>\begin</code> and <code>\end</code>, put the matrix elements. End each matrix row with <code>\\</code>, and separate matrix elements with <code>&amp;</code>. For example,</p>
-<pre class=" language-shell"><code class="language-shell">$$
-        \begin{matrix}
-        1 & x & x^2 \\\\
-        1 & y & y^2 \\\\
-        1 & z & z^2 \\\\
-        \end{matrix}
-$$
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span>$</div><div class="line">        \begin&#123;matrix&#125;</div><div class="line">        1 &amp; x &amp; x^2 \\\\</div><div class="line">        1 &amp; y &amp; y^2 \\\\</div><div class="line">        1 &amp; z &amp; z^2 \\\\</div><div class="line">        \end&#123;matrix&#125;</div><div class="line"><span class="meta">$</span>$</div></pre></td></tr></table></figure>
 <p>produces:<br>$$<br>        \begin{matrix}<br>        1 &amp; x &amp; x^2 \\<br>        1 &amp; y &amp; y^2 \\<br>        1 &amp; z &amp; z^2 \\<br>        \end{matrix}<br>$$</p>
 <p>MathJax will adjust the sizes of the rows and columns so that everything fits.</p>
 <p>2.To add brackets, either use <code>\left…\right</code> as in section 6 of the tutorial, or replace matrix with <code>pmatrix</code> $\begin{pmatrix}1 &amp; 3\\2 &amp; 4\end{pmatrix}$,<code>bmatrix</code> $\begin{bmatrix}1 &amp; 3\\2 &amp; 4\end{bmatrix}$, <code>Bmatrix</code> $\begin{Bmatrix}1 &amp; 3\\2 &amp; 4\end{Bmatrix}$, <code>vmatrix</code> $\begin{vmatrix}1 &amp; 3\\2 &amp; 4\end{vmatrix}$, <code>Vmatrix</code> $\begin{Vmatrix}1 &amp; 3\\2 &amp; 4\end{Vmatrix}$</p>
@@ -556,17 +217,7 @@ $$
 <p> $$<br> \left[\begin{array}{cc|c}<br>  1&amp;2&amp;3\\<br>  4&amp;5&amp;6<br>  \end{array}\right]<br>  $$</p>
 <h2 id="对齐的公式（Aligned-equations）"><a href="#对齐的公式（Aligned-equations）" class="headerlink" title="对齐的公式（Aligned equations）"></a>对齐的公式（Aligned equations）</h2><p>Often people want a series of equations where the equals signs are aligned. To get this, use <code>\begin{align}…\end{align}</code>. Each line should end with <code>\\</code>, and should contain an ampersand at the point to align at, typically immediately before the equals sign.<br>For example,</p>
 <p>$$<br>\begin{align}<br>\sqrt{37} &amp; = \sqrt{\frac{73^2-1}{12^2}} \\<br> &amp; = \sqrt{\frac{73^2}{12^2}\cdot\frac{73^2-1}{73^2}} \\<br> &amp; = \sqrt{\frac{73^2}{12^2}}\sqrt{\frac{73^2-1}{73^2}} \\<br> &amp; = \frac{73}{12}\sqrt{1 - \frac{1}{73^2}} \\<br> &amp; \approx \frac{73}{12}\left(1 - \frac{1}{2\cdot73^2}\right)<br>\end{align}<br>$$</p>
-<p>is produced by:</p>
-<pre class=" language-shell"><code class="language-shell">$$
-\begin{align}
-\sqrt{37} & = \sqrt{\frac{73^2-1}{12^2}} \\
- & = \sqrt{\frac{73^2}{12^2}\cdot\frac{73^2-1}{73^2}} \\ 
- & = \sqrt{\frac{73^2}{12^2}}\sqrt{\frac{73^2-1}{73^2}} \\
- & = \frac{73}{12}\sqrt{1 - \frac{1}{73^2}} \\ 
- & \approx \frac{73}{12}\left(1 - \frac{1}{2\cdot73^2}\right)
-\end{align}
-$$
-</code></pre>
+<p>is produced by:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span>$</div><div class="line">\begin&#123;align&#125;</div><div class="line">\sqrt&#123;37&#125; &amp; = \sqrt&#123;\frac&#123;73^2-1&#125;&#123;12^2&#125;&#125; \\</div><div class="line"> &amp; = \sqrt&#123;\frac&#123;73^2&#125;&#123;12^2&#125;\cdot\frac&#123;73^2-1&#125;&#123;73^2&#125;&#125; \\ </div><div class="line"> &amp; = \sqrt&#123;\frac&#123;73^2&#125;&#123;12^2&#125;&#125;\sqrt&#123;\frac&#123;73^2-1&#125;&#123;73^2&#125;&#125; \\</div><div class="line"> &amp; = \frac&#123;73&#125;&#123;12&#125;\sqrt&#123;1 - \frac&#123;1&#125;&#123;73^2&#125;&#125; \\ </div><div class="line"> &amp; \approx \frac&#123;73&#125;&#123;12&#125;\left(1 - \frac&#123;1&#125;&#123;2\cdot73^2&#125;\right)</div><div class="line">\end&#123;align&#125;</div><div class="line"><span class="meta">$</span>$</div></pre></td></tr></table></figure></p>
 <h2 id="符号查询-Symbols"><a href="#符号查询-Symbols" class="headerlink" title="符号查询(Symbols)"></a>符号查询(Symbols)</h2><p>That’s why the tool that I will present you in this post was conceived. Basically, it is a <code>LATEX</code> handwritten symbol recognition. Example in image:</p>
 <center><br><img src="https://i.stack.imgur.com/ScK3R.png" alt="Detexify"><br></center>
 
@@ -574,435 +225,121 @@ $$
 <h2 id="方程组（System-of-equations）"><a href="#方程组（System-of-equations）" class="headerlink" title="方程组（System of equations）"></a>方程组（System of equations）</h2><p>Use <code>\begin{array}…\end{array}</code> and <code>\left\{…\right.</code> . For example, you get this:</p>
 <p>$$<br>\begin{cases}<br>a_1x+b_1y+c_1z=d_1 \\<br>a_2x+b_2y+c_2z=d_2 \\<br>a_3x+b_3y+c_3z=d_3<br>\end{cases}<br>$$</p>
 <p>by wirtten this:</p>
-<pre><code>$$
-\left\{ 
-\begin{array}{c}
-a_1x+b_1y+c_1z=d_1 \\\\ 
-a_2x+b_2y+c_2z=d_2 \\\\ 
-a_3x+b_3y+c_3z=d_3
-\end{array}
-\right. 
-$$
-</code></pre><p>Alternatively we can use <code>\begin{cases}…\end{cases}</code>. The same system</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$$</div><div class="line">\left\&#123; </div><div class="line">\begin&#123;array&#125;&#123;c&#125;</div><div class="line">a_1x+b_1y+c_1z=d_1 \\\\ </div><div class="line">a_2x+b_2y+c_2z=d_2 \\\\ </div><div class="line">a_3x+b_3y+c_3z=d_3</div><div class="line">\end&#123;array&#125;</div><div class="line">\right. </div><div class="line">$$</div></pre></td></tr></table></figure>
+<p>Alternatively we can use <code>\begin{cases}…\end{cases}</code>. The same system</p>
 <p>is produced by the following code</p>
-<pre><code>$$
-\begin{cases}
-a_1x+b_1y+c_1z=d_1 \\\\ 
-a_2x+b_2y+c_2z=d_2 \\\\ 
-a_3x+b_3y+c_3z=d_3
-\end{cases}
-$$
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$$</div><div class="line">\begin&#123;cases&#125;</div><div class="line">a_1x+b_1y+c_1z=d_1 \\\\ </div><div class="line">a_2x+b_2y+c_2z=d_2 \\\\ </div><div class="line">a_3x+b_3y+c_3z=d_3</div><div class="line">\end&#123;cases&#125;</div><div class="line">$$</div></pre></td></tr></table></figure>
+
+    <!-- 显示photos -->
     
 
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-
-
-
-
-
-
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2017/06/17/linearalegebra/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2017/06/15/Hexo添加MathJax支持/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
+  </div>
+  <div class="post-tags">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cmd-Markdown/">Cmd-Markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mathjax/">Mathjax</a></li></ul>
+  </div>
+</article>
+  
+    <div class="post-nav">
+      <div class="post-nav-item post-nav-next">
+        
+          <a href="/2017/06/15/Hexo添加MathJax支持/" rel="next" title="Hexo添加 MathJax 支持">
+            <span>〈 </span> Hexo添加 MathJax 支持
+          </a>
+        
+      </div>
+  
+      <div class="post-nav-item post-nav-prev">
+        
+          <a href="/2017/06/17/linearalegebra/" rel="prev" title="Essence of Linear Alegebra">
+            Essence of Linear Alegebra <span>〉</span>
+          </a>
+        
+      </div>
     </div>
+  
 
 
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MathJax简介"><span class="toc-text">MathJax简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础"><span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#公式标记与查看公式"><span class="toc-text">公式标记与查看公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上标与下标"><span class="toc-text">上标与下标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#括号"><span class="toc-text">括号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#求和与积分"><span class="toc-text">求和与积分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分式与根式"><span class="toc-text">分式与根式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字体"><span class="toc-text">字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊函数与符号"><span class="toc-text">特殊函数与符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空间"><span class="toc-text">空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#顶部符号"><span class="toc-text">顶部符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#转义字符"><span class="toc-text">转义字符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表格"><span class="toc-text">表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#矩阵-Matrices"><span class="toc-text">矩阵(Matrices)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对齐的公式（Aligned-equations）"><span class="toc-text">对齐的公式（Aligned equations）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#符号查询-Symbols"><span class="toc-text">符号查询(Symbols)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方程组（System-of-equations）"><span class="toc-text">方程组（System of equations）</span></a></li></ol>
+  </div>
 
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="MengRZ's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        mengrenzi@qq.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="https://github.com/mengrenzi" target="_blank" title="Email Me">
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/" target="_self">
-                
-                主页
-            </a>
-        </li>
-        
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a>
-            </ul>
-        </li>
-        
-    
-
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                分类
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">6</span></a>
-            </ul>
-        </li>
-        
-            <li class="divider"></li>
-        
-    
-
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/gallery" title="映像">
-                
-                    <i class="material-icons sidebar-material-icons">photo</i>
-                
-                映像
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/about" title="关于我">
-                
-                    <i class="material-icons sidebar-material-icons">person</i>
-                
-                关于我
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/tags" title="标签云">
-                
-                标签云
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/links" title="友情链接">
-                
-                友情链接
-            </a>
-        </li>
-        
-            <li class="divider"></li>
-        
-    
-
-    <!-- Article Number  -->
-    
-        <li>
-            <a href="/archives">
-                文章总数
-                <span class="sidebar-badge">37</span>
-            </a>
-        </li>
-        
-    
-</ul>
-
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-
-<!-- Theme Material -->
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
 
     </div>
 
-    <!-- Sidebar Image -->
     
 
-</aside>
+  </div>
 
-                    
+  <footer class="footer text-center">
+    <div id="bottom-inner">
+      
+        <a href="http://hexo.io" target="_blank" class="footer-link">Hexo</a>
+      
+        <a href="https://github.com/microacup/hexo-theme-micorb" target="_blank" class="footer-link">Theme microb</a>
+      
+    </div>
+  </footer>
+  
 
-                    
-                        <!-- Footer Top Button -->
-                        <div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-
-    <!-- Facebook -->
-    
-        <a href="https://www.facebook.com/renzi.meng" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.svg);">
-                <span class="visuallyhidden">Facebook</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Google + -->
-    
-
-    <!-- Weibo -->
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-</div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;
-            <script type="text/javascript">
-                var fd = new Date();
-                document.write(fd.getFullYear());
-            </script>
-            &nbsp;MRZ's Blog
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
-
-
-                    <!-- Import File -->
-
-    <script src="/js/lazyload.min.js"></script>
-    <script src="/js/js.min.js"></script>
-
-
-
-    <script src="/js/nprogress.js"></script>
-
-
-<script type="text/javascript">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Window Load-->
-<script>
-    $(window).load(function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-</script>
-
-<!-- MathJax Load-->
+<!-- <script>
+  var titleTime,originTitle=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="[闷声发大财中...] "+originTitle,clearTimeout(titleTime)):(document.title="[+1s] "+originTitle,titleTime=setTimeout(function(){document.title=originTitle},2e3))});
+</script> -->
 
 <script>
-    <!-- Offer LazyLoad -->
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
+  (function (window, document) {
+    window.requestAnimationFrame = (function () {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback) {
+          setTimeout(callback, 1000 / 60);
+        }
+    })();
 
-    <!-- Start Queue -->
-    $(document).ready(function(){
-        setTimeout(function(){
-            setInterval(function(){
-                queue.execNext();
-            },200);
-        },3000);
-    });
-</script>
+    function init() {
+      addMenuEvent();
+    }
+    init();
 
-                </main>
-            </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    function addMenuEvent() {
+      var menu = document.getElementById('menu-main-post');
+      if (menu) {
+        var toc = document.getElementById('toc');
+        menu.title = toc ? '目录' : '回到顶部';
+        menu.onclick = function () {
+          if (toc) {
+            if (toc.style.display == 'block') {
+              toc.style.display = 'none';
+            } else {
+              toc.style.display = 'block';
+            }
+          } else {
+            returnTop();
+          }
+        };
+      }
+    }
+
+    var timer = null;
+
+    function returnTop() {
+      cancelAnimationFrame(timer);
+      timer = requestAnimationFrame(function fn() {
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (oTop > 0) {
+          document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+          timer = requestAnimationFrame(fn);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      });
+    }
+
+  })(window, document);
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -1020,6 +357,11 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
-        </body>
-    
+
+
+  
+
+
+
+</body>
 </html>
