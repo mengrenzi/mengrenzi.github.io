@@ -68,20 +68,33 @@
     <hr>
   </header>
   <div class="post-content">
-    <p>一、Java内存区域与内存溢出异常</p>
-<p>JVM 运行时的数据区域分为：</p>
+    <h1 id="一、Java-内存区域"><a href="#一、Java-内存区域" class="headerlink" title="一、Java 内存区域"></a>一、Java 内存区域</h1><p><code>JVM</code> 运行时的数据区域分为：</p>
+<p><img src="https://i.loli.net/2018/12/02/5c037543c17f8.png" alt="数据区"></p>
 <ol>
-<li><p>方法区：线程共享的区域，存储已经被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据</p>
+<li><p>方法区 <code>Method Area</code>: 线程共享的区域，存储已经被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。</p>
 </li>
-<li><p>堆：线程共享的区域，存储对象实例，以及给数组分配的内存区域也在这里。</p>
+<li><p>Java 堆 <code>Java Heap</code>: 线程共享的区域，存储对象实例，也是垃圾回收的主要区域。</p>
 </li>
-<li><p>虚拟机栈：线程隔离的区域，每个线程都有自己的虚拟机栈，生命周期和线程相同。虚拟机栈描述方法执行的内存模型，以站栈帧为单位，每个栈帧存储和方法运行有关的局部变量表、操作数栈、动态链接、方法返回地址等信息。</p>
+<li><p>虚拟机栈 <code>Java Virtual Machine Stacks</code>: 线程隔离的区域，线程私有，生命周期和线程相同。每个方法在执行的同时创建一个栈帧 <code>Stack Frame</code>，每个栈帧存储和方法运行有关的局部变量表、操作数栈、动态链接、方法返回地址等信息。</p>
 </li>
-<li><p>程序计数器：线程隔离的区域，每个线程都有自己的程序计数器，存储程序当前执行的字节码的行号。</p>
+<li><p>程序计数器 <code>Program Countter Register</code>: 线程隔离的区域，每个线程都有自己的程序计数器，存储程序当前执行的字节码的行号。</p>
 </li>
-<li><p>本地方法栈：线程隔离，和虚拟机栈类似，是虚拟机调用 Native 方法时使用的。</p>
+<li><p>本地方法栈 <code>Native Method Stack</code>: 线程隔离，和虚拟机栈类似，是虚拟机调用 Native 方法时使用的。</p>
+</li>
+<li><p>运行常量池 <code>Runtime Constant Pool</code>: 方法区的一部分，存放字面量和符号引用。</p>
+</li>
+<li><p>直接内存 <code>Direct Memory</code>: 他不是虚拟机运行时数据区的一部分，也不是<code>JVM</code>中定义的数据区，但是通过 <code>NIO</code> 引入通道与缓冲区的I/O方式，可以使用 <code>Native</code> 函数库直接分配堆外内存，然后通过一个存储在堆中<code>DirectByteBuffer</code>对象对这块内存进行引用操作。</p>
 </li>
 </ol>
+<h1 id="二、对象的创建与访问"><a href="#二、对象的创建与访问" class="headerlink" title="二、对象的创建与访问"></a>二、对象的创建与访问</h1><p>虚拟机遇到一条 <code>new</code> 指令时，首先将去检查这个指令的参数是否在常量词中定位到一个类的符号引用，并且检查这个符号引用代表的类是否已被加载、解析和初始化过。</p>
+<p>在类加载检查通过后，接下来虚拟机将为新生对象分配内存。对象所需内存的大小在类加载完成后便可完全确定，为对象分配空间的任务等同于把一块确定大小的内存从<code>Java堆</code>中划分出来。有两种分配方式:</p>
+<ol>
+<li><p>假设Java堆中内存是绝对规整的，所有用过的内存都放在一边，空闲的内存放在另一边，中间放着一个指针作为分界点的指示器，那所分配内存就仅仅是把那个指针向空闲空间那边挪动一段与对象大小相等的距离，这种分配方式称为“指针碰撞” <code>Bump the Pointer</code>。</p>
+</li>
+<li><p>如果<code>Java堆</code>中的内存并不是规整的，已使用的内存和空闲的内存相互交错，那就没有办法简单地进行指针碰撞了，虚拟机就必须维护一个列表，记录上哪些内存块是可用的，在分配的时候从列表中找到一块足够大的空间划分给对象实例，并更新列表上的记录，这种分配方式称为“空闲列表”<code>Free List</code>。</p>
+</li>
+</ol>
+<p>选择哪种分配方式由<code>Java</code>堆是否规整决定，而<code>Java</code>堆是否规整又由所采用的垃圾收集器是否带有压缩整理功能决定。因此，在使用<code>Serial、ParNew</code>等带<code>Compact</code>过程的收集器时，系统采用的分配算法是指针碰撞，而使用<code>CMS</code>这种基于<code>Mark-Sweep</code>算法的收集器时，通常采用空闲列表。</p>
 
 
     <!-- 显示photos -->
@@ -112,6 +125,11 @@
     </div>
   
 
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、Java-内存区域"><span class="toc-text">一、Java 内存区域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、对象的创建与访问"><span class="toc-text">二、对象的创建与访问</span></a></li></ol>
+  </div>
 
 
     </div>
