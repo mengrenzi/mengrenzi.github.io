@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#202020" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  
+  <meta name="keywords" content="博客," />
+  
+
+  
+  <meta name="description" content="【自言语】新版博客 -- 删繁就简三秋树" />
+  
+
+  <link rel="icon" type="image/x-icon" href="/img/logo.png">
+  <title>
+    【自言语】新版博客 -- 删繁就简三秋树 [ 仁梓小舍 ]
+  </title>
+  
+  <!-- stylesheets list from config.yml -->
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css">
+  
+  <link rel="stylesheet" href="/css/microb.css">
+  
+  
+<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+  <ul class="pure-menu-list float-r clearfix">
+    
+    <li class="pure-menu-item toc-menu">
+      <a id="menu-main-post" class="pure-menu-link" href="javascript:;">
+        <img class="menu-icon" src="/img/logo.png" alt="MENU">
+      </a>
+    </li>
+    
+  </ul>
+  <a class="pure-menu-heading" href="/">
+    <h1 class="title">
+      仁梓小舍
+    </h1>
+    <!-- <span>null</span> -->
+  </a>
+  <!-- 
+  <img class="logo" id="logo" src="/logo.png" alt="logo">
+   -->
+</nav>
+
+  <div class="container" id="content-outer">
+    <div class="inner" id="content-inner">
+      <article class="post" id="post">
+  <header class="post-header text-center">
+    <h1 class="title">
+      【自言语】新版博客 -- 删繁就简三秋树
+    </h1>
+    
+    <time class="time" datetime="2018-12-02T03:44:14.000Z">
+      2018-12-02
+    </time>
+    
+    <hr>
+  </header>
+  <div class="post-content">
+    <h1 id="旧博客弊病"><a href="#旧博客弊病" class="headerlink" title="旧博客弊病"></a>旧博客弊病</h1><p>2018 年 12 月 1 日 我决心对我的技术博客进行一次大调整（如图 1），</p>
+<p><img src="https://i.loli.net/2018/12/02/5c035eeb8acfb.jpg" alt="old"></p>
+<p align="center"> 图 1 旧博客 </p>
+
+<p>我之前的博客存在以下三个问题：</p>
+<ol>
+<li><p><strong>筛选图片费时且加载速度慢</strong>。以前的博客为了美观需要上传封面图片，但封面图片本身不存在太大的价值，在发表博文时，图片不是标准尺寸，很难找到合适的图片，浪费了时间去筛选图片，更无法忍受的是，因为博客本身部署在 Github 上的原因，博客加载速度不尽人意，高质量的图片在这样的加载速度下，显示缓慢极其缓慢，十分累赘。</p>
+</li>
+<li><p><strong>文章图片外链问题</strong>。博文中一旦需要配图，只能通过第三方平台生成外链，以前的解决方式是将图片上传到七牛云储存平台，然后生成外链，但是 2018 年起七牛云每次新建一个空间只能使用 30 天的测试域名，30 天之后就会回收，除非绑定域名。而这个域名必须进行 ICP 备案，很遗憾我的域名是国外域名，所以我得使用别的方法生成图片外链。</p>
+</li>
+<li><p><strong>内容太散且质量偏低</strong>。以前写文章缺少规划，我经常靠拍脑袋来决定要不要写文章，文章内容千奇百怪，全靠当时的心情决定，写完后，自己不会对文章的内容进行修改和校正，博文本有温故而知新的作用，方便自身查漏补缺，但结果是自己查相关资料时都不会去看自己写的文章。</p>
+</li>
+</ol>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>通过此次改造后，我希望我的博客对于方便创作与发表，内容更成体系且质量更高（如图 2）,</p>
+<p><img src="https://i.loli.net/2018/12/02/5c036c4c56f6b.png" alt="new"></p>
+<p align="center"> 图 2 新博客 </p>
+
+<p>所以我在以下三个方面做出了调整:</p>
+<ol>
+<li><p><strong>博客进行改版</strong>。换掉繁琐的主题，采用极简的版式，强调内容，减少发表博文时找图片的负担。</p>
+</li>
+<li><p><strong>图片外链采用 sm.ms + PicGo 的解决方案</strong>。现在的解决方案不但解决了七牛云不能生成外链的问题，而且比之前七牛云发布管理图片外链更快捷方便，毕竟有 <code>PicGo</code> 图片管理工具。</p>
+</li>
+<li><p><strong>合理的写作规划</strong>。每个月甚至每周应该有写技术文章的规划，将写博文列入计划中，强调博文成系统且保证高质量。</p>
+</li>
+</ol>
+<h1 id="新博客的不足（持续更新）"><a href="#新博客的不足（持续更新）" class="headerlink" title="新博客的不足（持续更新）"></a>新博客的不足（持续更新）</h1><p>在使用了新博客后，我发现新博客存在诸多不满意，列举如下：</p>
+<ol>
+<li><strong>文章版式始终不如人意</strong>。我心中理想的 <code>Markdown</code> 的呈现方式是 <code>VS Code</code> <code>Markdown</code> 预览呈现出来的效果，但最终的呈现的效果和我的期望有很大的差距。</li>
+</ol>
+
+
+    <!-- 显示photos -->
+    
+
+  </div>
+  <div class="post-tags">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li></ul>
+  </div>
+</article>
+  
+    <div class="post-nav">
+      <div class="post-nav-item post-nav-next">
+        
+          <a href="/2018/12/02/Java-Virtual-Machine/" rel="next" title="【技术向】 深入理解Java虚拟机 - 持续更新">
+            <span>〈 </span> 【技术向】 深入理解Java虚拟机 - 持续更新
+          </a>
+        
+      </div>
+  
+      <div class="post-nav-item post-nav-prev">
+        
+      </div>
+    </div>
+  
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#旧博客弊病"><span class="toc-text">旧博客弊病</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决方案"><span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#新博客的不足（持续更新）"><span class="toc-text">新博客的不足（持续更新）</span></a></li></ol>
+  </div>
+
+
+    </div>
+
+    
+
+  </div>
+
+  <footer class="footer text-center">
+    <div id="bottom-inner">
+      
+        <a href="http://hexo.io" target="_blank" class="footer-link">Hexo</a>
+      
+        <a href="https://github.com/microacup/hexo-theme-micorb" target="_blank" class="footer-link">Theme microb</a>
+      
+    </div>
+  </footer>
+  
+
+<!-- <script>
+  var titleTime,originTitle=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="[闷声发大财中...] "+originTitle,clearTimeout(titleTime)):(document.title="[+1s] "+originTitle,titleTime=setTimeout(function(){document.title=originTitle},2e3))});
+</script> -->
+
+<script>
+  (function (window, document) {
+    window.requestAnimationFrame = (function () {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback) {
+          setTimeout(callback, 1000 / 60);
+        }
+    })();
+
+    function init() {
+      addMenuEvent();
+    }
+    init();
+
+    function addMenuEvent() {
+      var menu = document.getElementById('menu-main-post');
+      if (menu) {
+        var toc = document.getElementById('toc');
+        menu.title = toc ? '目录' : '回到顶部';
+        menu.onclick = function () {
+          if (toc) {
+            if (toc.style.display == 'block') {
+              toc.style.display = 'none';
+            } else {
+              toc.style.display = 'block';
+            }
+          } else {
+            returnTop();
+          }
+        };
+      }
+    }
+
+    var timer = null;
+
+    function returnTop() {
+      cancelAnimationFrame(timer);
+      timer = requestAnimationFrame(function fn() {
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (oTop > 0) {
+          document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+          timer = requestAnimationFrame(fn);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      });
+    }
+
+  })(window, document);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+
+</body>
+</html>
