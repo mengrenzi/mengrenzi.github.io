@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#202020" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  
+  <meta name="keywords" content="技术,网络原理," />
+  
+
+  
+  <meta name="description" content="【技术向】网络原理基础知识 - 持续更新" />
+  
+
+  <link rel="icon" type="image/x-icon" href="/img/logo.png">
+  <title>
+    【技术向】网络原理基础知识 - 持续更新 [ 仁梓小舍 ]
+  </title>
+  
+  <!-- stylesheets list from config.yml -->
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css">
+  
+  <link rel="stylesheet" href="/css/microb.css">
+  
+  
+<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+  <ul class="pure-menu-list float-r clearfix">
+    
+    <li class="pure-menu-item toc-menu">
+      <a id="menu-main-post" class="pure-menu-link" href="javascript:;">
+        <img class="menu-icon" src="/img/logo.png" alt="MENU">
+      </a>
+    </li>
+    
+  </ul>
+  <a class="pure-menu-heading" href="/">
+    <h1 class="title">
+      仁梓小舍
+    </h1>
+    <!-- <span>null</span> -->
+  </a>
+  <!-- 
+  <img class="logo" id="logo" src="/logo.png" alt="logo">
+   -->
+</nav>
+
+  <div class="container" id="content-outer">
+    <div class="inner" id="content-inner">
+      <article class="post" id="post">
+  <header class="post-header text-center">
+    <h1 class="title">
+      【技术向】网络原理基础知识 - 持续更新
+    </h1>
+    
+    <time class="time" datetime="2018-12-02T13:15:04.000Z">
+      2018-12-02
+    </time>
+    
+    <hr>
+  </header>
+  <div class="post-content">
+    <h1 id="一、常见的协议和标准"><a href="#一、常见的协议和标准" class="headerlink" title="一、常见的协议和标准"></a>一、常见的协议和标准</h1><h2 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h2><p><code>BS</code> 网络传输的分解方式有两种: 一种是标准的 <code>OSI</code> 参考模型，另一种是 <code>TCP/IP</code> 参考模型，如下图所示：</p>
+<p><img src="https://i.loli.net/2018/12/02/5c03dea2ab3c2.png" alt="网络结构"></p>
+<p>在 <code>TCP/IP</code> 4 层模型中，</p>
+<ul>
+<li><p>网络接入层：将需要相互连接的节点接入网络层，为数据传输提供条件。</p>
+</li>
+<li><p>网际互连层：找到要传输的数据的目标节点。典型：<code>IP</code>、<code>ICMP</code></p>
+</li>
+<li><p>传输层：实际传输数据。典型：<code>TCP</code> 协议、<code>UDP</code></p>
+</li>
+<li><p>应用层：使用接收到的数据。典型：<code>Http</code> 、<code>DNS</code>、<code>RPC</code>(会话层协议)</p>
+</li>
+</ul>
+<p>Tips：在 <code>HTTP</code> 层，<code>Java Web</code> 开发中使用的是 <code>Servlet</code> 标准</p>
+<h2 id="DNS-协议-和-IP-地址"><a href="#DNS-协议-和-IP-地址" class="headerlink" title="DNS 协议 和 IP 地址"></a>DNS 协议 和 IP 地址</h2><p>DNS 协议的作用是将域名解析为 <code>IP</code> 地址。</p>
+<p><code>IP</code> 地址中，</p>
+<blockquote>
+<p>A 类地址：以 0 开头，   第一个字节范围：1~127（1.0.0.0 - 127.255.255.255）；</p>
+<p>B 类地址：以 10 开头，  第一个字节范围：128~191（128.0.0.0 - 191.255.255.255）；</p>
+<p>C 类地址：以 110 开头， 第一个字节范围：192~223（192.0.0.0 - 223.255.255.255）；</p>
+<p>D 类地址：以 1110 开头，第一个字节范围：224~239（224.0.0.0 - 239.255.255.255）；（作为多播使用）</p>
+<p>E 类地址：保留</p>
+</blockquote>
+<p>其中 A、B、C 是基本类，D、E 类作为多播和保留使用。</p>
+<p>以下是留用的内部私有地址：</p>
+<blockquote>
+<p>A 类 10.0.0.0–10.255.255.255</p>
+<p>B 类 172.16.0.0–172.31.255.255</p>
+<p>C 类 192.168.0.0–192.168.255.255</p>
+</blockquote>
+<h2 id="TCP-IP-协议与-Socket"><a href="#TCP-IP-协议与-Socket" class="headerlink" title="TCP/IP 协议与 Socket"></a>TCP/IP 协议与 Socket</h2><h3 id="TCP-三次握手"><a href="#TCP-三次握手" class="headerlink" title="TCP 三次握手:"></a><code>TCP</code> 三次握手:</h3><p>第一次握手：客户端发送 <code>syn</code> 包 <code>(syn=x)</code> 到服务器，并进入 <code>SYN_SEND</code> 状态，等待服务器确认；</p>
+<p>第二次握手：服务器收到 <code>syn</code> 包，必须确认客户的 <code>SYN（ack=x+1）</code>，同时自己也发送一个 SYN 包 <code>（syn=y）</code>，即 S<code>YN+ACK</code> 包，此时服务器进入 <code>SYN_RECV</code> 状态；</p>
+<p>第三次握手：客户端收到服务器的 <code>SYN＋ACK</code> 包，向服务器发送确认包 <code>ACK(ack=y+1)</code>，此包发送完毕，客户端和服务器进入 <code>ESTABLISHED</code> 状态，完成三次握手。</p>
+<p>握手过程中传送的包里不包含数据，三次握手完毕后，客户端与服务器才正式开始传送数据。理想状态下，<code>TCP</code> 连接一旦建立，在通信双方中的任何一方主动关闭连接之前，<code>TCP</code> 连接都将被一直保持下去。</p>
+<h3 id="TCP-四次挥手"><a href="#TCP-四次挥手" class="headerlink" title="TCP 四次挥手"></a><code>TCP</code> 四次挥手</h3><p>第一次挥手：主动关闭方发送一个 <code>FIN</code>，用来关闭主动方到被动关闭方的数据传送，也就是主动关闭方告诉被动关闭方：我已经不 会再给你发数据了 (当然，在 <code>fin</code> 包之前发送出去的数据，如果没有收到对应的 ack 确认报文，主动关闭方依然会重发这些数据)，但是，此时主动关闭方还可 以接受数据。</p>
+<p>第二次挥手：被动关闭方收到 <code>FIN</code> 包后，发送一个 <code>ACK</code> 给对方，确认序号为收到序号 + 1（与 <code>SYN</code> 相同，一个 <code>FIN</code> 占用一个序号）。</p>
+<p>第三次挥手：被动关闭方发送一个 <code>FIN</code>，用来关闭被动关闭方到主动关闭方的数据传送，也就是告诉主动关闭方，我的数据也发送完了，不会再给你发数据了。</p>
+<p>第四次挥手：主动关闭方收到 <code>FIN</code> 后，发送一个 <code>ACK</code> 给被动关闭方，确认序号为收到序号 + 1，至此，完成四次挥手。</p>
+<p><img src="https://i.loli.net/2018/12/02/5c03e39d39e0f.png" alt="TCP"></p>
+<p>其中两个序号和三个标志位含义如下：</p>
+<ul>
+<li><p>seq：sequence number 所传数据的序号。</p>
+</li>
+<li><p>ack：acknoledge number 表示确认号。</p>
+</li>
+<li><p>ACK：确认位。</p>
+</li>
+<li><p>SYN：同部位。</p>
+</li>
+<li><p>FIN：终止位。</p>
+</li>
+</ul>
+<h2 id="HTTP-协议"><a href="#HTTP-协议" class="headerlink" title="HTTP 协议"></a>HTTP 协议</h2><p>HTTP 中的报文分为：请求报文、响应报文。这两种类型都包括：首行、头部和主体。</p>
+<p><img src="https://i.loli.net/2018/12/02/5c03e635c4ad3.png" alt="HTTP"></p>
+<p>请求报文中的方法指 <code>GET</code>、 <code>HEAD</code>、 <code>POST</code>、 <code>PUT</code>、 <code>DELETE</code> 等类型，响应报文中的状态码就是 <code>Response</code> 中的 <code>status</code>， 一共可以分为 5 类：</p>
+<ul>
+<li><p>1XX: 信息性状态码。</p>
+</li>
+<li><p>2XX: 成功状态码，如 200 表示成功。</p>
+</li>
+<li><p>3XX: 重定向状态码， 如 301 表示重定向。</p>
+</li>
+<li><p>4XX: 客户端错误状态码，如 404 表示没找到请求的资源。</p>
+</li>
+<li><p>5XX: 服务端错误状态码，如 500 表示内部错误。</p>
+</li>
+</ul>
+<h2 id="Servlet-与-Java-Web-开发"><a href="#Servlet-与-Java-Web-开发" class="headerlink" title="Servlet 与 Java Web 开发"></a>Servlet 与 Java Web 开发</h2><p>Servlet 是 J2EE 标准的一部分，是 JavaWeb 开发的标准。Servlet 的作用是对接收到的数据进行处理并生成要返回给客户端的结果。要想使用 Servlet 需要相应的 Servlet 容器，常见的 Servlet 容器时 Tomcat.</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>在浏览器中输入 <code>www.baidu.com</code> 后执行的全部过程</p>
+<ol>
+<li><p>客户端浏览器通过 <code>DNS</code> 解析到 <code>www.baidu.com</code> 的 IP 地址 <code>220.181.27.48</code>，通过这个 <code>IP</code> 地址找到客户端到服务器的路径。客户端浏览器发起一个 <code>HTTP</code> 会话到 <code>220.181.27.48</code>，然后通过 <code>TCP</code> 进行封装数据包，输入到网络层。</p>
+</li>
+<li><p>在客户端的传输层，把 <code>HTTP</code> 会话请求分成报文段，添加源和目的端口，如服务器使用 80 端口监听客户端的请求，客户端由系统随机选择一个端口如 <code>5000</code>，与服务器进行交换，服务器把相应的请求返回给客户端的 <code>5000</code> 端口。然后使用 <code>IP</code> 层的 <code>IP</code> 地址查找目的端。</p>
+</li>
+<li><p>客户端的网络层不用关心应用层或者传输层的东西，主要做的是通过查找路由表确定如何到达服务器，期间可能经过多个路由器，这些都是由路由器来完成的工作，我不作过多的描述，无非就是通过查找路由表决定通过那个路径到达服务器。</p>
+</li>
+<li><p>客户端的链路层，包通过链路层发送到路由器，通过邻居协议查找给定 <code>IP</code> 地址的 <code>MAC</code> 地址，然后发送 <code>ARP</code> 请求查找目的地址，如果得到回应后就可以使用 <code>ARP</code> 的请求应答交换的 <code>IP</code> 数据包现在就可以传输了，然后发送 <code>IP</code> 数据包到达服务器的地址。</p>
+</li>
+</ol>
+<h1 id="第二章-Java-中-Socket-的用法"><a href="#第二章-Java-中-Socket-的用法" class="headerlink" title="第二章 Java 中 Socket 的用法"></a>第二章 Java 中 Socket 的用法</h1><p>本章介绍 <code>Java</code> 中的 <code>Socket</code> 的用法，<code>Java</code> 中的 <code>Socket</code> 分为普通 <code>Socket</code> 和 <code>NioSocket</code> 两种。</p>
+<h2 id="普通-Socket-用法"><a href="#普通-Socket-用法" class="headerlink" title="普通 Socket 用法"></a>普通 Socket 用法</h2><p><code>Java</code> 中的网络通信通过 <code>Socket</code> <code>实现的，Socket</code> 分为 <code>ServerSocket</code> 和 <code>Socket</code> 两大类。<code>ServerSocket</code> 用于服务端，可以通过 <code>accept（）</code>方法监听请求返回 <code>Socket</code>，<code>Socket</code> 用于具体完成数据传输。客户端直接使用 <code>Socket</code> 发起请求并传输数据。</p>
+<p><code>ServerSocket</code> 的使用分为三步：</p>
+<ol>
+<li><p>创建 <code>ServerSocket</code>。</p>
+</li>
+<li><p>调用创建出来的 <code>ServerSocket</code> 的 <code>accept</code> 方法。</p>
+</li>
+<li><p>使用 <code>accept</code> 方法返回 <code>Socket</code> 与客户端进行通信。</p>
+</li>
+</ol>
+<p><code>Socket</code> 客户端使用：创建一个 <code>Socket</code>，和服务器进行通行，传输数据，释放连接。</p>
+<p>ServerSocket简单示例:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Server</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">// 创建一个ServerSocket 监听8080 端口</span></div><div class="line">            ServerSocket server = <span class="keyword">new</span> ServerSocket ( <span class="number">8080</span> );</div><div class="line">            <span class="comment">// 等待请求</span></div><div class="line">            Socket socket = server.accept ();</div><div class="line">            <span class="comment">// 接收到请求后使用socket通信，创建BufferedReader用于读取数据</span></div><div class="line">            BufferedReader br = <span class="keyword">new</span> BufferedReader ( <span class="keyword">new</span> InputStreamReader ( socket.getInputStream () ) );</div><div class="line">            String line = br.readLine();</div><div class="line">            System.out.println ( <span class="string">"received from client: "</span> + line );</div><div class="line">            <span class="comment">// 创建PrintWriter用于发送数据</span></div><div class="line">            PrintWriter pw = <span class="keyword">new</span> PrintWriter ( socket.getOutputStream () );</div><div class="line">            pw.println ( <span class="string">"received data: "</span> + line );</div><div class="line">            <span class="comment">// 关闭读写流之前先 flush()，先清空数据</span></div><div class="line">            pw.flush ();</div><div class="line">            <span class="comment">// 关闭资源</span></div><div class="line">            pw.close ();</div><div class="line">            br.close ();</div><div class="line">            socket.close ();</div><div class="line">            server.close ();</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace ();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>ClientSocket简单示例:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Clinet</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        String msg = <span class="string">"Client Data"</span>;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">// 创建一个Socket和本机的8080端口连接</span></div><div class="line">            Socket socket = <span class="keyword">new</span> Socket ( <span class="string">"127.0.0.1"</span>, <span class="number">8080</span> );</div><div class="line">            <span class="comment">// 使用Socket创建PrintWriter和 BufferReader进行读写数据</span></div><div class="line">            PrintWriter pw = <span class="keyword">new</span> PrintWriter ( socket.getOutputStream () );</div><div class="line">            BufferedReader is = <span class="keyword">new</span> BufferedReader ( <span class="keyword">new</span> InputStreamReader ( socket.getInputStream () ) );</div><div class="line">            <span class="comment">// 发送数据</span></div><div class="line">            pw.println ( msg );</div><div class="line">            pw.flush ();</div><div class="line">            <span class="comment">// 接收数据</span></div><div class="line">            String line = is.readLine ();</div><div class="line">            System.out.println ( <span class="string">" received from server"</span> + line );</div><div class="line">            <span class="comment">// 关闭资源</span></div><div class="line">            pw.close ();</div><div class="line">            is.close ();</div><div class="line">            socket.close ();</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace ();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="NioSocket-的用法"><a href="#NioSocket-的用法" class="headerlink" title="NioSocket 的用法"></a>NioSocket 的用法</h2><p><code>ServerSocketChannel</code> 和 <code>SocketCHannel</code>，分别对应以前的 <code>ServerSocket</code> 和 <code>Socket</code>。</p>
+<p><code>NioSocket</code> 中服务端的处理过程步骤：</p>
+<ol>
+<li><p>创建 <code>ServerSocketChannel</code> 并设置相应采参数。</p>
+</li>
+<li><p>创建 <code>Selector</code> 并注册到 <code>ServerSocketChannel</code>。</p>
+</li>
+<li><p>调用 <code>Selector</code> 的 <code>select</code> 方法等待请求。</p>
+</li>
+<li><p><code>Selector</code> 接收请求后使用 <code>selectedKeys</code> 返回 <code>SelectionKey</code> 集合。</p>
+</li>
+<li><p>使用 <code>SelectionKey</code> 获取到 <code>Channel</code>、<code>Selector</code> 和操作类型并进行具体的操作。</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NIOServer</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Handler</span> </span>&#123;</div><div class="line">        <span class="keyword">private</span> <span class="keyword">int</span> bufferSize = <span class="number">1024</span>;</div><div class="line">        <span class="keyword">private</span> String localCharset = <span class="string">"UTF-8"</span>;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Handler</span><span class="params">()</span> </span>&#123;&#125;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Handler</span><span class="params">(<span class="keyword">int</span> bufferSize)</span> </span>&#123;</div><div class="line">            <span class="keyword">this</span>(bufferSize, <span class="keyword">null</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Handler</span><span class="params">(String LocalCharset)</span> </span>&#123;</div><div class="line">            <span class="keyword">this</span>(-<span class="number">1</span>, LocalCharset);</div><div class="line">        &#125;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Handler</span><span class="params">(<span class="keyword">int</span> bufferSize, String localCharset)</span> </span>&#123;</div><div class="line">            <span class="keyword">if</span>(bufferSize &gt; <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">this</span>.bufferSize = bufferSize;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(localCharset!=<span class="keyword">null</span>) &#123;</div><div class="line">                <span class="keyword">this</span>.localCharset = localCharset;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleAccept</span><span class="params">(SelectionKey key)</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">            SocketChannel sc = ((ServerSocketChannel) key.channel ()). accept();</div><div class="line">            sc.configureBlocking ( <span class="keyword">false</span> );</div><div class="line">            sc.register ( key.selector (),SelectionKey.OP_READ, ByteBuffer.allocate ( bufferSize ) );</div><div class="line">        &#125;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleReader</span><span class="params">(SelectionKey key)</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">            <span class="comment">// 获取 channel</span></div><div class="line">            SocketChannel sc = (SocketChannel)key.channel ();</div><div class="line">            <span class="comment">// 获取 buffer 并重置</span></div><div class="line">            ByteBuffer buffer = (ByteBuffer) key.attachment ();</div><div class="line">            buffer.clear ();</div><div class="line">            <span class="comment">// 没有读到内容则关闭</span></div><div class="line">            <span class="keyword">if</span>(sc.read ( buffer ) == -<span class="number">1</span>) &#123;</div><div class="line">                sc.close ();</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="comment">// 将buffer转化为读状态</span></div><div class="line">                buffer.flip ();</div><div class="line">                <span class="comment">// 将buffer中接收到的值按localCharset格式编码到receivedString</span></div><div class="line">                String receivedString = Charset.forName ( localCharset ).newDecoder(). decode( buffer). toString();</div><div class="line">                System.out.println ( <span class="string">"revceived from client: "</span> + receivedString);</div><div class="line">                <span class="comment">// 返回数据给客户端</span></div><div class="line">                String sendString = <span class="string">"received data"</span> + receivedString;</div><div class="line">                buffer = ByteBuffer.wrap ( sendString.getBytes (localCharset) );</div><div class="line">                sc.write ( buffer );</div><div class="line">                <span class="comment">// 关闭Socket</span></div><div class="line">                sc.close ();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        <span class="comment">// 创建 ServerSocketChannel，监听8080端口</span></div><div class="line">        ServerSocketChannel ssc = ServerSocketChannel.open ();</div><div class="line">        ssc.socket ().bind ( <span class="keyword">new</span> InetSocketAddress ( <span class="number">8080</span> ) );</div><div class="line">        <span class="comment">// 设置非阻塞模式</span></div><div class="line">        ssc.configureBlocking ( <span class="keyword">false</span> );</div><div class="line">        <span class="comment">// 为 ssc 注册选择器</span></div><div class="line">        Selector selector = Selector.open ();</div><div class="line">        ssc.register ( selector, SelectionKey.OP_ACCEPT );</div><div class="line">        <span class="comment">// 创建处理器</span></div><div class="line">        Handler handler = <span class="keyword">new</span> Handler(<span class="number">1024</span>);</div><div class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</div><div class="line">            <span class="comment">// 等待请求，每次等待阻塞3s，超过3s后线程继续向下运行，如果传入0或者不传参数将一直阻塞</span></div><div class="line">            <span class="keyword">if</span>(selector.select (<span class="number">3000</span>) == <span class="number">0</span>) &#123;</div><div class="line">                System.out.println ( <span class="string">"等待请求超时……"</span> );</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            &#125;</div><div class="line">            System.out.println ( <span class="string">"处理请求……"</span> );</div><div class="line">            <span class="comment">// 获取待处理的SelectionKey</span></div><div class="line">            Iterator&lt;SelectionKey&gt; keyIterator = selector.selectedKeys (). iterator ();</div><div class="line">            <span class="keyword">while</span>(keyIterator.hasNext ()) &#123;</div><div class="line">                SelectionKey key = keyIterator.next ();</div><div class="line"></div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    <span class="comment">// 接收到连接请求时</span></div><div class="line">                    <span class="keyword">if</span>(key.isAcceptable ()) &#123;</div><div class="line">                        handler.handleAccept ( key );</div><div class="line">                    &#125;</div><div class="line">                    <span class="comment">// 读数据</span></div><div class="line">                    <span class="keyword">if</span>(key.isReadable ()) &#123;</div><div class="line">                        handler.handleReader ( key );</div><div class="line">                    &#125;</div><div class="line">                &#125; <span class="keyword">catch</span> (IOException ex) &#123;</div><div class="line">                    keyIterator.remove ();</div><div class="line">                    <span class="keyword">continue</span>;</div><div class="line">                &#125;</div><div class="line">                keyIterator.remove ();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="详解-Servlet"><a href="#详解-Servlet" class="headerlink" title="详解 Servlet"></a>详解 Servlet</h2><p><code>Servlet</code> 是 <code>Server</code> + <code>Applet</code> 的缩写，表示一个服务器应用。Servlet 是一套规范，按照此规范编写的代码就能在 java 的服务器上运行</p>
+<p><img src="https://i.loli.net/2018/12/03/5c04d5cf14dfe.png" alt="Servlet"></p>
+<h3 id="Servlet-接口"><a href="#Servlet-接口" class="headerlink" title="Servlet 接口"></a>Servlet 接口</h3><p>Servlet 接口定义：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Servlet</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig var1)</span> <span class="keyword">throws</span> ServletException</span>;</div><div class="line"></div><div class="line">    <span class="function">ServletConfig <span class="title">getServletConfig</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest var1, ServletResponse var2)</span> <span class="keyword">throws</span> ServletException, IOException</span>;</div><div class="line"></div><div class="line">    <span class="function">String <span class="title">getServletInfo</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>init</code> 方法：容器启动时被容器调用，只会调用一次。</p>
+<p><code>getServletConfig</code> 方法：用于获得 ServletConfig.<br><code>service</code> 方法：用于具体处理一次请求。<br><code>getServletInfo</code> 方法：获取一些 Servlet 相关信息，如作者、版权等。<br><code>destroy</code> 方法：主要用于 Servlet 销毁时释放一些资源，只会调用一次。</p>
+<p>在 <code>web.xml</code> 中定义 <code>Servlet</code> 时通过 <code>init-param</code> 标签配置的参数就是通过 <code>Servlet</code> 来保存的。<code>Tomcat</code> 中的 <code>Servletinit</code> 方法是在 <code>ocrg.apache.catalina.core.StandardWrapper</code> 的 <code>initServlet</code> <code>方法中调用的，ServletConfig</code> 传入的是 <code>StandardWrapper</code> 自身的门面类 <code>StandardWrapperFacade</code>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> javax.servlet;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.Enumeration;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ServletConfig</span> </span>&#123;</div><div class="line">    <span class="function">String <span class="title">getServletName</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function">ServletContext <span class="title">getServletContext</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function">String <span class="title">getInitParameter</span><span class="params">(String var1)</span></span>;</div><div class="line"></div><div class="line">    <span class="function">Enumeration&lt;String&gt; <span class="title">getInitParameterNames</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>ServletConfig</code>（Servlet 级别）和 <code>ServletContext</code>（Application 级别）是最常见的传递初始化参数的。</p>
+<h3 id="GenericServlet"><a href="#GenericServlet" class="headerlink" title="GenericServlet"></a>GenericServlet</h3><p><code>GenericServlet</code> 是 <code>Servlet</code> 的默认实现，主要做了三件事：实现 <code>ServletConfig</code> 接口，可以直接调用 <code>ServletConfig</code> 里面的方法；提供了无参的 <code>init</code> 方法；提供了 <code>log</code> 方法。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ServletContext <span class="title">getServletContext</span><span class="params">()</span> </span>&#123;</div><div class="line">    ServletConfig sc = <span class="keyword">this</span>.getServletConfig();</div><div class="line">    <span class="keyword">if</span> (sc == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(lStrings.getString(<span class="string">"err.servlet_config_not_initialized"</span>));</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> sc.getServletContext();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>GenericServlet</code> 实现了 <code>ServletConfig</code>，可以在需要用 <code>ServletConfig</code> 中的方法的时候可以直接调用，而不需要先获取 <code>ServletConfig</code>，不过底层还是使用 <code>ServletConfig</code> 进行调用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span> <span class="keyword">throws</span> ServletException </span>&#123;</div><div class="line">    <span class="keyword">this</span>.config = config;</div><div class="line">    <span class="keyword">this</span>.init();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>GenericServlet</code> 实现了 <code>Servlet</code> 的 <code>init</code>（ServletConfig  config）方法，现将 <code>config</code> 设置给了内部变量 <code>config</code>, 然后调用了无参的 init() 方法，这个方法是模板方法，子类可以通过覆盖它来完成自己的初始化工作。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">    <span class="keyword">this</span>.getServletContext().log(<span class="keyword">this</span>.getServletName() + <span class="string">": "</span> + msg);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">(String message, Throwable t)</span> </span>&#123;</div><div class="line">    <span class="keyword">this</span>.getServletContext().log(<span class="keyword">this</span>.getServletName() + <span class="string">": "</span> + message, t);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>GenericServlet</code> 提供了 2 个 <code>log</code> 方法，一个记录日志，一个记录异常，具体实现是通过传给 <code>ServletContext</code> 的日志实现的。</p>
+<h3 id="HttpServlet"><a href="#HttpServlet" class="headerlink" title="HttpServlet"></a>HttpServlet</h3><p><code>HttpServlet</code> 是 <code>HTTP</code> 协议实现的 <code>Servlet</code> <code>的基类，HttpServlet</code> 主要重写了 service 方法，首先将 <code>ServletRequest</code> 和 <code>ServletResponse</code> 转换为了 <code>HttpServletRequest</code> 和 <code>HttpServletResponse</code>, 然后根据 <code>http</code> 请求的类型不同将请求路由到了不同的处理方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line">    HttpServletRequest request;</div><div class="line">    HttpServletResponse response;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        request = (HttpServletRequest)req;</div><div class="line">        response = (HttpServletResponse)res;</div><div class="line">    &#125; <span class="keyword">catch</span> (ClassCastException var6) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> ServletException(<span class="string">"non-HTTP request or response"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.service(request, response);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line">    String method = req.getMethod();</div><div class="line">    <span class="keyword">long</span> lastModified;</div><div class="line">    <span class="keyword">if</span> (method.equals(<span class="string">"GET"</span>)) &#123;</div><div class="line">        lastModified = <span class="keyword">this</span>.getLastModified(req);</div><div class="line">        <span class="keyword">if</span> (lastModified == -<span class="number">1L</span>) &#123;</div><div class="line">            <span class="keyword">this</span>.doGet(req, resp);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">long</span> ifModifiedSince = req.getDateHeader(<span class="string">"If-Modified-Since"</span>);</div><div class="line">            <span class="keyword">if</span> (ifModifiedSince &lt; lastModified) &#123;</div><div class="line">                <span class="keyword">this</span>.maybeSetLastModified(resp, lastModified);</div><div class="line">                <span class="keyword">this</span>.doGet(req, resp);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                resp.setStatus(<span class="number">304</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(<span class="string">"HEAD"</span>)) &#123;</div><div class="line">        lastModified = <span class="keyword">this</span>.getLastModified(req);</div><div class="line">        <span class="keyword">this</span>.maybeSetLastModified(resp, lastModified);</div><div class="line">        <span class="keyword">this</span>.doHead(req, resp);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(<span class="string">"POST"</span>)) &#123;</div><div class="line">        <span class="keyword">this</span>.doPost(req, resp);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(<span class="string">"PUT"</span>)) &#123;</div><div class="line">        <span class="keyword">this</span>.doPut(req, resp);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(<span class="string">"DELETE"</span>)) &#123;</div><div class="line">        <span class="keyword">this</span>.doDelete(req, resp);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(<span class="string">"OPTIONS"</span>)) &#123;</div><div class="line">        <span class="keyword">this</span>.doOptions(req, resp);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(<span class="string">"TRACE"</span>)) &#123;</div><div class="line">        <span class="keyword">this</span>.doTrace(req, resp);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        String errMsg = lStrings.getString(<span class="string">"http.method_not_implemented"</span>);</div><div class="line">        Object[] errArgs = <span class="keyword">new</span> Object[]&#123;method&#125;;</div><div class="line">        errMsg = MessageFormat.format(errMsg, errArgs);</div><div class="line">        resp.sendError(<span class="number">501</span>, errMsg);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Tomcat-分析"><a href="#Tomcat-分析" class="headerlink" title="Tomcat 分析"></a>Tomcat 分析</h2><h3 id="Tomcat-的顶层结构"><a href="#Tomcat-的顶层结构" class="headerlink" title="Tomcat 的顶层结构"></a>Tomcat 的顶层结构</h3><p><img src="https://i.loli.net/2018/12/03/5c04d5d02e28e.png" alt="Tomcat"></p>
+<h3 id="Tomcat-的启动过程"><a href="#Tomcat-的启动过程" class="headerlink" title="Tomcat 的启动过程"></a>Tomcat 的启动过程</h3><h4 id="Bootstrap-的启动过程"><a href="#Bootstrap-的启动过程" class="headerlink" title="Bootstrap 的启动过程"></a>Bootstrap 的启动过程</h4><h4 id="Catalina-的启动过程"><a href="#Catalina-的启动过程" class="headerlink" title="Catalina 的启动过程"></a>Catalina 的启动过程</h4><h4 id="Server-的启动过程"><a href="#Server-的启动过程" class="headerlink" title="Server 的启动过程"></a>Server 的启动过程</h4><h4 id="Service-的启动过程"><a href="#Service-的启动过程" class="headerlink" title="Service 的启动过程"></a>Service 的启动过程</h4><h3 id="Tomcat-生命周期"><a href="#Tomcat-生命周期" class="headerlink" title="Tomcat 生命周期"></a>Tomcat 生命周期</h3><h4 id="Lifecyle-接口"><a href="#Lifecyle-接口" class="headerlink" title="Lifecyle 接口"></a>Lifecyle 接口</h4><h4 id="LifecycleBase"><a href="#LifecycleBase" class="headerlink" title="LifecycleBase"></a>LifecycleBase</h4><h3 id="Container-分析"><a href="#Container-分析" class="headerlink" title="Container 分析"></a>Container 分析</h3><h3 id="Pipeline-Value-管道"><a href="#Pipeline-Value-管道" class="headerlink" title="Pipeline-Value 管道"></a>Pipeline-Value 管道</h3><h3 id="Connector-分析"><a href="#Connector-分析" class="headerlink" title="Connector 分析"></a>Connector 分析</h3>
+
+    <!-- 显示photos -->
+    
+
+  </div>
+  <div class="post-tags">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络原理/">网络原理</a></li></ul>
+  </div>
+</article>
+  
+    <div class="post-nav">
+      <div class="post-nav-item post-nav-next">
+        
+          <a href="/2018/12/02/New-Blog-Style-2018/" rel="next" title="【自言语】新版博客 -- 删繁就简三秋树">
+            <span>〈 </span> 【自言语】新版博客 -- 删繁就简三秋树
+          </a>
+        
+      </div>
+  
+      <div class="post-nav-item post-nav-prev">
+        
+      </div>
+    </div>
+  
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、常见的协议和标准"><span class="toc-text">一、常见的协议和标准</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#网络结构"><span class="toc-text">网络结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DNS-协议-和-IP-地址"><span class="toc-text">DNS 协议 和 IP 地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-IP-协议与-Socket"><span class="toc-text">TCP/IP 协议与 Socket</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-三次握手"><span class="toc-text">TCP 三次握手:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-四次挥手"><span class="toc-text">TCP 四次挥手</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-协议"><span class="toc-text">HTTP 协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Servlet-与-Java-Web-开发"><span class="toc-text">Servlet 与 Java Web 开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二章-Java-中-Socket-的用法"><span class="toc-text">第二章 Java 中 Socket 的用法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#普通-Socket-用法"><span class="toc-text">普通 Socket 用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NioSocket-的用法"><span class="toc-text">NioSocket 的用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#详解-Servlet"><span class="toc-text">详解 Servlet</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet-接口"><span class="toc-text">Servlet 接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GenericServlet"><span class="toc-text">GenericServlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HttpServlet"><span class="toc-text">HttpServlet</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tomcat-分析"><span class="toc-text">Tomcat 分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-的顶层结构"><span class="toc-text">Tomcat 的顶层结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-的启动过程"><span class="toc-text">Tomcat 的启动过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Bootstrap-的启动过程"><span class="toc-text">Bootstrap 的启动过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Catalina-的启动过程"><span class="toc-text">Catalina 的启动过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Server-的启动过程"><span class="toc-text">Server 的启动过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Service-的启动过程"><span class="toc-text">Service 的启动过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-生命周期"><span class="toc-text">Tomcat 生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Lifecyle-接口"><span class="toc-text">Lifecyle 接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LifecycleBase"><span class="toc-text">LifecycleBase</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Container-分析"><span class="toc-text">Container 分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pipeline-Value-管道"><span class="toc-text">Pipeline-Value 管道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Connector-分析"><span class="toc-text">Connector 分析</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+
+    </div>
+
+    
+
+  </div>
+
+  <footer class="footer text-center">
+    <div id="bottom-inner">
+      
+        <a href="http://hexo.io" target="_blank" class="footer-link">Hexo</a>
+      
+        <a href="https://github.com/microacup/hexo-theme-micorb" target="_blank" class="footer-link">Theme microb</a>
+      
+    </div>
+  </footer>
+  
+
+<!-- <script>
+  var titleTime,originTitle=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="[闷声发大财中...] "+originTitle,clearTimeout(titleTime)):(document.title="[+1s] "+originTitle,titleTime=setTimeout(function(){document.title=originTitle},2e3))});
+</script> -->
+
+<script>
+  (function (window, document) {
+    window.requestAnimationFrame = (function () {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback) {
+          setTimeout(callback, 1000 / 60);
+        }
+    })();
+
+    function init() {
+      addMenuEvent();
+    }
+    init();
+
+    function addMenuEvent() {
+      var menu = document.getElementById('menu-main-post');
+      if (menu) {
+        var toc = document.getElementById('toc');
+        menu.title = toc ? '目录' : '回到顶部';
+        menu.onclick = function () {
+          if (toc) {
+            if (toc.style.display == 'block') {
+              toc.style.display = 'none';
+            } else {
+              toc.style.display = 'block';
+            }
+          } else {
+            returnTop();
+          }
+        };
+      }
+    }
+
+    var timer = null;
+
+    function returnTop() {
+      cancelAnimationFrame(timer);
+      timer = requestAnimationFrame(function fn() {
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (oTop > 0) {
+          document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+          timer = requestAnimationFrame(fn);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      });
+    }
+
+  })(window, document);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+
+</body>
+</html>
