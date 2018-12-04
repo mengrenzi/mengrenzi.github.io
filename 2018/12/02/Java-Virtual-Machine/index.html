@@ -95,7 +95,7 @@
 </li>
 </ol>
 <p>选择哪种分配方式由<code>Java</code>堆是否规整决定，而<code>Java</code>堆是否规整又由所采用的垃圾收集器是否带有压缩整理功能决定。因此，在使用<code>Serial、ParNew</code>等带<code>Compact</code>过程的收集器时，系统采用的分配算法是指针碰撞，而使用<code>CMS</code>这种基于<code>Mark-Sweep</code>算法的收集器时，通常采用空闲列表。</p>
-<h2 id="对象的访问"><a href="#对象的访问" class="headerlink" title="对象的访问"></a>对象的访问</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object obj = <span class="keyword">new</span> Object()</div></pre></td></tr></table></figure>
+<h2 id="对象的访问"><a href="#对象的访问" class="headerlink" title="对象的访问"></a>对象的访问</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object obj = <span class="keyword">new</span> Object();</div></pre></td></tr></table></figure>
 <p>这句代码会影响 <code>Java栈、Java堆、方法区</code>。假设这句代码出现在方法体中，那 <code>Object obj</code> 将会放映到 <code>Java栈</code> 的本地变量表中作为一个 <code>Reference</code> 类型出现。 而 new Object() 这部分会反映到 <code>Java堆</code> 中，形成一块存储了<code>Object</code>类型所有实例数据值（Instance Data, 对象中各个实例字段的数据）的结构化内存。另外在<code>Java堆</code>中还必须包含能找到此对象类型数据（如对象类型、父类、实现的接口、方法等）的地址信息，这些数据则存储在方法区中。</p>
 <p>由于 reference 类型在 JVM 中只规定了一个指向对象的引用，其主流的定位方式依靠：使用句柄和直接指针。</p>
 <ol>
@@ -106,7 +106,45 @@
 <li>直接指针访问，就是虚拟机栈直接指向 Java 堆中的对象类型指针和对象的实例数据，然后对象类型指针在指向方法区中对象类型的实例数据，分布如下图：</li>
 </ol>
 <p><img src="https://i.loli.net/2018/12/02/5c03cebb845c3.png" alt="直接指针"></p>
-<h1 id="三、【实战】OutOfMemoryError-异常"><a href="#三、【实战】OutOfMemoryError-异常" class="headerlink" title="三、【实战】OutOfMemoryError 异常"></a>三、【实战】OutOfMemoryError 异常</h1>
+<h1 id="【实战】OutOfMemoryError-异常"><a href="#【实战】OutOfMemoryError-异常" class="headerlink" title="【实战】OutOfMemoryError 异常"></a>【实战】OutOfMemoryError 异常</h1><h1 id="基于JDK-命令行工具的监控"><a href="#基于JDK-命令行工具的监控" class="headerlink" title="基于JDK 命令行工具的监控"></a>基于JDK 命令行工具的监控</h1><h2 id="JVM的参数"><a href="#JVM的参数" class="headerlink" title="JVM的参数"></a>JVM的参数</h2><p>JDK8 文档查看： <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jps.html#CHDCGECD" target="_blank" rel="external">https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jps.html#CHDCGECD</a></p>
+<h3 id="参数分类"><a href="#参数分类" class="headerlink" title="参数分类"></a>参数分类</h3><ul>
+<li>标准参数（基本不随着JVM版本变化而变化）<ul>
+<li>help</li>
+<li>server -client</li>
+<li>version - showversion</li>
+<li>cp -classpath</li>
+</ul>
+</li>
+<li>x参数（非标准参数，随着JVM版本变化变化较大）<ul>
+<li>Xint: 解释执行</li>
+<li>Xcomp: 第一使用就编译成本地代码</li>
+<li>Xmixed: 混合模式，JVM自己来决定是否编译成本地代码</li>
+</ul>
+</li>
+<li>xx参数（用处很大，随着JVM版本变化变化较大）<ul>
+<li>Boolean 类型<ul>
+<li>格式：-XX:[+-]<name> 表示启用或者禁用name属性</name></li>
+<li>例子：-XX:+UseConcMarkSweepGC</li>
+</ul>
+</li>
+<li>非 Boolean 类型<ul>
+<li>格式: -XX:<name>=<value>表示name属性的值是value</value></name></li>
+<li>例子：-XX:MaxGCPauseMillis=500</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h3><h4 id="jps"><a href="#jps" class="headerlink" title="jps"></a>jps</h4><blockquote>
+<p>Lists the instrumented Java Virtual Machines (JVMs) on the target system. This command is experimental and unsupported.</p>
+</blockquote>
+<p>列出所有虚拟机</p>
+<h4 id="jstat"><a href="#jstat" class="headerlink" title="jstat"></a>jstat</h4><blockquote>
+<p>Monitors Java Virtual Machine (JVM) statistics. This command is experimental and unsupported.</p>
+</blockquote>
+<p>数据统计</p>
+<p>jstat -class</p>
+<h4 id="类加载-加载的信息-jstat-class"><a href="#类加载-加载的信息-jstat-class" class="headerlink" title="类加载 加载的信息 jstat -class"></a>类加载 加载的信息 jstat -class</h4><h4 id="垃圾收集-jstat-gc"><a href="#垃圾收集-jstat-gc" class="headerlink" title="垃圾收集 jstat -gc"></a>垃圾收集 jstat -gc</h4><h4 id="JIT编译"><a href="#JIT编译" class="headerlink" title="JIT编译"></a>JIT编译</h4><h2 id="jmap-MAT-实战内存溢出"><a href="#jmap-MAT-实战内存溢出" class="headerlink" title="jmap + MAT 实战内存溢出"></a>jmap + MAT 实战内存溢出</h2><h2 id="jstack-实战死循环与死锁"><a href="#jstack-实战死循环与死锁" class="headerlink" title="jstack 实战死循环与死锁"></a>jstack 实战死循环与死锁</h2>
 
     <!-- 显示photos -->
     
@@ -139,7 +177,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、Java-内存区域"><span class="toc-text">一、Java 内存区域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、对象的创建与访问"><span class="toc-text">二、对象的创建与访问</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的创建"><span class="toc-text">对象的创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的访问"><span class="toc-text">对象的访问</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、【实战】OutOfMemoryError-异常"><span class="toc-text">三、【实战】OutOfMemoryError 异常</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、Java-内存区域"><span class="toc-text">一、Java 内存区域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、对象的创建与访问"><span class="toc-text">二、对象的创建与访问</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的创建"><span class="toc-text">对象的创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的访问"><span class="toc-text">对象的访问</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#【实战】OutOfMemoryError-异常"><span class="toc-text">【实战】OutOfMemoryError 异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于JDK-命令行工具的监控"><span class="toc-text">基于JDK 命令行工具的监控</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM的参数"><span class="toc-text">JVM的参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数分类"><span class="toc-text">参数分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用参数"><span class="toc-text">常用参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#jps"><span class="toc-text">jps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jstat"><span class="toc-text">jstat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类加载-加载的信息-jstat-class"><span class="toc-text">类加载 加载的信息 jstat -class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#垃圾收集-jstat-gc"><span class="toc-text">垃圾收集 jstat -gc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JIT编译"><span class="toc-text">JIT编译</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jmap-MAT-实战内存溢出"><span class="toc-text">jmap + MAT 实战内存溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jstack-实战死循环与死锁"><span class="toc-text">jstack 实战死循环与死锁</span></a></li></ol></li></ol>
   </div>
 
 
