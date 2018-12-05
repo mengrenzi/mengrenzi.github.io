@@ -142,9 +142,16 @@
 <h4 id="jstat"><a href="#jstat" class="headerlink" title="jstat"></a>jstat</h4><blockquote>
 <p>Monitors Java Virtual Machine (JVM) statistics. This command is experimental and unsupported.</p>
 </blockquote>
-<p>数据统计</p>
-<p>jstat -class</p>
-<h4 id="类加载-加载的信息-jstat-class"><a href="#类加载-加载的信息-jstat-class" class="headerlink" title="类加载 加载的信息 jstat -class"></a>类加载 加载的信息 jstat -class</h4><h4 id="垃圾收集-jstat-gc"><a href="#垃圾收集-jstat-gc" class="headerlink" title="垃圾收集 jstat -gc"></a>垃圾收集 jstat -gc</h4><h4 id="JIT编译"><a href="#JIT编译" class="headerlink" title="JIT编译"></a>JIT编译</h4><h2 id="jmap-MAT-实战内存溢出"><a href="#jmap-MAT-实战内存溢出" class="headerlink" title="jmap + MAT 实战内存溢出"></a>jmap + MAT 实战内存溢出</h2><h2 id="jstack-实战死循环与死锁"><a href="#jstack-实战死循环与死锁" class="headerlink" title="jstack 实战死循环与死锁"></a>jstack 实战死循环与死锁</h2>
+<p>数据统计:</p>
+<ul>
+<li><p>jstat -class 类加载的信息</p>
+</li>
+<li><p>jstat -gc 垃圾收集信息</p>
+</li>
+<li><p>jstat -compiler 编译信息</p>
+</li>
+</ul>
+<h2 id="jmap-MAT-实战内存溢出"><a href="#jmap-MAT-实战内存溢出" class="headerlink" title="jmap + MAT 实战内存溢出"></a>jmap + MAT 实战内存溢出</h2><h2 id="jstack-实战死循环与死锁"><a href="#jstack-实战死循环与死锁" class="headerlink" title="jstack 实战死循环与死锁"></a>jstack 实战死循环与死锁</h2>
 
     <!-- 显示photos -->
     
@@ -177,7 +184,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、Java-内存区域"><span class="toc-text">一、Java 内存区域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、对象的创建与访问"><span class="toc-text">二、对象的创建与访问</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的创建"><span class="toc-text">对象的创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的访问"><span class="toc-text">对象的访问</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#【实战】OutOfMemoryError-异常"><span class="toc-text">【实战】OutOfMemoryError 异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于JDK-命令行工具的监控"><span class="toc-text">基于JDK 命令行工具的监控</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM的参数"><span class="toc-text">JVM的参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数分类"><span class="toc-text">参数分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用参数"><span class="toc-text">常用参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#jps"><span class="toc-text">jps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jstat"><span class="toc-text">jstat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类加载-加载的信息-jstat-class"><span class="toc-text">类加载 加载的信息 jstat -class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#垃圾收集-jstat-gc"><span class="toc-text">垃圾收集 jstat -gc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JIT编译"><span class="toc-text">JIT编译</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jmap-MAT-实战内存溢出"><span class="toc-text">jmap + MAT 实战内存溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jstack-实战死循环与死锁"><span class="toc-text">jstack 实战死循环与死锁</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、Java-内存区域"><span class="toc-text">一、Java 内存区域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、对象的创建与访问"><span class="toc-text">二、对象的创建与访问</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的创建"><span class="toc-text">对象的创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的访问"><span class="toc-text">对象的访问</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#【实战】OutOfMemoryError-异常"><span class="toc-text">【实战】OutOfMemoryError 异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于JDK-命令行工具的监控"><span class="toc-text">基于JDK 命令行工具的监控</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM的参数"><span class="toc-text">JVM的参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数分类"><span class="toc-text">参数分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用参数"><span class="toc-text">常用参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#jps"><span class="toc-text">jps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jstat"><span class="toc-text">jstat</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jmap-MAT-实战内存溢出"><span class="toc-text">jmap + MAT 实战内存溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jstack-实战死循环与死锁"><span class="toc-text">jstack 实战死循环与死锁</span></a></li></ol></li></ol>
   </div>
 
 
