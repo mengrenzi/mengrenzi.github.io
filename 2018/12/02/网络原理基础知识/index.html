@@ -147,6 +147,57 @@
 <li><p>客户端的链路层，包通过链路层发送到路由器，通过邻居协议查找给定 <code>IP</code> 地址的 <code>MAC</code> 地址，然后发送 <code>ARP</code> 请求查找目的地址，如果得到回应后就可以使用 <code>ARP</code> 的请求应答交换的 <code>IP</code> 数据包现在就可以传输了，然后发送 <code>IP</code> 数据包到达服务器的地址。</p>
 </li>
 </ol>
+<h2 id="动态代理和静态代理"><a href="#动态代理和静态代理" class="headerlink" title="动态代理和静态代理"></a>动态代理和静态代理</h2><p>静态：由程序员创建代理类或特定工具自动生成源代码再对其编译。在程序运行前代理类的. class 文件就已经存在了。</p>
+<p>动态：在程序运行时运用反射机制动态创建而成。</p>
+<h2 id="正向代理和反向代理"><a href="#正向代理和反向代理" class="headerlink" title="正向代理和反向代理"></a>正向代理和反向代理</h2><p>正向代理（forward proxy） ，一个位于客户端和原始服务器之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并制定目标（原始服务器），然后代理向原始服务器转发请求并将获得的内容返回给客户端，客户端才能使用正向代理。我们平时说的代理就是指正向代理。</p>
+<p>反向代理（Reverse Proxy），以代理服务器来接受 internet 上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给 internet 上请求的客户端，此时代理服务器对外表现为一个反向代理服务器。</p>
+<h2 id="TCP-UDP-区别"><a href="#TCP-UDP-区别" class="headerlink" title="TCP UDP 区别"></a>TCP UDP 区别</h2><p>TCP 与 UDP 的区别：</p>
+<ol>
+<li>基于连接与无连接；</li>
+<li>对系统资源的要求（TCP 较多，UDP 少）；</li>
+<li>UDP 程序结构较简单；</li>
+<li>流模式与数据报模式 ；</li>
+<li>TCP 保证数据正确性，UDP 可能丢包，TCP 保证数据顺序，UDP 不保证。</li>
+</ol>
+<h2 id="Tcp连接原理"><a href="#Tcp连接原理" class="headerlink" title="Tcp连接原理"></a>Tcp连接原理</h2><p>TCP 协议是端到端的传输控制协议，之所以是 “端到端” 的协议，是因为” 路由 “是由 IP 协议负责的，TCP 协议负责为两个通信端点提供可靠性保证，这个可靠性不是指一个端点发送的数据，另一个端点肯定能收到（这显然是不可能的），而是指，数据的可靠投递或者故障的可靠通知。</p>
+<h2 id="Http-post和get"><a href="#Http-post和get" class="headerlink" title="Http post和get"></a>Http post和get</h2><p>在客户机和服务器之间进行请求 - 响应时，两种最常被用到的方法是：GET 和 POST。</p>
+<ul>
+<li>GET - 从指定的资源请求数据。</li>
+<li>POST - 向指定的资源提交要被处理的数据</li>
+</ul>
+<h2 id="http-和-https-的区别-https-的加密方式"><a href="#http-和-https-的区别-https-的加密方式" class="headerlink" title="http 和 https 的区别 https 的加密方式"></a>http 和 https 的区别 https 的加密方式</h2><p>HTTP 协议传输的数据都是未加密的，也就是明文的，因此使用 HTTP 协议传输隐私信息非常不安全，为了保证这些隐私数据能加密传输，于是网景公司设计了 SSL（Secure Sockets Layer）协议用于对 HTTP 协议传输的数据进行加密，从而就诞生了 HTTPS。简单来说，HTTPS 协议是由 SSL+HTTP 协议构建的可进行加密传输、身份认证的网络协议，要比 http 协议安全。</p>
+<p>HTTPS 和 HTTP 的区别主要如下：</p>
+<p>1、https 协议需要到 ca 申请证书，一般免费证书较少，因而需要一定费用。</p>
+<p>2、http 是超文本传输协议，信息是明文传输，https 则是具有安全性的 ssl 加密传输协议。</p>
+<p>3、http 和 https 使用的是完全不同的连接方式，用的端口也不一样，前者是 80，后者是 443。</p>
+<p>4、http 的连接很简单，是无状态的；HTTPS 协议是由 SSL+HTTP 协议构建的可进行加密传输、身份认证的网络协议，比 http 协议安全。</p>
+<h2 id="Cookie和session"><a href="#Cookie和session" class="headerlink" title="Cookie和session"></a>Cookie和session</h2><p>1、cookie 数据存放在客户的浏览器上，session 数据放在服务器上。</p>
+<p>2、cookie 不是很安全，别人可以分析存放在本地的 COOKIE 并进行 COOKIE 欺骗，考虑到安全应当使用 session。</p>
+<p>3、session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面，应当使用 COOKIE。</p>
+<p>4、单个 cookie 保存的数据不能超过 4K，很多浏览器都限制一个站点最多保存 20 个 cookie。</p>
+<h2 id="Tomcat如何处理http"><a href="#Tomcat如何处理http" class="headerlink" title="Tomcat如何处理http"></a>Tomcat如何处理http</h2><p><img src="https://i.loli.net/2018/12/09/5c0cf12a06148.jpg" alt="Tomcat如何处理http"></p>
+<ol>
+<li><p>用户在浏览器中输入网址 localhost:8080/test/index.jsp，请求被发送到本机端口 8080，被在那里监听的 Coyote HTTP/1.1 Connector 获得；</p>
+</li>
+<li><p>Connector 把该请求交给它所在的 Service 的 Engine（Container）来处理，并等待 Engine 的回应；</p>
+</li>
+<li><p>Engine 获得请求 localhost/test/index.jsp，匹配所有的虚拟主机 Host；</p>
+</li>
+<li><p>Engine 匹配到名为 localhost 的 Host（即使匹配不到也把请求交给该 Host 处理，因为该 Host 被定义为该 Engine 的默认主机），名为 localhost 的 Host 获得请求 / test/index.jsp，匹配它所拥有的所有 Context。Host 匹配到路径为 / test 的 Context（如果匹配不到就把该请求交给路径名为 “ ” 的 Context 去处理）；</p>
+</li>
+<li><p>path=“/test” 的 Context 获得请求 / index.jsp，在它的 mapping table 中寻找出对应的 Servlet。Context 匹配到 URL Pattern 为 *.jsp 的 Servlet，对应于 JspServlet 类；</p>
+</li>
+<li><p>构造 HttpServletRequest 对象和 HttpServletResponse 对象，作为参数调用 JspServlet 的 doGet() 或 doPost(), 执行业务逻辑、数据存储等；</p>
+</li>
+<li><p>Context 把执行完之后的 HttpServletResponse 对象返回给 Host；</p>
+</li>
+<li><p>Host 把 HttpServletResponse 对象返回给 Engine；</p>
+</li>
+<li><p>Engine 把 HttpServletResponse 对象返回 Connector；</p>
+</li>
+<li><p>Connector 把 HttpServletResponse 对象返回给客户 Browser。</p>
+</li>
+</ol>
 <h2 id="普通-Socket-用法"><a href="#普通-Socket-用法" class="headerlink" title="普通 Socket 用法"></a>普通 Socket 用法</h2><p><code>Java</code> 中的网络通信通过 <code>Socket</code> 实现的，<code>Socket</code> 分为 <code>ServerSocket</code> 和 <code>Socket</code> 两大类。<code>ServerSocket</code> 用于服务端，可以通过 <code>accept（）</code> 方法监听请求返回 <code>Socket</code>，<code>Socket</code> 用于具体完成数据传输。客户端直接使用 <code>Socket</code> 发起请求并传输数据。</p>
 <p><code>ServerSocket</code> 的使用分为三步：</p>
 <ol>
@@ -230,7 +281,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#网络结构"><span class="toc-text">网络结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DNS-协议-和-IP-地址"><span class="toc-text">DNS 协议 和 IP 地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-IP-协议与-Socket"><span class="toc-text">TCP/IP 协议与 Socket</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-三次握手"><span class="toc-text">TCP 三次握手:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-四次挥手"><span class="toc-text">TCP 四次挥手</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-协议"><span class="toc-text">HTTP 协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Servlet-与-Java-Web-开发"><span class="toc-text">Servlet 与 Java Web 开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#普通-Socket-用法"><span class="toc-text">普通 Socket 用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NioSocket-的用法"><span class="toc-text">NioSocket 的用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#详解-Servlet"><span class="toc-text">详解 Servlet</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet-接口"><span class="toc-text">Servlet 接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GenericServlet"><span class="toc-text">GenericServlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HttpServlet"><span class="toc-text">HttpServlet</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tomcat-分析"><span class="toc-text">Tomcat 分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-的顶层结构"><span class="toc-text">Tomcat 的顶层结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-的启动过程"><span class="toc-text">Tomcat 的启动过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Bootstrap-的启动过程"><span class="toc-text">Bootstrap 的启动过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Catalina-的启动过程"><span class="toc-text">Catalina 的启动过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Server-的启动过程"><span class="toc-text">Server 的启动过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Service-的启动过程"><span class="toc-text">Service 的启动过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-生命周期"><span class="toc-text">Tomcat 生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Lifecyle-接口"><span class="toc-text">Lifecyle 接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LifecycleBase"><span class="toc-text">LifecycleBase</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Container-分析"><span class="toc-text">Container 分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pipeline-Value-管道"><span class="toc-text">Pipeline-Value 管道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Connector-分析"><span class="toc-text">Connector 分析</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#网络结构"><span class="toc-text">网络结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DNS-协议-和-IP-地址"><span class="toc-text">DNS 协议 和 IP 地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-IP-协议与-Socket"><span class="toc-text">TCP/IP 协议与 Socket</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-三次握手"><span class="toc-text">TCP 三次握手:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-四次挥手"><span class="toc-text">TCP 四次挥手</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-协议"><span class="toc-text">HTTP 协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Servlet-与-Java-Web-开发"><span class="toc-text">Servlet 与 Java Web 开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态代理和静态代理"><span class="toc-text">动态代理和静态代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正向代理和反向代理"><span class="toc-text">正向代理和反向代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-UDP-区别"><span class="toc-text">TCP UDP 区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tcp连接原理"><span class="toc-text">Tcp连接原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Http-post和get"><span class="toc-text">Http post和get</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-和-https-的区别-https-的加密方式"><span class="toc-text">http 和 https 的区别 https 的加密方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie和session"><span class="toc-text">Cookie和session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tomcat如何处理http"><span class="toc-text">Tomcat如何处理http</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#普通-Socket-用法"><span class="toc-text">普通 Socket 用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NioSocket-的用法"><span class="toc-text">NioSocket 的用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#详解-Servlet"><span class="toc-text">详解 Servlet</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet-接口"><span class="toc-text">Servlet 接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GenericServlet"><span class="toc-text">GenericServlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HttpServlet"><span class="toc-text">HttpServlet</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tomcat-分析"><span class="toc-text">Tomcat 分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-的顶层结构"><span class="toc-text">Tomcat 的顶层结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-的启动过程"><span class="toc-text">Tomcat 的启动过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Bootstrap-的启动过程"><span class="toc-text">Bootstrap 的启动过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Catalina-的启动过程"><span class="toc-text">Catalina 的启动过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Server-的启动过程"><span class="toc-text">Server 的启动过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Service-的启动过程"><span class="toc-text">Service 的启动过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat-生命周期"><span class="toc-text">Tomcat 生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Lifecyle-接口"><span class="toc-text">Lifecyle 接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LifecycleBase"><span class="toc-text">LifecycleBase</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Container-分析"><span class="toc-text">Container 分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pipeline-Value-管道"><span class="toc-text">Pipeline-Value 管道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Connector-分析"><span class="toc-text">Connector 分析</span></a></li></ol></li></ol>
   </div>
 
 
