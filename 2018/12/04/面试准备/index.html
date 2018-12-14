@@ -14,12 +14,12 @@
   
 
   
-  <meta name="description" content="【技术向】头条实习面试问题准备" />
+  <meta name="description" content="【技术向】头条实习面试问题准备 &amp; 挂经" />
   
 
   <link rel="icon" type="image/x-icon" href="/img/logo.png">
   <title>
-    【技术向】头条实习面试问题准备 [ 仁梓小舍 ]
+    【技术向】头条实习面试问题准备 &amp; 挂经 [ 仁梓小舍 ]
   </title>
   
   <!-- stylesheets list from config.yml -->
@@ -58,7 +58,7 @@
       <article class="post" id="post">
   <header class="post-header text-center">
     <h1 class="title">
-      【技术向】头条实习面试问题准备
+      【技术向】头条实习面试问题准备 &amp; 挂经
     </h1>
     
     <time class="time" datetime="2018-12-04T15:46:09.000Z">
@@ -320,6 +320,56 @@
 <p>（1）将请求尽量拦截在系统上游（不要让锁冲突落到数据库上去）。传统秒杀系统之所以挂，请求都压倒了后端数据层，数据读写锁冲突严重，并发高响应慢，几乎所有请求都超时，流量虽大，下单成功的有效流量甚小。以 12306 为例，一趟火车其实只有 2000 张票，200w 个人来买，基本没有人能买成功，请求有效率为 0。</p>
 <p>（2）充分利用缓存，秒杀买票，这是一个典型的读多写少的应用场景，大部分请求是车次查询，票查询，下单和支付才是写请求。一趟火车其实只有 2000 张票，200w 个人来买，最多 2000 个人下单成功，其他人都是查询库存，写比例只有 0.1%，读比例占 99.9%，非常适合使用缓存来优化。好，后续讲讲怎么个 “将请求尽量拦截在系统上游” 法，以及怎么个 “缓存” 法，讲讲细节。</p>
 <h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p>Java 的学习路线，看了什么书</p>
+<h1 id="我的面试"><a href="#我的面试" class="headerlink" title="我的面试"></a>我的面试</h1><p>头条的面试比我想象的要简单一些，题目基本上都遇到过了，但自己准备得不太充分，导致面试结果很差，所以好好准备对面试还是很有帮助的。</p>
+<h2 id="复盘"><a href="#复盘" class="headerlink" title="复盘"></a>复盘</h2><h3 id="非代码类"><a href="#非代码类" class="headerlink" title="非代码类"></a>非代码类</h3><h4 id="操作系统概述"><a href="#操作系统概述" class="headerlink" title="操作系统概述"></a>操作系统概述</h4><p>进程与线程的区别</p>
+<p>进程之间如何通信</p>
+<ol>
+<li><p>管道：速度慢，容量有限，只有父子进程能通讯。</p>
+</li>
+<li><p>FIFO：任何进程间都能通讯，但速度慢。</p>
+</li>
+<li><p>消息队列：容量受到系统限制，且要注意第一次读的时候，要考虑上一次没有读完数据的问题。</p>
+</li>
+<li><p>信号量：不能传递复杂消息，只能用来同步。</p>
+</li>
+<li><p>共享内存区：能够很容易控制容量，速度快，但要保持同步，比如一个进程在写的时候，另一个进程要注意读写的问题，相当于线程中的线程安全，当然，共享内存区同样可以用作线程间通讯，不过没这个必要，线程间本来就已经共享了同一进程内的一块内存。</p>
+</li>
+</ol>
+<p>在CMD中按下 Ctrl+c 会出现什么</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	AttachConsole(PID); <span class="comment">// attach to process console</span></div><div class="line">	SetConsoleCtrlHandler(<span class="literal">NULL</span>, TRUE); <span class="comment">// disable Control+C handling for our app</span></div><div class="line">	GenerateConsoleCtrlEvent(CTRL_C_EVENT, <span class="number">0</span>); <span class="comment">// generate Control+C event</span></div><div class="line"></div><div class="line">	HANDLE hProcess = OpenProcess(PROCESS_TERMINATE, FALSE, PID);</div><div class="line">	<span class="keyword">if</span> (INVALID_HANDLE_VALUE == hProcess)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">return</span> ;</div><div class="line">	&#125;</div><div class="line">	WaitForSingleObject(hProcess, INFINITE);</div><div class="line">	CloseHandle(hProcess);</div><div class="line">	Sleep(<span class="number">2000</span>); <span class="comment">//等待2秒，以防止自身被关闭。</span></div><div class="line"></div><div class="line">	FreeConsole();</div><div class="line">	SetConsoleCtrlHandler(<span class="literal">NULL</span>, FALSE);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="网络原理"><a href="#网络原理" class="headerlink" title="网络原理"></a>网络原理</h4><p>三次握手，四次挥手</p>
+<p>如果不进行第四次挥手，会带来什么问题</p>
+<h4 id="数据库原理"><a href="#数据库原理" class="headerlink" title="数据库原理"></a>数据库原理</h4><p>介绍数据的 ACID 四个特性</p>
+<p>数据库如何实现索引</p>
+<p>介绍一下 InnoDB</p>
+<h3 id="代码类"><a href="#代码类" class="headerlink" title="代码类"></a>代码类</h3><ol>
+<li><p>手写两链表相加 1 -&gt; 2 -&gt; 3 -&gt; 4 + 2 -&gt; 3 -&gt; 4 = 1 -&gt; 4 -&gt; 6 -&gt; 8</p>
+</li>
+<li><p>写两线程分别是 [1,3,5,7] [2,4,6,8] 交替打印出， [1,2,3,4,5,6,7,8]</p>
+</li>
+</ol>
+<h2 id="自我总结"><a href="#自我总结" class="headerlink" title="自我总结"></a>自我总结</h2><p>我有4个问题，</p>
+<ol>
+<li><p>表达问题，无论是自我介绍还是在回答问题时，表述十分不流利。</p>
+</li>
+<li><p>项目问题，项目介绍不自信。</p>
+</li>
+<li><p>题目问题，题目不能保证90%的回答。</p>
+</li>
+<li><p>手写题目，手写代码能力偏弱。</p>
+</li>
+</ol>
+<h2 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h2><p>针对以上四个问题，我应该这么去解决</p>
+<ol>
+<li><p>准备面试不仅要看懂原理，也应该学会如何去表达，尝试复述问题的答案。</p>
+</li>
+<li><p>项目没有吃透，我应该围绕着我写的项目去搞懂里面的知识。</p>
+</li>
+<li><p>多留一些时间去准备面试问题，对症下药很重要。</p>
+</li>
+<li><p>我要把Leetcode里重点题目写得滚瓜烂熟。</p>
+</li>
+</ol>
 
 
     <!-- 显示photos -->
@@ -342,6 +392,10 @@
   
       <div class="post-nav-item post-nav-prev">
         
+          <a href="/2018/12/13/OS/" rel="prev" title="【技术向】操作系统原理">
+            【技术向】操作系统原理 <span>〉</span>
+          </a>
+        
       </div>
     </div>
   
@@ -349,7 +403,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-基础"><span class="toc-text">Java 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#堆与栈的区别"><span class="toc-text">堆与栈的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#volatile-synchronized-关键字"><span class="toc-text">volatile, synchronized 关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hashmap"><span class="toc-text">Hashmap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash-冲突"><span class="toc-text">Hash 冲突</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-Clone复制对象"><span class="toc-text">Java Clone复制对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-的三大特性：多态是怎么实现的"><span class="toc-text">Java 的三大特性：多态是怎么实现的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList-LinkedList-实现对比，使用场景"><span class="toc-text">ArrayList/LinkedList 实现对比，使用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#int-和-Integer-区别"><span class="toc-text">int 和 Integer 区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JVM"><span class="toc-text">JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM原理"><span class="toc-text">JVM原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java内存区域的分配"><span class="toc-text">Java内存区域的分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类加载机制"><span class="toc-text">类加载机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化时机"><span class="toc-text">初始化时机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#加载过程"><span class="toc-text">加载过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GC回收机制"><span class="toc-text">GC回收机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#回收对象"><span class="toc-text">回收对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何回收"><span class="toc-text">如何回收</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Minor-GC条件"><span class="toc-text">Minor GC条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GC-算法"><span class="toc-text">GC 算法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#架构"><span class="toc-text">架构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#进程线程，通信方式，同步方式"><span class="toc-text">进程线程，通信方式，同步方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线程通信"><span class="toc-text">线程通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程通信"><span class="toc-text">进程通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程同步"><span class="toc-text">线程同步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dubbo"><span class="toc-text">Dubbo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RPC"><span class="toc-text">RPC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异步和同步"><span class="toc-text">异步和同步</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#操作系统"><span class="toc-text">操作系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#协程"><span class="toc-text">协程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存管理"><span class="toc-text">内存管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁是啥，死锁产生的条件是什么"><span class="toc-text">死锁是啥，死锁产生的条件是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wait-notify-notifyAll"><span class="toc-text">wait(), notify()/notifyAll()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正在-wait-的线程被唤醒后会发生什么"><span class="toc-text">正在 wait 的线程被唤醒后会发生什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#notifyAll-唤醒所有的等待线程后会发生什么"><span class="toc-text">notifyAll 唤醒所有的等待线程后会发生什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-命令-如何杀死占用指定端口的进程"><span class="toc-text">Linux 命令 如何杀死占用指定端口的进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程之间共享数据的方式"><span class="toc-text">线程之间共享数据的方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程和线程的区别"><span class="toc-text">进程和线程的区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据库"><span class="toc-text">数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库事务隔离级别"><span class="toc-text">数据库事务隔离级别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库的-ACID"><span class="toc-text">数据库的 ACID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库乐观锁悲观锁，以及乐观锁如何实现"><span class="toc-text">数据库乐观锁悲观锁，以及乐观锁如何实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库索引"><span class="toc-text">数据库索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要用B-树，B-树和B树的区别"><span class="toc-text">为什么要用B+树，B+树和B树的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#联合索引，最左匹配"><span class="toc-text">联合索引，最左匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是红黑树"><span class="toc-text">什么是红黑树</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#网络与服务器"><span class="toc-text">网络与服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据结构与算法"><span class="toc-text">数据结构与算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实践"><span class="toc-text">实践</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其它"><span class="toc-text">其它</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-基础"><span class="toc-text">Java 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#堆与栈的区别"><span class="toc-text">堆与栈的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#volatile-synchronized-关键字"><span class="toc-text">volatile, synchronized 关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hashmap"><span class="toc-text">Hashmap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash-冲突"><span class="toc-text">Hash 冲突</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-Clone复制对象"><span class="toc-text">Java Clone复制对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-的三大特性：多态是怎么实现的"><span class="toc-text">Java 的三大特性：多态是怎么实现的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList-LinkedList-实现对比，使用场景"><span class="toc-text">ArrayList/LinkedList 实现对比，使用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#int-和-Integer-区别"><span class="toc-text">int 和 Integer 区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JVM"><span class="toc-text">JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM原理"><span class="toc-text">JVM原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java内存区域的分配"><span class="toc-text">Java内存区域的分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类加载机制"><span class="toc-text">类加载机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化时机"><span class="toc-text">初始化时机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#加载过程"><span class="toc-text">加载过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GC回收机制"><span class="toc-text">GC回收机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#回收对象"><span class="toc-text">回收对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何回收"><span class="toc-text">如何回收</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Minor-GC条件"><span class="toc-text">Minor GC条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GC-算法"><span class="toc-text">GC 算法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#架构"><span class="toc-text">架构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#进程线程，通信方式，同步方式"><span class="toc-text">进程线程，通信方式，同步方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线程通信"><span class="toc-text">线程通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程通信"><span class="toc-text">进程通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程同步"><span class="toc-text">线程同步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dubbo"><span class="toc-text">Dubbo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RPC"><span class="toc-text">RPC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异步和同步"><span class="toc-text">异步和同步</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#操作系统"><span class="toc-text">操作系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#协程"><span class="toc-text">协程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存管理"><span class="toc-text">内存管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁是啥，死锁产生的条件是什么"><span class="toc-text">死锁是啥，死锁产生的条件是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wait-notify-notifyAll"><span class="toc-text">wait(), notify()/notifyAll()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正在-wait-的线程被唤醒后会发生什么"><span class="toc-text">正在 wait 的线程被唤醒后会发生什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#notifyAll-唤醒所有的等待线程后会发生什么"><span class="toc-text">notifyAll 唤醒所有的等待线程后会发生什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-命令-如何杀死占用指定端口的进程"><span class="toc-text">Linux 命令 如何杀死占用指定端口的进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程之间共享数据的方式"><span class="toc-text">线程之间共享数据的方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程和线程的区别"><span class="toc-text">进程和线程的区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据库"><span class="toc-text">数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库事务隔离级别"><span class="toc-text">数据库事务隔离级别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库的-ACID"><span class="toc-text">数据库的 ACID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库乐观锁悲观锁，以及乐观锁如何实现"><span class="toc-text">数据库乐观锁悲观锁，以及乐观锁如何实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库索引"><span class="toc-text">数据库索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要用B-树，B-树和B树的区别"><span class="toc-text">为什么要用B+树，B+树和B树的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#联合索引，最左匹配"><span class="toc-text">联合索引，最左匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是红黑树"><span class="toc-text">什么是红黑树</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#网络与服务器"><span class="toc-text">网络与服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据结构与算法"><span class="toc-text">数据结构与算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实践"><span class="toc-text">实践</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其它"><span class="toc-text">其它</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的面试"><span class="toc-text">我的面试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#复盘"><span class="toc-text">复盘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#非代码类"><span class="toc-text">非代码类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#操作系统概述"><span class="toc-text">操作系统概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网络原理"><span class="toc-text">网络原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库原理"><span class="toc-text">数据库原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码类"><span class="toc-text">代码类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自我总结"><span class="toc-text">自我总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何解决"><span class="toc-text">如何解决</span></a></li></ol></li></ol>
   </div>
 
 

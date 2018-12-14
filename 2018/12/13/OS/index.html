@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#202020" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  
+  <meta name="keywords" content="操作系统,线程与进程,主存管理,分布式系统," />
+  
+
+  
+  <meta name="description" content="【技术向】操作系统原理" />
+  
+
+  <link rel="icon" type="image/x-icon" href="/img/logo.png">
+  <title>
+    【技术向】操作系统原理 [ 仁梓小舍 ]
+  </title>
+  
+  <!-- stylesheets list from config.yml -->
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css">
+  
+  <link rel="stylesheet" href="/css/microb.css">
+  
+  
+<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+  <ul class="pure-menu-list float-r clearfix">
+    
+    <li class="pure-menu-item toc-menu">
+      <a id="menu-main-post" class="pure-menu-link" href="javascript:;">
+        <img class="menu-icon" src="/img/logo.png" alt="MENU">
+      </a>
+    </li>
+    
+  </ul>
+  <a class="pure-menu-heading" href="/">
+    <h1 class="title">
+      仁梓小舍
+    </h1>
+    <!-- <span>null</span> -->
+  </a>
+  <!-- 
+  <img class="logo" id="logo" src="/logo.png" alt="logo">
+   -->
+</nav>
+
+  <div class="container" id="content-outer">
+    <div class="inner" id="content-inner">
+      <article class="post" id="post">
+  <header class="post-header text-center">
+    <h1 class="title">
+      【技术向】操作系统原理
+    </h1>
+    
+    <time class="time" datetime="2018-12-13T03:42:48.000Z">
+      2018-12-13
+    </time>
+    
+    <hr>
+  </header>
+  <div class="post-content">
+    <h1 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h1><h2 id="进程定义"><a href="#进程定义" class="headerlink" title="进程定义"></a>进程定义</h2><p><strong>进程</strong>（process）是指一个具有一定独立功能的程序关于某个数据集合的一次运行活动。</p>
+<p>进程有着“执行-暂停-执行”的活动规律，所以进程通常有三种状态：</p>
+<ol>
+<li><p>就绪（ready）状态：进程获得了除CPU之外的所有资源，它就已经准备就绪。</p>
+</li>
+<li><p>运行（running）状态：当进程获得调度模块分派后，进入运行状态。</p>
+</li>
+<li><p>阻塞（wait）状态：若一个进程正在等待某一事件（例如I/O）发生而暂时停止执行。</p>
+</li>
+</ol>
+<p>进程的构成： 进程控制块 PCB + 程序段（数据）。</p>
+<p>进程控制块中通常包含了：进程的名字，当前状态和next指针等。</p>
+<h2 id="线程定义"><a href="#线程定义" class="headerlink" title="线程定义"></a>线程定义</h2><p><strong>线程</strong>（threads）是进程中的一条执行路径。</p>
+<p>线程特点：</p>
+<ol>
+<li><p>他有自己私有的堆栈和处理机执行环境；他有自己私有的栈和处理机执行环境（尤其是处理器寄存器）。</p>
+</li>
+<li><p>共享分配给父进程的主存。</p>
+</li>
+<li><p>单个进程中拥有许多线程。</p>
+</li>
+</ol>
+<p>进程与线程的区别：</p>
+<ol>
+<li><p>进程和线程，进程有自己的独立地址空间，每启动一个进程，系统就会为它分配地址空间，建立数据表来维护代码段、堆栈段和数据段，这种操作非常昂贵。而线程是共享进程中的数据的，使用相同的地址空间，因此 CPU 切换一个线程的花费远比进程要小很多，同时创建一个线程的开销也比进程要小很多。</p>
+</li>
+<li><p>线程之间的通信更方便，同一进程下的线程共享全局变量、静态变量等数据，而进程之间的通信需要以通信的方式（IPC) 进行。不过如何处理好同步与互斥是编写多线程程序的难点。</p>
+</li>
+<li><p>多进程程序更健壮，多线程程序只要有一个线程死掉，整个进程也死掉了，而一个进程死掉并不会对另外一个进程造成影响，因为进程有自己独立的地址空间。</p>
+</li>
+</ol>
+<h2 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h2><p>进程之间的相互制约是通过进程通信来实现的，他们之间需要交换信息以便达到目的，也就是需要 <strong>同步</strong>。</p>
+<p>通常把一次仅允许一个进程使用的自愿成为 <strong>临界资源</strong>。</p>
+<p>访问临界资源的那段程序从概念上抽离出来，称为 <strong>临界区</strong>或 <strong>临界段</strong>。</p>
+<p>通过 <strong>互斥</strong> 解决了并发进程对临界区的的使用问题。</p>
+<p>操作系统提供提供的同步方式有：</p>
+<ol>
+<li><p>锁的上锁和开锁</p>
+</li>
+<li><p>信号量和其P、V操作</p>
+</li>
+</ol>
+<p><strong>生产者-消费者问题</strong>，计算机每个进程都可以消费（使用）或生产（释放）某类资源，通常实现的手段是信号灯P、V操作。</p>
+<h2 id="进程间通信（IPC）"><a href="#进程间通信（IPC）" class="headerlink" title="进程间通信（IPC）"></a>进程间通信（IPC）</h2><p>IPC 机制是一个进程与另一个进程间共享消息的一种方式，消息（message）是发送进程的一个消息块，通过信息的语法表示传送进程形成的一个信息块，通过信息的语法表示传送内容到接受进程。</p>
+<p>!()[<a href="https://i.loli.net/2018/12/14/5c131da3bbab2.png" target="_blank" rel="external">https://i.loli.net/2018/12/14/5c131da3bbab2.png</a>]</p>
+<h1 id="资源分配"><a href="#资源分配" class="headerlink" title="资源分配"></a>资源分配</h1><h2 id="资源分配的目的是"><a href="#资源分配的目的是" class="headerlink" title="资源分配的目的是"></a>资源分配的目的是</h2><ol>
+<li><p>保证资源的高利用率。</p>
+</li>
+<li><p>在 “合理” 时间内使所有顾客获得所需资源的机会。</p>
+</li>
+<li><p>对不可共享的资源实施互斥使用。</p>
+</li>
+<li><p>防止由资源分配不当而引起的死锁。</p>
+</li>
+</ol>
+<h2 id="资源分配原则"><a href="#资源分配原则" class="headerlink" title="资源分配原则"></a>资源分配原则</h2><ol>
+<li><p>资源数据结构的描述。</p>
+</li>
+<li><p>确定资源分配的原则和调度原则。</p>
+</li>
+<li><p>执行资源分配。</p>
+</li>
+<li><p>存取控制和安全保护。</p>
+</li>
+</ol>
+<h2 id="资源分配的策略"><a href="#资源分配的策略" class="headerlink" title="资源分配的策略"></a>资源分配的策略</h2><ol>
+<li><p>先请求先服务</p>
+</li>
+<li><p>优先调度原则：根据优先级调度</p>
+</li>
+</ol>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><h3 id="死锁产生原因"><a href="#死锁产生原因" class="headerlink" title="死锁产生原因"></a>死锁产生原因</h3><ol>
+<li><p>系统资源不足</p>
+</li>
+<li><p>进程推进顺序非法</p>
+</li>
+</ol>
+<h3 id="死锁产生必要条件"><a href="#死锁产生必要条件" class="headerlink" title="死锁产生必要条件"></a>死锁产生必要条件</h3><ol>
+<li><p>互斥条件：设计的资源是非共享的，一次只有一个进程使用。</p>
+</li>
+<li><p>不剥夺条件（非抢占）：资源在进程使用完之前只能由自己释放。</p>
+</li>
+<li><p>占有并等待（部分分配）：进程每次申请它所需要的一部分资源。在等待新资源时继续占有分配到的资源。</p>
+</li>
+<li><p>环路条件（循环等待）：链中每一个进程以获得的资源同时被下一个进程请求。</p>
+</li>
+</ol>
+<h3 id="死锁的避免"><a href="#死锁的避免" class="headerlink" title="死锁的避免"></a>死锁的避免</h3><ol>
+<li><p>有序资源分配法</p>
+</li>
+<li><p>银行家算法</p>
+</li>
+</ol>
+<h2 id="处理机调度"><a href="#处理机调度" class="headerlink" title="处理机调度"></a>处理机调度</h2><ol>
+<li><p>先来先服务调度算法</p>
+</li>
+<li><p>短作业优先调度算法</p>
+</li>
+<li><p>响应比高者优先调度算法</p>
+</li>
+<li><p>优先调度算法</p>
+</li>
+</ol>
+
+
+    <!-- 显示photos -->
+    
+
+  </div>
+  <div class="post-tags">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主存管理/">主存管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式系统/">分布式系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线程与进程/">线程与进程</a></li></ul>
+  </div>
+</article>
+  
+    <div class="post-nav">
+      <div class="post-nav-item post-nav-next">
+        
+          <a href="/2018/12/04/面试准备/" rel="next" title="【技术向】头条实习面试问题准备 &amp; 挂经">
+            <span>〈 </span> 【技术向】头条实习面试问题准备 &amp; 挂经
+          </a>
+        
+      </div>
+  
+      <div class="post-nav-item post-nav-prev">
+        
+      </div>
+    </div>
+  
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#进程与线程"><span class="toc-text">进程与线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#进程定义"><span class="toc-text">进程定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程定义"><span class="toc-text">线程定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程同步"><span class="toc-text">进程同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程间通信（IPC）"><span class="toc-text">进程间通信（IPC）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#资源分配"><span class="toc-text">资源分配</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#资源分配的目的是"><span class="toc-text">资源分配的目的是</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#资源分配原则"><span class="toc-text">资源分配原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#资源分配的策略"><span class="toc-text">资源分配的策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁"><span class="toc-text">死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁产生原因"><span class="toc-text">死锁产生原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁产生必要条件"><span class="toc-text">死锁产生必要条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁的避免"><span class="toc-text">死锁的避免</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#处理机调度"><span class="toc-text">处理机调度</span></a></li></ol></li></ol>
+  </div>
+
+
+    </div>
+
+    
+
+  </div>
+
+  <footer class="footer text-center">
+    <div id="bottom-inner">
+      
+        <a href="http://hexo.io" target="_blank" class="footer-link">Hexo</a>
+      
+        <a href="https://github.com/microacup/hexo-theme-micorb" target="_blank" class="footer-link">Theme microb</a>
+      
+    </div>
+  </footer>
+  
+
+<!-- <script>
+  var titleTime,originTitle=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="[闷声发大财中...] "+originTitle,clearTimeout(titleTime)):(document.title="[+1s] "+originTitle,titleTime=setTimeout(function(){document.title=originTitle},2e3))});
+</script> -->
+
+<script>
+  (function (window, document) {
+    window.requestAnimationFrame = (function () {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback) {
+          setTimeout(callback, 1000 / 60);
+        }
+    })();
+
+    function init() {
+      addMenuEvent();
+    }
+    init();
+
+    function addMenuEvent() {
+      var menu = document.getElementById('menu-main-post');
+      if (menu) {
+        var toc = document.getElementById('toc');
+        menu.title = toc ? '目录' : '回到顶部';
+        menu.onclick = function () {
+          if (toc) {
+            if (toc.style.display == 'block') {
+              toc.style.display = 'none';
+            } else {
+              toc.style.display = 'block';
+            }
+          } else {
+            returnTop();
+          }
+        };
+      }
+    }
+
+    var timer = null;
+
+    function returnTop() {
+      cancelAnimationFrame(timer);
+      timer = requestAnimationFrame(function fn() {
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (oTop > 0) {
+          document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+          timer = requestAnimationFrame(fn);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      });
+    }
+
+  })(window, document);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+
+</body>
+</html>
