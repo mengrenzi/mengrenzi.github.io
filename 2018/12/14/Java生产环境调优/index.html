@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#202020" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  
+  <meta name="keywords" content="Java,JVM," />
+  
+
+  
+  <meta name="description" content="Java生产环境性能监控与调优" />
+  
+
+  <link rel="icon" type="image/x-icon" href="/img/logo.png">
+  <title>
+    Java生产环境性能监控与调优 [ 仁梓小舍 ]
+  </title>
+  
+  <!-- stylesheets list from config.yml -->
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css">
+  
+  <link rel="stylesheet" href="/css/microb.css">
+  
+  
+<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+  <ul class="pure-menu-list float-r clearfix">
+    
+    <li class="pure-menu-item toc-menu">
+      <a id="menu-main-post" class="pure-menu-link" href="javascript:;">
+        <img class="menu-icon" src="/img/logo.png" alt="MENU">
+      </a>
+    </li>
+    
+  </ul>
+  <a class="pure-menu-heading" href="/">
+    <h1 class="title">
+      仁梓小舍
+    </h1>
+    <!-- <span>null</span> -->
+  </a>
+  <!-- 
+  <img class="logo" id="logo" src="/logo.png" alt="logo">
+   -->
+</nav>
+
+  <div class="container" id="content-outer">
+    <div class="inner" id="content-inner">
+      <article class="post" id="post">
+  <header class="post-header text-center">
+    <h1 class="title">
+      Java生产环境性能监控与调优
+    </h1>
+    
+    <time class="time" datetime="2018-12-14T10:42:59.000Z">
+      2018-12-14
+    </time>
+    
+    <hr>
+  </header>
+  <div class="post-content">
+    <h1 id="基于JDK-命令行工具的监控"><a href="#基于JDK-命令行工具的监控" class="headerlink" title="基于JDK 命令行工具的监控"></a>基于JDK 命令行工具的监控</h1><h2 id="JVM的参数"><a href="#JVM的参数" class="headerlink" title="JVM的参数"></a>JVM的参数</h2><p>JDK8 文档查看： <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix" target="_blank" rel="external">https://docs.oracle.com/javase/8/docs/technotes/tools/unix</a></p>
+<h3 id="参数分类"><a href="#参数分类" class="headerlink" title="参数分类"></a>参数分类</h3><ul>
+<li>标准参数（基本不随着JVM版本变化而变化）<ul>
+<li>help</li>
+<li>server -client</li>
+<li>version - showversion</li>
+<li>cp -classpath</li>
+</ul>
+</li>
+<li>x参数（非标准参数，随着JVM版本变化变化较大）<ul>
+<li>Xint: 解释执行</li>
+<li>Xcomp: 第一使用就编译成本地代码</li>
+<li>Xmixed: 混合模式，JVM自己来决定是否编译成本地代码</li>
+</ul>
+</li>
+<li>xx参数（用处很大，随着JVM版本变化变化较大）<ul>
+<li>Boolean 类型<ul>
+<li>格式：-XX:[+-]<name> 表示启用或者禁用name属性</name></li>
+<li>例子：-XX:+UseConcMarkSweepGC</li>
+</ul>
+</li>
+<li>非 Boolean 类型<ul>
+<li>格式: -XX:<name>=<value>表示name属性的值是value</value></name></li>
+<li>例子：-XX:MaxGCPauseMillis=500</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h3><h4 id="jps"><a href="#jps" class="headerlink" title="jps"></a>jps</h4><blockquote>
+<p>Lists the instrumented Java Virtual Machines (JVMs) on the target system. This command is experimental and unsupported.</p>
+</blockquote>
+<p>列出所有虚拟机</p>
+<h4 id="jstat"><a href="#jstat" class="headerlink" title="jstat"></a>jstat</h4><blockquote>
+<p>Monitors Java Virtual Machine (JVM) statistics. This command is experimental and unsupported.</p>
+</blockquote>
+<p>数据统计:</p>
+<ul>
+<li><p>jstat -class 类加载的信息</p>
+</li>
+<li><p>jstat -gc 垃圾收集信息</p>
+</li>
+<li><p>jstat -compiler 编译信息</p>
+</li>
+</ul>
+<h2 id="jmap-MAT-实战内存溢出"><a href="#jmap-MAT-实战内存溢出" class="headerlink" title="jmap + MAT 实战内存溢出"></a>jmap + MAT 实战内存溢出</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">* -Xmx32M -Xms32M</div><div class="line">* 堆内存溢出</div><div class="line">**/</div><div class="line"><span class="meta">@GetMapping</span>(<span class="string">"/heap"</span>)</div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">heap</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</div><div class="line">        userList.add ( <span class="keyword">new</span> User (i++, UUID.randomUUID ().toString ()) );</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">  * -XX: MetaspaceSize=32M -XX:MaxMetaspaceSize=32M</div><div class="line">  */</div><div class="line"></div><div class="line"><span class="meta">@GetMapping</span>(<span class="string">"/nonheap"</span>)</div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">nonheap</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</div><div class="line">        classList.addAll ( Metaspace.createClasses () );</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>内存溢出自动导出</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">-XX:+HeapDumpOnOutOfMemoryError</div><div class="line">-XX:HeapDumpPath=./</div></pre></td></tr></table></figure>
+<ul>
+<li>使用jmap命令手动导出</li>
+</ul>
+<h2 id="jstack-实战死循环与死锁"><a href="#jstack-实战死循环与死锁" class="headerlink" title="jstack 实战死循环与死锁"></a>jstack 实战死循环与死锁</h2>
+
+    <!-- 显示photos -->
+    
+
+  </div>
+  <div class="post-tags">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/">JVM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+  </div>
+</article>
+  
+    <div class="post-nav">
+      <div class="post-nav-item post-nav-next">
+        
+          <a href="/2018/12/13/OS/" rel="next" title="【技术向】操作系统原理">
+            <span>〈 </span> 【技术向】操作系统原理
+          </a>
+        
+      </div>
+  
+      <div class="post-nav-item post-nav-prev">
+        
+      </div>
+    </div>
+  
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基于JDK-命令行工具的监控"><span class="toc-text">基于JDK 命令行工具的监控</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM的参数"><span class="toc-text">JVM的参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数分类"><span class="toc-text">参数分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用参数"><span class="toc-text">常用参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#jps"><span class="toc-text">jps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jstat"><span class="toc-text">jstat</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jmap-MAT-实战内存溢出"><span class="toc-text">jmap + MAT 实战内存溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jstack-实战死循环与死锁"><span class="toc-text">jstack 实战死循环与死锁</span></a></li></ol></li></ol>
+  </div>
+
+
+    </div>
+
+    
+
+  </div>
+
+  <footer class="footer text-center">
+    <div id="bottom-inner">
+      
+        <a href="http://hexo.io" target="_blank" class="footer-link">Hexo</a>
+      
+        <a href="https://github.com/microacup/hexo-theme-micorb" target="_blank" class="footer-link">Theme microb</a>
+      
+    </div>
+  </footer>
+  
+
+<!-- <script>
+  var titleTime,originTitle=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="[闷声发大财中...] "+originTitle,clearTimeout(titleTime)):(document.title="[+1s] "+originTitle,titleTime=setTimeout(function(){document.title=originTitle},2e3))});
+</script> -->
+
+<script>
+  (function (window, document) {
+    window.requestAnimationFrame = (function () {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback) {
+          setTimeout(callback, 1000 / 60);
+        }
+    })();
+
+    function init() {
+      addMenuEvent();
+    }
+    init();
+
+    function addMenuEvent() {
+      var menu = document.getElementById('menu-main-post');
+      if (menu) {
+        var toc = document.getElementById('toc');
+        menu.title = toc ? '目录' : '回到顶部';
+        menu.onclick = function () {
+          if (toc) {
+            if (toc.style.display == 'block') {
+              toc.style.display = 'none';
+            } else {
+              toc.style.display = 'block';
+            }
+          } else {
+            returnTop();
+          }
+        };
+      }
+    }
+
+    var timer = null;
+
+    function returnTop() {
+      cancelAnimationFrame(timer);
+      timer = requestAnimationFrame(function fn() {
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (oTop > 0) {
+          document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+          timer = requestAnimationFrame(fn);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      });
+    }
+
+  })(window, document);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+
+</body>
+</html>
