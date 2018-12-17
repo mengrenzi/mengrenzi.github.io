@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#202020" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  
+  <meta name="keywords" content="Java,后端," />
+  
+
+  
+  <meta name="description" content="【技术向】后端实习面试题总结" />
+  
+
+  <link rel="icon" type="image/x-icon" href="/img/logo.png">
+  <title>
+    【技术向】后端实习面试题总结 [ 仁梓小舍 ]
+  </title>
+  
+  <!-- stylesheets list from config.yml -->
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css">
+  
+  <link rel="stylesheet" href="/css/microb.css">
+  
+  
+<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+  <ul class="pure-menu-list float-r clearfix">
+    
+    <li class="pure-menu-item toc-menu">
+      <a id="menu-main-post" class="pure-menu-link" href="javascript:;">
+        <img class="menu-icon" src="/img/logo.png" alt="MENU">
+      </a>
+    </li>
+    
+  </ul>
+  <a class="pure-menu-heading" href="/">
+    <h1 class="title">
+      仁梓小舍
+    </h1>
+    <!-- <span>null</span> -->
+  </a>
+  <!-- 
+  <img class="logo" id="logo" src="/logo.png" alt="logo">
+   -->
+</nav>
+
+  <div class="container" id="content-outer">
+    <div class="inner" id="content-inner">
+      <article class="post" id="post">
+  <header class="post-header text-center">
+    <h1 class="title">
+      【技术向】后端实习面试题总结
+    </h1>
+    
+    <time class="time" datetime="2018-12-15T08:47:06.000Z">
+      2018-12-15
+    </time>
+    
+    <hr>
+  </header>
+  <div class="post-content">
+    <h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p>将一个知识点 分解为  xxx 是什么，xxx 有什么用，如何实现这个功能的（核心的工作流程），缺点是什么（以及为什么有这个缺点，缺点如何补救）。</p>
+<p>举个例子， CMS 垃圾回收器回收时为什么有内存碎片 ， 首先分解为 CMS 是什么，内存碎片是什么？CMS 垃圾回收器有什么用和 Serial ParNew Parallel 等比较，优势，CMS 是如何工作的，来实现尽可能降低响应时间的，为什么 CMS 有这个缺点，它是如何取舍的，如何补救这个缺点。</p>
+<p>这些子问题都回答好，那么基本上这个问题就学的可以了。</p>
+<p>这样可以检测你是否学好，而且，若是你都没法条理清晰地讲给自己，那怎么条理清晰地讲给面试官呢？</p>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="原码、补码、反码"><a href="#原码、补码、反码" class="headerlink" title="原码、补码、反码"></a>原码、补码、反码</h2><ul>
+<li>原码</li>
+</ul>
+<p>原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值. 比如如果是 8 位二进制:</p>
+<blockquote>
+<p>[+1] 原 = 0000 0001</p>
+<p>[-1] 原 = 1000 0001</p>
+</blockquote>
+<ul>
+<li>反码</li>
+</ul>
+<p>正数的反码是其本身</p>
+<p>负数的反码是在其原码的基础上, 符号位不变，其余各个位取反。</p>
+<blockquote>
+<p>[+1] = [00000001] 原 = [00000001] 反</p>
+<p>[-1] = [10000001] 原 = [11111110] 反</p>
+</blockquote>
+<ul>
+<li>补码</li>
+</ul>
+<p>正数的补码就是其本身</p>
+<p>负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后 + 1. (即在反码的基础上 + 1)</p>
+<blockquote>
+<p>[+1] = [00000001] 原 = [00000001] 反 = [00000001] 补</p>
+<p>[-1] = [10000001] 原 = [11111110] 反 = [11111111] 补</p>
+</blockquote>
+<h1 id="操作系统与环境"><a href="#操作系统与环境" class="headerlink" title="操作系统与环境"></a>操作系统与环境</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>Java如何使用多线程交替打印数组？</p>
+<p>说一下进程和线程的区别？协程呢？</p>
+<p>进程之间如何通信？说几种方法并且举一个例子</p>
+<p>线程同步的方式</p>
+<p>wait() 和 notify() 使用场景和作用<br>notify()<br>notify 方法是一个 native 方法，并且也是 final 的，不允许子类重写。</p>
+<p>唤醒一个在此对象监视器上等待的线程 (监视器相当于就是锁的概念)。如果所有的线程都在此对象上等待，那么只会选择一个线程。选择是任意性的，并在对实现做出决定时发生。一个线程在对象监视器上等待可以调用 wait 方法。</p>
+<p>直到当前线程放弃对象上的锁之后，被唤醒的线程才可以继续处理。被唤醒的线程将以常规方式与在该对象上主动同步的其他所有线程进行竞争。例如，唤醒的线程在作为锁定此对象的下一个线程方面没有可靠的特权或劣势。</p>
+<p>notify 方法只能被作为此对象监视器的所有者的线程来调用。一个线程要想成为对象监视器的所有者，可以使用以下 3 种方法：</p>
+<p>执行对象的同步实例方法<br>使用 synchronized 内置锁<br>对于 Class 类型的对象，执行同步静态方法<br>一次只能有一个线程拥有对象的监视器。</p>
+<p>wait()<br>wait 方法会让当前线程 (我们先叫做线程 T) 将其自身放置在对象的等待集中，并且放弃该对象上的所有同步要求。出于线程调度目的，线程 T 是不可用并处于休眠状态，直到发生以下四件事中的任意一件：</p>
+<p>其他某个线程调用此对象的 notify 方法，并且线程 T 碰巧被任选为被唤醒的线程<br>其他某个线程调用此对象的 notifyAll 方法<br>其他某个线程调用 Thread.interrupt 方法中断线程 T<br>时间到了参数设置的超时时间。如果 timeout 参数为 0，则不会超时，会一直进行等待<br>所以可以理解 wait 方法相当于放弃了当前线程对对象监视器的所有者 (也就是说释放了对象的锁)。</p>
+<p>之后，线程 T 会被等待集中被移除，并且重新进行线程调度。然后，该线程以常规方式与其他线程竞争，以获得在该对象上同步的权利；一旦获得对该对象的控制权，该对象上的所有其同步声明都将被恢复到以前的状态，这就是调用 wait 方法时的情况。然后，线程 T 从 wait 方法的调用中返回。所以，从 wait 方法返回时，该对象和线程 T 的同步状态与调用 wait 方法时的情况完全相同。<br>d<br>锁 Object 和锁 class 的区别</p>
+<p>什么是死锁，死锁产生条件以及预防办法</p>
+<p>阻塞、非阻塞、异步等</p>
+<p>多线程与并发</p>
+<p>谈谈 Java 堆和栈？</p>
+<p>堆栈，栈溢出</p>
+<p>解释一下信号量？</p>
+<p>线程死锁如何调试？用什么工具来调试定位？</p>
+<p>进程和线程的区别</p>
+<p>什么是虚拟地址空间，如何完成虚拟地址空间到物理内存的映射</p>
+<p>多线程同步的方法</p>
+<p>线程同步有哪几种方式，解释一下 Volatile</p>
+<p>实现多线程的三种方式，说说线程池</p>
+<p>线程是不是开的越多越好，开多少合适，如何减少上下文切换开销，如何写个 shell 脚本获取上下文切换的开销？</p>
+<p>ReentrantLock 和 Synchronized 区别</p>
+<p>对 java 多线程有了解么？讲讲你对于多线程的学习和掌握</p>
+<p>什么情况下需要用到多线程，多线程的好处、使用、原理、调度</p>
+<p>有做过性能监测和调优相关的工作吗</p>
+<p>分布式锁如何实现</p>
+<p>除了加锁还有什么方法解决资源竞争</p>
+<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p>说一下内存管理机制</p>
+<p>内存泄露（如何产生，如何避免）</p>
+<p>磁盘如何存储</p>
+<p>静态资源分配和动态资源分配</p>
+<p>进程和线程的区别</p>
+<p>进程间通信的方式</p>
+<p>线程同步机制</p>
+<p>信号量的实现原理</p>
+<p>IPC 方式有哪些, 用过哪些, 你知道的锁有哪些种, 有什么区别. (锁的种类没答出来)</p>
+<p>说一说锁，原子变量怎么实现的</p>
+<p>公平锁的实现</p>
+<h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><p>GC</p>
+<p>类加载机制，说了双亲代理</p>
+<p>虚拟机有几个类加载器，又讲了双亲委派</p>
+<p>GC 判断和算法</p>
+<p>JVM 能用外面的内存吗</p>
+<p>JVM 内存分区、堆的分代</p>
+<p>JVM 垃圾回收算法</p>
+<p>线程池</p>
+<p>CMS 垃圾回收过程</p>
+<p>jvm 内存模型，1.6 1.7 1.8 哪里不同</p>
+<p>类加载机制</p>
+<p>gc 算法，可达性分析</p>
+<p>考虑对于老年代怎么解决互联网应用中 gc 停顿问题，怎么解决内存碎片问题<br>锁，sync，lock（公平锁，非公平锁，实现） 读写锁，cas，aqs<br>jvm 调优，命令行工具 jstack jmap</p>
+<p>jvm 工作原理</p>
+<p>gc 算法，内存模型</p>
+<p>为什么 jvm 调优经常会将 - Xms 和 - Xmx 参数设置成一样</p>
+<p>CGLib 创建动态代理的原理</p>
+<p>介绍一下 young gc、full gc、old gc、mix gc 的概念和区别，最好以具体垃圾收集器和收集算法为例进行介绍。</p>
+<p>JVM 如何提供反射特性（Unsafe，动态字节码生成）</p>
+<p>GC 策略</p>
+<p>JDK 1.7 及以下版本，字节码存储在哪个区域</p>
+<p>1.8 永久代的改变</p>
+<p>JDK 自带的动态代理有什么限制</p>
+<p>这里简要说明下 Java 中的绑定：绑定指的是把一个方法的调用与方法所在的类 (方法主体) 关联起来，对 java 来说，绑定分为静态绑定和动态绑定：</p>
+<p>静态绑定：即前期绑定。在程序执行前方法已经被绑定，此时由编译器或其它连接程序实现。针对 java，简单的可以理解为程序编译期的绑定。java 当中的方法只有 final，static，private 和构造方法是前期绑定的。<br>动态绑定：即晚期绑定，也叫运行时绑定。在运行时根据具体对象的类型进行绑定。在 java 中，几乎所有的方法都是后期绑定的。<br>类加载器虽然只用于实现类的加载动作，但它在 Java 程序中起到的作用却远远不限于类的加载阶段。对于任意一个类，都需要由它的类加载器和这个类本身一同确定其在就 Java 虚拟机中的唯一性，也就是说，即使两个类来源于同一个 Class 文件，只要加载它们的类加载器不同，那这两个类就必定不相等。这里的 “相等” 包括了代表类的 Class 对象的 equals（）、isAssignableFrom（）、isInstance（）等方法的返回结果，也包括了使用 instanceof 关键字对对象所属关系的判定结果。</p>
+<p>Class.forName 的运行过程</p>
+<p>问：G1 收集器是在哪个版本出来的？</p>
+<p>答：不太清楚，就说是 1.5 之后。</p>
+<p>问：那你知道内存 GC 的时候，要使用 Object 的什么方法吗？这个方法在什么时候使用？</p>
+<p>答：finalize 方法，在进行第一次标记的时候，如果发现 GC Root 不能触及到时，就调用这个方法，如果该对象还没有复活，那么在下一次就进行回收。这个方法不管是否复活，都只调用一次。</p>
+<p>最顶层的 ClassLoader 叫什么</p>
+<p>能获得 Bootstrap ClassLoader 的引用吗</p>
+<p>Synchronize 和 Lock 区别</p>
+<p>集合框架，线程池，ThreadLocal，Cookie Session,RDB AOF 等</p>
+<p>Java基础，集合类，List和Hashmap，还有concurrenthashmap对比，多线程</p>
+<p>抽象类和接口</p>
+<p>JVM内存模型，垃圾回收，问的很深，伊甸区复制到存活区究竟应该放到哪个地方，新建对象存在哪里</p>
+<p>多线程线程池如何自己实现，栈内存多线程</p>
+<p>动态代理和静态代理，正向代理和反向代理</p>
+<p>类加载，有哪些 ClassLoader</p>
+<p>JVM 回收算法和回收器，CMS 采用哪种回收算法，怎么解决内存碎片问题</p>
+<p>说一下 G1 的策略</p>
+<p> 操作系统如何控制一个资源只能被一个进程访问，也就是锁是如何实现的？（这里我说能不能从 Java 说，面试官说，我需要底层原理，Java 应该解释不清楚）<br>项目的抢购模块如何解决超卖的问题？</p>
+<p>项目里的 QPS 如何提高和优化的？</p>
+<ol>
+<li><p>GC 的原理<br>答：没引用的对象就是可以回收的了，不定时选择回收与否, 略…</p>
+</li>
+<li><p>栈和堆内存的区别<br>答：<br>1、栈区（stack）—由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈<br>2、堆区（heap）— 一般由程序员分配释放，若程序员不释放，程序结束时可能由 OS 回收。注意它与数据结构中的堆是两回事，分配方式倒是类似于链表<br>3、全局区（静态区）（static）—，全局变量和静态变量的存储是放在一块的，初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域。- 程序结束后有系统释放<br>4、文字常量区—常量字符串就是放在这里的。 程序结束后由系统释放</p>
+</li>
+</ol>
+<p>5、程序代码区—存放函数体的二进制代码。</p>
+<ol>
+<li>永生代是什么，为啥要有这个<br>答：永久代用于存放静态文件，如 Java 类、方法等，引用关系比较稳定，一般不进行垃圾管理。但是，有些应用可能会动态生成 Class，在有些 JVM 的实现中会给永生代添加一些必要的回收算法。</li>
+</ol>
+<p>问：那你怎么使用某种收集器呢？在哪个时候进行参数设置？</p>
+<p>答：（翻白眼）当然是在 Java 运行的时候啊。（当时面试官不满意，追问我在具体哪个阶段）就说了具体的 Java 文件，字节码文件，Javac 命令和 Java 命令使用，在 Java 命令运行 Class 文件的时候进行参数设置。</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>Linux 下如何查看文件？在文件中如何搜索关键字？</p>
+<p>用什么命令查看端口是否被占用？</p>
+<p>Linux 常用指令，软连接硬链接区别说一下</p>
+<p>Linux 进程间通信方式，管道的特点，消息队列的特点，什么时候使用这些通信方式，TB 级别数据传输使用何种进程间通信方式</p>
+<p>Linux 查看打开的网络端口的命令是什么?</p>
+<p>Linux 怎么抓包?</p>
+<p>linux 命令行中如何使用管道？</p>
+<p>java 线程池的几个参数的意义和实现机制。</p>
+<p>JVM 调优实践，JVM 分区，栈堆空间，分配策略</p>
+<p>Linux 用什么命令查看进程；</p>
+<p>常用的linux指令</p>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="常见排序算法的时间复杂度-空间复杂度"><a href="#常见排序算法的时间复杂度-空间复杂度" class="headerlink" title="常见排序算法的时间复杂度,空间复杂度"></a>常见排序算法的时间复杂度,空间复杂度</h2><p><img src="https://github.com/qiu-deqing/FE-interview/blob/master/img/sort-compare.png" alt="排序算法比较"></p>
+<h2 id="从浏览器地址栏输入url到显示页面的步骤-以HTTP为例"><a href="#从浏览器地址栏输入url到显示页面的步骤-以HTTP为例" class="headerlink" title="从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)"></a>从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)</h2><ol>
+<li>在浏览器地址栏输入URL</li>
+<li>浏览器查看<strong>缓存</strong>，如果请求资源在缓存中并且新鲜，跳转到转码步骤<ol>
+<li>如果资源未缓存，发起新请求</li>
+<li>如果已缓存，检验是否足够新鲜，足够新鲜直接提供给客户端，否则与服务器进行验证。</li>
+<li>检验新鲜通常有两个HTTP头进行控制<code>Expires</code>和<code>Cache-Control</code>：<ul>
+<li>HTTP1.0提供Expires，值为一个绝对时间表示缓存新鲜日期</li>
+<li>HTTP1.1增加了Cache-Control: max-age=,值为以秒为单位的最大新鲜时间</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>浏览器<strong>解析URL</strong>获取协议，主机，端口，path</li>
+<li>浏览器<strong>组装一个HTTP（GET）请求报文</strong></li>
+<li>浏览器<strong>获取主机ip地址</strong>，过程如下：<ol>
+<li>浏览器缓存</li>
+<li>本机缓存</li>
+<li>hosts文件</li>
+<li>路由器缓存</li>
+<li>ISP DNS缓存</li>
+<li>DNS递归查询（可能存在负载均衡导致每次IP不一样）</li>
+</ol>
+</li>
+<li><strong>打开一个socket与目标IP地址，端口建立TCP链接</strong>，三次握手如下：<ol>
+<li>客户端发送一个TCP的<strong>SYN=1，Seq=X</strong>的包到服务器端口</li>
+<li>服务器发回<strong>SYN=1， ACK=X+1， Seq=Y</strong>的响应包</li>
+<li>客户端发送<strong>ACK=Y+1， Seq=Z</strong></li>
+</ol>
+</li>
+<li>TCP链接建立后<strong>发送HTTP请求</strong></li>
+<li>服务器接受请求并解析，将请求转发到服务程序，如虚拟主机使用HTTP Host头部判断请求的服务程序</li>
+<li>服务器检查<strong>HTTP请求头是否包含缓存验证信息</strong>如果验证缓存新鲜，返回<strong>304</strong>等对应状态码</li>
+<li>处理程序读取完整请求并准备HTTP响应，可能需要查询数据库等操作</li>
+<li>服务器将<strong>响应报文通过TCP连接发送回浏览器</strong></li>
+<li>浏览器接收HTTP响应，然后根据情况选择<strong>关闭TCP连接或者保留重用，关闭TCP连接的四次握手如下</strong>：<ol>
+<li>主动方发送<strong>Fin=1， Ack=Z， Seq= X</strong>报文</li>
+<li>被动方发送<strong>ACK=X+1， Seq=Z</strong>报文</li>
+<li>被动方发送<strong>Fin=1， ACK=X， Seq=Y</strong>报文</li>
+<li>主动方发送<strong>ACK=Y， Seq=X</strong>报文</li>
+</ol>
+</li>
+<li>浏览器检查响应状态吗：是否为1XX，3XX， 4XX， 5XX，这些情况处理与2XX不同</li>
+<li>如果资源可缓存，<strong>进行缓存</strong></li>
+<li>对响应进行<strong>解码</strong>（例如gzip压缩）</li>
+<li>根据资源类型决定如何处理（假设资源为HTML文档）</li>
+<li><strong>解析HTML文档，构件DOM树，下载资源，构造CSSOM树，执行js脚本</strong>，这些操作没有严格的先后顺序，以下分别解释</li>
+<li><strong>构建DOM树</strong>：<ol>
+<li><strong>Tokenizing</strong>：根据HTML规范将字符流解析为标记</li>
+<li><strong>Lexing</strong>：词法分析将标记转换为对象并定义属性和规则</li>
+<li><strong>DOM construction</strong>：根据HTML标记关系将对象组成DOM树</li>
+</ol>
+</li>
+<li>解析过程中遇到图片、样式表、js文件，<strong>启动下载</strong></li>
+<li>构建<strong>CSSOM树</strong>：<ol>
+<li><strong>Tokenizing</strong>：字符流转换为标记流</li>
+<li><strong>Node</strong>：根据标记创建节点</li>
+<li><strong>CSSOM</strong>：节点创建CSSOM树</li>
+</ol>
+</li>
+<li><strong><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction" target="_blank" rel="external">根据DOM树和CSSOM树构建渲染树</a></strong>:<ol>
+<li>从DOM树的根节点遍历所有<strong>可见节点</strong>，不可见节点包括：1）<code>script</code>,<code>meta</code>这样本身不可见的标签。2)被css隐藏的节点，如<code>display: none</code></li>
+<li>对每一个可见节点，找到恰当的CSSOM规则并应用</li>
+<li>发布可视节点的内容和计算样式</li>
+</ol>
+</li>
+<li><strong>js解析如下</strong>：<ol>
+<li>浏览器创建Document对象并解析HTML，将解析到的元素和文本节点添加到文档中，此时<strong>document.readystate为loading</strong></li>
+<li>HTML解析器遇到<strong>没有async和defer的script时</strong>，将他们添加到文档中，然后执行行内或外部脚本。这些脚本会同步执行，并且在脚本下载和执行时解析器会暂停。这样就可以用document.write()把文本插入到输入流中。<strong>同步脚本经常简单定义函数和注册事件处理程序，他们可以遍历和操作script和他们之前的文档内容</strong></li>
+<li>当解析器遇到设置了<strong>async</strong>属性的script时，开始下载脚本并继续解析文档。脚本会在它<strong>下载完成后尽快执行</strong>，但是<strong>解析器不会停下来等它下载</strong>。异步脚本<strong>禁止使用document.write()</strong>，它们可以访问自己script和之前的文档元素</li>
+<li>当文档完成解析，document.readState变成interactive</li>
+<li>所有<strong>defer</strong>脚本会<strong>按照在文档出现的顺序执行</strong>，延迟脚本<strong>能访问完整文档树</strong>，禁止使用document.write()</li>
+<li>浏览器<strong>在Document对象上触发DOMContentLoaded事件</strong></li>
+<li>此时文档完全解析完成，浏览器可能还在等待如图片等内容加载，等这些<strong>内容完成载入并且所有异步脚本完成载入和执行</strong>，document.readState变为complete,window触发load事件</li>
+</ol>
+</li>
+<li><strong>显示页面</strong>（HTML解析过程中会逐步显示页面）</li>
+</ol>
+<h2 id="HTTP-request报文结构是怎样的"><a href="#HTTP-request报文结构是怎样的" class="headerlink" title="HTTP request报文结构是怎样的"></a>HTTP request报文结构是怎样的</h2><p><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html" target="_blank" rel="external">rfc2616</a>中进行了定义：</p>
+<ol>
+<li>首行是<strong>Request-Line</strong>包括：<strong>请求方法</strong>，<strong>请求URI</strong>，<strong>协议版本</strong>，<strong>CRLF</strong></li>
+<li>首行之后是若干行<strong>请求头</strong>，包括<strong>general-header</strong>，<strong>request-header</strong>或者<strong>entity-header</strong>，每个一行以CRLF结束</li>
+<li>请求头和消息实体之间有一个<strong>CRLF分隔</strong></li>
+<li>根据实际请求需要可能包含一个<strong>消息实体</strong><br>一个请求报文例子如下：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">GET /Protocols/rfc2616/rfc2616-sec5.html HTTP/1.1</div><div class="line">Host: www.w3.org</div><div class="line">Connection: keep-alive</div><div class="line">Cache-Control: max-age=0</div><div class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div><div class="line">User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36</div><div class="line">Referer: https://www.google.com.hk/</div><div class="line">Accept-Encoding: gzip,deflate,sdch</div><div class="line">Accept-Language: zh-CN,zh;q=0.8,en;q=0.6</div><div class="line">Cookie: authorstyle=yes</div><div class="line">If-None-Match: &quot;2cc8-3e3073913b100&quot;</div><div class="line">If-Modified-Since: Wed, 01 Sep 2004 13:24:52 GMT</div><div class="line"></div><div class="line">name=qiu&amp;age=25</div></pre></td></tr></table></figure>
+<h2 id="HTTP-response报文结构是怎样的"><a href="#HTTP-response报文结构是怎样的" class="headerlink" title="HTTP response报文结构是怎样的"></a>HTTP response报文结构是怎样的</h2><p><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html" target="_blank" rel="external">rfc2616</a>中进行了定义：</p>
+<ol>
+<li>首行是状态行包括：<strong>HTTP版本，状态码，状态描述</strong>，后面跟一个CRLF</li>
+<li>首行之后是<strong>若干行响应头</strong>，包括：<strong>通用头部，响应头部，实体头部</strong></li>
+<li>响应头部和响应实体之间用<strong>一个CRLF空行</strong>分隔</li>
+<li>最后是一个可能的<strong>消息实体</strong><br>响应报文例子如下：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 200 OK</div><div class="line">Date: Tue, 08 Jul 2014 05:28:43 GMT</div><div class="line">Server: Apache/2</div><div class="line">Last-Modified: Wed, 01 Sep 2004 13:24:52 GMT</div><div class="line">ETag: &quot;40d7-3e3073913b100&quot;</div><div class="line">Accept-Ranges: bytes</div><div class="line">Content-Length: 16599</div><div class="line">Cache-Control: max-age=21600</div><div class="line">Expires: Tue, 08 Jul 2014 11:28:43 GMT</div><div class="line">P3P: policyref=&quot;http://www.w3.org/2001/05/P3P/p3p.xml&quot;</div><div class="line">Content-Type: text/html; charset=iso-8859-1</div><div class="line"></div><div class="line">&#123;&quot;name&quot;: &quot;qiu&quot;, &quot;age&quot;: 25&#125;</div></pre></td></tr></table></figure>
+
+
+    <!-- 显示photos -->
+    
+
+  </div>
+  <div class="post-tags">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
+  </div>
+</article>
+  
+    <div class="post-nav">
+      <div class="post-nav-item post-nav-next">
+        
+          <a href="/2018/12/14/Java生产环境调优/" rel="next" title="Java生产环境性能监控与调优">
+            <span>〈 </span> Java生产环境性能监控与调优
+          </a>
+        
+      </div>
+  
+      <div class="post-nav-item post-nav-prev">
+        
+      </div>
+    </div>
+  
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Tips"><span class="toc-text">Tips</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基础知识"><span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#原码、补码、反码"><span class="toc-text">原码、补码、反码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#操作系统与环境"><span class="toc-text">操作系统与环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础"><span class="toc-text">基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存管理"><span class="toc-text">内存管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM"><span class="toc-text">JVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux"><span class="toc-text">Linux</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#算法"><span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常见排序算法的时间复杂度-空间复杂度"><span class="toc-text">常见排序算法的时间复杂度,空间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从浏览器地址栏输入url到显示页面的步骤-以HTTP为例"><span class="toc-text">从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-request报文结构是怎样的"><span class="toc-text">HTTP request报文结构是怎样的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-response报文结构是怎样的"><span class="toc-text">HTTP response报文结构是怎样的</span></a></li></ol></li></ol>
+  </div>
+
+
+    </div>
+
+    
+
+  </div>
+
+  <footer class="footer text-center">
+    <div id="bottom-inner">
+      
+        <a href="http://hexo.io" target="_blank" class="footer-link">Hexo</a>
+      
+        <a href="https://github.com/microacup/hexo-theme-micorb" target="_blank" class="footer-link">Theme microb</a>
+      
+    </div>
+  </footer>
+  
+
+<!-- <script>
+  var titleTime,originTitle=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="[闷声发大财中...] "+originTitle,clearTimeout(titleTime)):(document.title="[+1s] "+originTitle,titleTime=setTimeout(function(){document.title=originTitle},2e3))});
+</script> -->
+
+<script>
+  (function (window, document) {
+    window.requestAnimationFrame = (function () {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback) {
+          setTimeout(callback, 1000 / 60);
+        }
+    })();
+
+    function init() {
+      addMenuEvent();
+    }
+    init();
+
+    function addMenuEvent() {
+      var menu = document.getElementById('menu-main-post');
+      if (menu) {
+        var toc = document.getElementById('toc');
+        menu.title = toc ? '目录' : '回到顶部';
+        menu.onclick = function () {
+          if (toc) {
+            if (toc.style.display == 'block') {
+              toc.style.display = 'none';
+            } else {
+              toc.style.display = 'block';
+            }
+          } else {
+            returnTop();
+          }
+        };
+      }
+    }
+
+    var timer = null;
+
+    function returnTop() {
+      cancelAnimationFrame(timer);
+      timer = requestAnimationFrame(function fn() {
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (oTop > 0) {
+          document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+          timer = requestAnimationFrame(fn);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      });
+    }
+
+  })(window, document);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+
+</body>
+</html>

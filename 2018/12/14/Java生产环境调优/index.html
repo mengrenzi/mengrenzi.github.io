@@ -98,11 +98,15 @@
 </li>
 </ul>
 <h3 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h3><h4 id="jps"><a href="#jps" class="headerlink" title="jps"></a>jps</h4><blockquote>
-<p>Lists the instrumented Java Virtual Machines (JVMs) on the target system. This command is experimental and unsupported.</p>
+<p>Lists the instrumented Java Virtual Machines (JVMs) on the target system.</p>
 </blockquote>
 <p>列出所有虚拟机</p>
+<h4 id="jmap"><a href="#jmap" class="headerlink" title="jmap"></a>jmap</h4><blockquote>
+<p>Prints shared object memory maps or heap memory details for a process, core file, or remote debug server.</p>
+</blockquote>
+<p>打印进程，核心文件或远程调试服务器的共享对象内存映射或堆内存详细信息。</p>
 <h4 id="jstat"><a href="#jstat" class="headerlink" title="jstat"></a>jstat</h4><blockquote>
-<p>Monitors Java Virtual Machine (JVM) statistics. This command is experimental and unsupported.</p>
+<p>Monitors Java Virtual Machine (JVM) statistics.</p>
 </blockquote>
 <p>数据统计:</p>
 <ul>
@@ -121,6 +125,7 @@
 <ul>
 <li>使用jmap命令手动导出</li>
 </ul>
+<p>jmap -dump:format=b,file=heap.hprof (pid)</p>
 <h2 id="jstack-实战死循环与死锁"><a href="#jstack-实战死循环与死锁" class="headerlink" title="jstack 实战死循环与死锁"></a>jstack 实战死循环与死锁</h2>
 
     <!-- 显示photos -->
@@ -143,6 +148,10 @@
   
       <div class="post-nav-item post-nav-prev">
         
+          <a href="/2018/12/15/后端实习面试题总结/" rel="prev" title="【技术向】后端实习面试题总结">
+            【技术向】后端实习面试题总结 <span>〉</span>
+          </a>
+        
       </div>
     </div>
   
@@ -150,7 +159,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基于JDK-命令行工具的监控"><span class="toc-text">基于JDK 命令行工具的监控</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM的参数"><span class="toc-text">JVM的参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数分类"><span class="toc-text">参数分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用参数"><span class="toc-text">常用参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#jps"><span class="toc-text">jps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jstat"><span class="toc-text">jstat</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jmap-MAT-实战内存溢出"><span class="toc-text">jmap + MAT 实战内存溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jstack-实战死循环与死锁"><span class="toc-text">jstack 实战死循环与死锁</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基于JDK-命令行工具的监控"><span class="toc-text">基于JDK 命令行工具的监控</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM的参数"><span class="toc-text">JVM的参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数分类"><span class="toc-text">参数分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用参数"><span class="toc-text">常用参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#jps"><span class="toc-text">jps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jmap"><span class="toc-text">jmap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jstat"><span class="toc-text">jstat</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jmap-MAT-实战内存溢出"><span class="toc-text">jmap + MAT 实战内存溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jstack-实战死循环与死锁"><span class="toc-text">jstack 实战死循环与死锁</span></a></li></ol></li></ol>
   </div>
 
 

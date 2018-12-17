@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#202020" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  
+  <meta name="keywords" content="技术,面试," />
+  
+
+  
+  <meta name="description" content="【技术向】头条实习面试问题准备 &amp; 挂经" />
+  
+
+  <link rel="icon" type="image/x-icon" href="/img/logo.png">
+  <title>
+    【技术向】头条实习面试问题准备 &amp; 挂经 [ 仁梓小舍 ]
+  </title>
+  
+  <!-- stylesheets list from config.yml -->
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css">
+  
+  <link rel="stylesheet" href="/css/microb.css">
+  
+  
+<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+  <ul class="pure-menu-list float-r clearfix">
+    
+    <li class="pure-menu-item toc-menu">
+      <a id="menu-main-post" class="pure-menu-link" href="javascript:;">
+        <img class="menu-icon" src="/img/logo.png" alt="MENU">
+      </a>
+    </li>
+    
+  </ul>
+  <a class="pure-menu-heading" href="/">
+    <h1 class="title">
+      仁梓小舍
+    </h1>
+    <!-- <span>null</span> -->
+  </a>
+  <!-- 
+  <img class="logo" id="logo" src="/logo.png" alt="logo">
+   -->
+</nav>
+
+  <div class="container" id="content-outer">
+    <div class="inner" id="content-inner">
+      <article class="post" id="post">
+  <header class="post-header text-center">
+    <h1 class="title">
+      【技术向】头条实习面试问题准备 &amp; 挂经
+    </h1>
+    
+    <time class="time" datetime="2018-12-04T15:46:09.000Z">
+      2018-12-04
+    </time>
+    
+    <hr>
+  </header>
+  <div class="post-content">
+    <p>本文针对头条实习面试历年的面经归纳总结。</p>
+<h1 id="Java-基础"><a href="#Java-基础" class="headerlink" title="Java 基础"></a>Java 基础</h1><h2 id="堆与栈的区别"><a href="#堆与栈的区别" class="headerlink" title="堆与栈的区别"></a>堆与栈的区别</h2><p>Java 把内存划分成两种：一种是堆内存，一种是栈内存。</p>
+<p>堆：主要用于存储实例化的对象，数组。由 JVM 动态分配内存空间。一个 JVM 只有一个堆内存，线程是可以共享数据的。</p>
+<p>栈：主要用于存储局部变量和对象的引用变量，每个线程都会有一个独立的栈空间，所以线程之间是不共享数据的。</p>
+<h2 id="volatile-synchronized-关键字"><a href="#volatile-synchronized-关键字" class="headerlink" title="volatile, synchronized 关键字"></a>volatile, synchronized 关键字</h2><p>volatile，它能够使变量在值发生改变时能尽快地让其他线程知道，保证了数据的可见性。</p>
+<p>synchronized，它可作用于一段代码或方法，既可以保证可见性，又能够保证原子性。</p>
+<p>可见性体现在：通过 synchronized 或者 Lock 能保证同一时刻只有一个线程获取锁然后执行同步代码，并且在释放锁之前会将对变量的修改刷新到主存中。</p>
+<p>原子性表现在：要么不执行，要么执行到底。</p>
+<h2 id="Hashmap"><a href="#Hashmap" class="headerlink" title="Hashmap"></a>Hashmap</h2><p>简单来说，HashMap 由数组 + 链表组成的，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的，如果定位到的数组位置不含链表（当前 entry 的 next 指向 null）, 那么对于查找，添加等操作很快，仅需一次寻址即可；如果定位到的数组包含链表，对于添加操作，其时间复杂度为 O(n)，首先遍历链表，存在即覆盖，否则新增；对于查找操作来讲，仍需遍历链表，然后通过 key 对象的 equals 方法逐一比对查找。所以，性能考虑，HashMap 中的链表出现越少，性能才会越好。</p>
+<h2 id="Hash-冲突"><a href="#Hash-冲突" class="headerlink" title="Hash 冲突"></a>Hash 冲突</h2><p>根据 key 即经过一个函数 f(key) 得到的结果的作为地址去存放当前的 key value 键值对 (这个是 hashmap 的存值方式)，但是却发现算出来的地址上已经有人先来了。就是说这个地方被抢了啦。这就是所谓的 hash 冲突啦。</p>
+<p>Hash 不是线程安全。</p>
+<h2 id="Java-Clone复制对象"><a href="#Java-Clone复制对象" class="headerlink" title="Java Clone复制对象"></a>Java Clone复制对象</h2><p>浅拷贝：被复制对象的所有值属性都含有与原来对象的相同，而所有的对象引用属性仍然指向原来的对象。</p>
+<p>深拷贝：在浅拷贝的基础上，所有引用其他对象的变量也进行了 clone，并指向被复制过的新对象。</p>
+<h2 id="Java-的三大特性：多态是怎么实现的"><a href="#Java-的三大特性：多态是怎么实现的" class="headerlink" title="Java 的三大特性：多态是怎么实现的"></a>Java 的三大特性：多态是怎么实现的</h2><p>Java 提供了编译时多态和运行时多态两种多态机制。前者是通过方法重载（变量相关）实现的，后者是通过方法的重写（继承相关）实现的。</p>
+<h2 id="ArrayList-LinkedList-实现对比，使用场景"><a href="#ArrayList-LinkedList-实现对比，使用场景" class="headerlink" title="ArrayList/LinkedList 实现对比，使用场景"></a>ArrayList/LinkedList 实现对比，使用场景</h2><p>ArrayList 和 LinkedList 的大致区别如下:</p>
+<ol>
+<li>ArrayList 是实现了基于动态数组的数据结构，LinkedList 基于链表的数据结构。</li>
+<li>对于随机访问 get 和 set，ArrayList 觉得优于 LinkedList，因为 LinkedList 要移动指针。</li>
+<li>对于新增和删除操作 add 和 remove，LinedList 比较占优势，因为 ArrayList 要移动数据。</li>
+</ol>
+<h2 id="int-和-Integer-区别"><a href="#int-和-Integer-区别" class="headerlink" title="int 和 Integer 区别"></a>int 和 Integer 区别</h2><p>1、Integer 是 int 的包装类，int 则是 java 的一种基本数据类型。<br>2、Integer 变量必须实例化后才能使用，而 int 变量不需要。<br>3、Integer 实际是对象的引用，当 new 一个 Integer 时，实际上是生成一个指针指向此对象；而 int 则是直接存储数据值。<br>4、Integer 的默认值是 null，int 的默认值是 0。</p>
+<h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><h2 id="JVM原理"><a href="#JVM原理" class="headerlink" title="JVM原理"></a>JVM原理</h2><p>JVM本身是介于JAVA编译器和操作系统之间的程序，这个程序提供了一个无视操作系统和硬件平台的运行环境</p>
+<h3 id="Java内存区域的分配"><a href="#Java内存区域的分配" class="headerlink" title="Java内存区域的分配"></a>Java内存区域的分配</h3><p>以1.8为例，内存区域如下：</p>
+<p><img src="https://github.com/xbox1994/2018-Java-Interview/raw/master/images/j1.jpg" alt=""></p>
+<p>按线程是否共享分为以下区域：</p>
+<p>所有线程共享的数据区：</p>
+<ol>
+<li>方法区: 存储已被虚拟机加载的类信息、方法信息、常量、静态变量、字节码、JIT编译后的本地代码，并使用永久代来实现方法区。1.8中用元空间替代了永久代，元空间并不在虚拟机中，而是使用本地内存，元空间中可能还存在短指针数据区CCS</li>
+<li>堆区: 最大的一块区域，用于存放对象的区域，1.7之后常量池移到这里</li>
+</ol>
+<p>每个线程都会有一块私有的数据区：</p>
+<ol>
+<li>虚拟机栈: 每个方法执行时在其中创建一个栈帧，用于存储局部变量、操作数栈、动态链接、方法出口等信息</li>
+<li>本地方法栈: 功能与虚拟机栈相同，为native方法服务</li>
+<li>程序计数器: 存放当前正在执行的指令的地址</li>
+</ol>
+<p>直接内存：</p>
+<ul>
+<li>直接内存并非Java标准。</li>
+<li>JDK1.4 加入了新的 NIO 机制，目的是防止 Java 堆 和 Native 堆之间往复的数据复制带来的性能损耗，此后 NIO 可以使用 Native 的方式直接在 Native 堆分配内存。</li>
+<li>直接内存区域是全局共享的内存区域。</li>
+</ul>
+<h3 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h3><h4 id="初始化时机"><a href="#初始化时机" class="headerlink" title="初始化时机"></a>初始化时机</h4><p>new、静态字段或方法被使用、反射、父类、main函数调用</p>
+<h4 id="加载过程"><a href="#加载过程" class="headerlink" title="加载过程"></a>加载过程</h4><ol>
+<li>加载（获取字节流并转换成运行时数据结构，然后生成Class对象）</li>
+<li>验证（验证字节流信息符合当前虚拟机的要求）</li>
+<li>准备（为类变量分配内存并设置初始值）</li>
+<li>解析（将常量池的符号引用替换为直接引用）</li>
+<li>初始化（执行类构造器-类变量赋值和静态块的过程）</li>
+</ol>
+<h3 id="GC回收机制"><a href="#GC回收机制" class="headerlink" title="GC回收机制"></a>GC回收机制</h3><h4 id="回收对象"><a href="#回收对象" class="headerlink" title="回收对象"></a>回收对象</h4><p>不可达对象：通过一系列的GC Roots的对象作为起点，从这些节点开始向下搜索，搜索所走过的路径称为引用链，当一个对象到GC Roots没有任何引用链相连时则此对象是不可用的。<br>GC Roots包括：虚拟机栈中引用的对象、方法区中类静态属性引用的对象、方法区中常量引用的对象、本地方法栈中JNI（Native方法）引用的对象。</p>
+<p>彻底死亡条件：<br>条件1：通过GC Roots作为起点的向下搜索形成引用链，没有搜到该对象，这是第一次标记。<br>条件2：在finalize方法中没有逃脱回收（将自身被其他对象引用），这是第一次标记的清理。</p>
+<h4 id="如何回收"><a href="#如何回收" class="headerlink" title="如何回收"></a>如何回收</h4><p>新生代因为每次GC都有大批对象死去，只需要付出少量存活对象的复制成本且无碎片所以使用“复制算法”<br>老年代因为存活率高、没有分配担保空间，所以使用“标记-清理”或者“标记-整理”算法</p>
+<p>复制算法：将可用内存按容量划分为Eden、from survivor、to survivor，分配的时候使用Eden和一个survivor，Minor GC后将存活的对象复制到另一个survivor，然后将原来已使用的内存一次清理掉。这样没有内存碎片。<br>标记-清除：首先标记出所有需要回收的对象，标记完成后统一回收被标记的对象。会产生大量碎片，导致无法分配大对象从而导致频繁GC。<br>标记-整理：首先标记出所有需要回收的对象，让所有存活的对象向一端移动。</p>
+<h4 id="Minor-GC条件"><a href="#Minor-GC条件" class="headerlink" title="Minor GC条件"></a>Minor GC条件</h4><p>当Eden区空间不足以继续分配对象，发起Minor GC。</p>
+<h4 id="GC-算法"><a href="#GC-算法" class="headerlink" title="GC 算法"></a>GC 算法</h4><p>GC 最基础的算法有三种： 标记 - 清除算法、复制算法、标记 - 压缩算法，我们常用的垃圾回收器一般都采用分代收集算法：</p>
+<ul>
+<li>标记 - 清除算法，“标记 - 清除”（Mark-Sweep）算法，如它的名字一样，算法分为 “标记” 和 “清除” 两个阶段：首先标记出所有需要回收的对象，在标记完成后统一回收掉所有被标记的对象。</li>
+<li>复制算法，“复制”（Copying）的收集算法，它将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。</li>
+<li>标记 - 压缩算法，标记过程仍然与 “标记 - 清除” 算法一样，但后续步骤不是直接对可回收对象进行清理，而是让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存</li>
+<li>分代收集算法，“分代收集”（Generational Collection）算法，把 Java 堆分为新生代和老年代，这样就可以根据各个年代的特点采用最适当的收集算法。</li>
+</ul>
+<h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><h2 id="进程线程，通信方式，同步方式"><a href="#进程线程，通信方式，同步方式" class="headerlink" title="进程线程，通信方式，同步方式"></a>进程线程，通信方式，同步方式</h2><h3 id="线程通信"><a href="#线程通信" class="headerlink" title="线程通信"></a>线程通信</h3><ul>
+<li>使用全局变量</li>
+<li>使用消息实现通信</li>
+<li>使用事件 CEvent 类实现线程间通信</li>
+</ul>
+<h3 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h3><p>1、低级通信, 控制信息的通信 (主要用于进程之间的同步, 互斥, 终止和挂起等等控制信息的传递)。</p>
+<p>2、高级通信, 大批数据信息的通信 (主要用于进程间数据块数据的交换和共享, 常见的高级通信有管道, 消息队列, 共享内存等)。</p>
+<h3 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h3><ul>
+<li>临界区</li>
+</ul>
+<p>临界区：通过对多线程的串行化来访问公共资源或一段代码，速度快，适合控制数据访问。在任意时刻只允许一个线程对共享资源进行访问，如果有多个线程试图访问公共资源，那么在有一个线程进入后，其他试图访问公共资源的线程将被挂起，并一直等到进入临界区的线程离开，临界区在被释放后，其他线程才可以抢占。</p>
+<ul>
+<li>互斥量</li>
+</ul>
+<p>互斥与临界区很相似，但是使用时相对复杂一些（互斥量为内核对象），不仅可以在同一应用程序的线程间实现同步，还可以在不同的进程间实现同步，从而实现资源的安全共享。<br>PS:1、互斥量由于也有线程所有权的概念，故也只能进行线程间的资源互斥访问，不能由于线程同步；<br>2、由于互斥量是内核对象，因此其可以进行进程间通信，同时还具有一个很好的特性，就是在进程间通信时完美的解决了” 遗弃” 问题</p>
+<ul>
+<li>信号量</li>
+</ul>
+<p>信号量的用法和互斥的用法很相似，不同的是它可以同一时刻允许多个线程访问同一个资源，PV 操作。<br>PS: 事件可以完美解决线程间的同步问题，同时信号量也属于内核对象，可用于进程间的通信</p>
+<ul>
+<li>事件</li>
+</ul>
+<p>事件分为手动置位事件和自动置位事件。事件 Event 内部它包含一个使用计数（所有内核对象都有），一个布尔值表示是手动置位事件还是自动置位事件，另一个布尔值用来表示事件有无触发。由 SetEvent() 来触发，由 ResetEvent() 来设成未触发。<br>PS: 事件是内核对象, 可以解决线程间同步问题，因此也能解决互斥问题。</p>
+<h2 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h2><p>Apache Dubbo (incubating) |ˈdʌbəʊ| 是一款高性能、轻量级的开源 Java RPC 框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。简单来说 Dubbo 是一个分布式服务框架，致力于提供高性能和透明化的 RPC 远程服务调用方案，以及 SOA 服务治理方案。</p>
+<h2 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h2><p>正如上一讲所说，RPC 主要是为了解决的两个问题：</p>
+<ul>
+<li><p>解决分布式系统中，服务之间的调用问题。</p>
+</li>
+<li><p>远程调用时，要能够像本地调用一样方便，让调用者感知不到远程调用的逻辑。</p>
+</li>
+</ul>
+<h2 id="异步和同步"><a href="#异步和同步" class="headerlink" title="异步和同步"></a>异步和同步</h2><p>同步：执行一个操作之后，等待结果，然后才继续执行后续的操作。</p>
+<p>异步：执行一个操作后，可以去执行其他的操作，然后等待通知再回来执行刚才没执行完的操作。</p>
+<p>阻塞：进程给 CPU 传达一个任务之后，一直等待 CPU 处理完成，然后才执行后面的操作。</p>
+<p>非阻塞：进程给 CPU 传达任我后，继续处理后续的操作，隔断时间再来询问之前的操作是否完成。这样的过程其实也叫轮询。</p>
+<h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><p>协程与异步结合——性能与简单的结合<br>结合上面的分析，如果我们可以写下面功能的代码，将很完美:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span>(;;)</div><div class="line">    &#123;</div><div class="line">        Buffer buf;</div><div class="line"></div><div class="line">        <span class="function">yeild <span class="title">readAsync</span><span class="params">(buf,start)</span></span>;</div><div class="line">    <span class="comment">//------ 分隔线，协程在这里返回，等待 readAsync 完成，当 readAsync 完成后，它再调用 start</span></div><div class="line">    <span class="comment">// 此时 start 将从这里接着运行</span></div><div class="line"></div><div class="line">        <span class="function">yeild <span class="title">writeAsync</span><span class="params">(buf, start)</span></span>;</div><div class="line">    <span class="comment">//------ 分隔线，协程在这里返回，等待 writeAsync 完成，当 writeAsync 完成后，它再调用 start</span></div><div class="line">    <span class="comment">// 此时 start 将从这里接着运行</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码也很一清晰明了。如果真的能写这样的代码，那将是所有程序员之福。这样在一些语言里确实可以直接写出来，比如 Python、Lua、 golang，这些语言有原生的协程支持——编译器或解释器为我们处理了这些执行流的跳转。那么在 C/C++ 里怎么实现呢？可能肯定的是，C/C++ 里不能直接写出这样简洁的代码，但却可以写类似的代码，尤其是 C++——它提供了更强大的封装能力。</p>
+<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p>内存管理包括内存管理概念、交换与覆盖、连续分配管理方式和非连续分配管理方式（分页管理方式、分段管理方式、段页式管理方式）。</p>
+<p>虚拟内存管理包括虚拟内存概念、请求分页管理方式、页面置换算法、页面分配策略、工作集和抖动。</p>
+<p>内存管理的功能有：<br>内存空间的分配与回收：由操作系统完成主存储器空间的分配和管理，使程序员摆脱存储分配的麻烦，提高编程效率。</p>
+<p>地址转换：在多道程序环境下，程序中的逻辑地址与内存中的物理地址不可能一致，因此存储管理必须提供地址变换功能，把逻辑地址转换成相应的物理地址。</p>
+<p>内存空间的扩充：利用虚拟存储技术或自动覆盖技术，从逻辑上扩充内存。<br>存储保护：保证各道作业在各自的存储空间内运行，. 互不干扰。</p>
+<h2 id="死锁是啥，死锁产生的条件是什么"><a href="#死锁是啥，死锁产生的条件是什么" class="headerlink" title="死锁是啥，死锁产生的条件是什么"></a>死锁是啥，死锁产生的条件是什么</h2><p>所谓死锁，是指多个进程在运行过程中因争夺资源而造成的一种僵局，当进程处于这种僵持状态时，若无外力作用，它们都将无法再向前推进。</p>
+<p>产生的原因：</p>
+<ul>
+<li>竞争资源</li>
+<li>进程间推进顺序非法</li>
+</ul>
+<h2 id="wait-notify-notifyAll"><a href="#wait-notify-notifyAll" class="headerlink" title="wait(), notify()/notifyAll()"></a>wait(), notify()/notifyAll()</h2><ul>
+<li><p>wait(): 使当前线程阻塞</p>
+</li>
+<li><p>notify()/notifyAll(): 唤醒线程</p>
+</li>
+</ul>
+<h2 id="正在-wait-的线程被唤醒后会发生什么"><a href="#正在-wait-的线程被唤醒后会发生什么" class="headerlink" title="正在 wait 的线程被唤醒后会发生什么"></a>正在 wait 的线程被唤醒后会发生什么</h2><p>而实际情况是，被唤醒并且被执行的线程是从上次阻塞的位置从下开始运行，也就是从 wait() 方法后开始执行。</p>
+<h2 id="notifyAll-唤醒所有的等待线程后会发生什么"><a href="#notifyAll-唤醒所有的等待线程后会发生什么" class="headerlink" title="notifyAll 唤醒所有的等待线程后会发生什么"></a>notifyAll 唤醒所有的等待线程后会发生什么</h2><p>notifyAll 是针对指定对象里面的所有线程执行唤醒操作，指定对象一旦唤醒成功。则会立即加入线程的资源争夺中去。</p>
+<h2 id="Linux-命令-如何杀死占用指定端口的进程"><a href="#Linux-命令-如何杀死占用指定端口的进程" class="headerlink" title="Linux 命令 如何杀死占用指定端口的进程"></a>Linux 命令 如何杀死占用指定端口的进程</h2><p>lsof : 端口号 # 查看占用端口的进程<br>kill -9 进程号 # kill 掉该进程</p>
+<h2 id="线程之间共享数据的方式"><a href="#线程之间共享数据的方式" class="headerlink" title="线程之间共享数据的方式"></a>线程之间共享数据的方式</h2><ol>
+<li><p>多个线程对共享数据的操作是相同的，那么创建一个 Runnable 的子类对象，将这个对象作为参数传递给 Thread 的构造方法，此时因为多个线程操作的是同一个 Runnable 的子类对象，所以他们操作的是同一个共享数据。</p>
+</li>
+<li><p>多个线程对共享数据的操作是不同的，将共享数据和操作共享数据的方法放在同一对象中，将这个对象作为参数传递给 Runnable 的子类，在子类中用该对象的方法对共享数据进行操作。如：生产者消费则。</p>
+</li>
+<li><p>多个线程对共享数据的操作是不同的， 用内部类的方式去实现，创建 Runnable 的子类作为内部类，将共享对象作为全局变量，在 Runnable 的子类中对共享数据进行操作。</p>
+</li>
+</ol>
+<h2 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h2><p>进程是资源分配的最小单位，线程是程序执行的最小单位。</p>
+<p>进程有自己的独立地址空间，每启动一个进程，系统就会为它分配地址空间，建立数据表来维护代码段、堆栈段和数据段，这种操作非常昂贵。而线程是共享进程中的数据的，使用相同的地址空间，因此 CPU 切换一个线程的花费远比进程要小很多，同时创建一个线程的开销也比进程要小很多。</p>
+<p>线程之间的通信更方便，同一进程下的线程共享全局变量、静态变量等数据，而进程之间的通信需要以通信的方式（IPC) 进行。不过如何处理好同步与互斥是编写多线程程序的难点。</p>
+<p>但是多进程程序更健壮，多线程程序只要有一个线程死掉，整个进程也死掉了，而一个进程死掉并不会对另外一个进程造成影响，因为进程有自己独立的地址空间。</p>
+<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="数据库事务隔离级别"><a href="#数据库事务隔离级别" class="headerlink" title="数据库事务隔离级别"></a>数据库事务隔离级别</h2><p>Read uncommitted – 不防止任何隔离性问题, 具有脏读 / 不可重复度 / 虚读 (幻读) 问题</p>
+<p>Read committed – 可以防止脏读问题, 但是不能防止不可重复度 / 虚读 (幻读) 问题</p>
+<p>Repeatable read – 可以防止脏读 / 不可重复读问题, 但是不能防止虚读 (幻读) 问题</p>
+<p>Serializable – 数据库被设计为单线程数据库, 可以防止上述所有问题</p>
+<h2 id="数据库的-ACID"><a href="#数据库的-ACID" class="headerlink" title="数据库的 ACID"></a>数据库的 ACID</h2><p>⑴ 原子性（Atomicity）</p>
+<p>原子性是指事务包含的所有操作要么全部成功，要么全部失败回滚，这和前面两篇博客介绍事务的功能是一样的概念，因此事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。</p>
+<p>⑵ 一致性（Consistency）</p>
+<p>一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。</p>
+<p>拿转账来说，假设用户 A 和用户 B 两者的钱加起来一共是 5000，那么不管 A 和 B 之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是 5000，这就是事务的一致性。</p>
+<p>⑶ 隔离性（Isolation）</p>
+<p>隔离性是当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离。</p>
+<p>即要达到这么一种效果：对于任意两个并发的事务 T1 和 T2，在事务 T1 看来，T2 要么在 T1 开始之前就已经结束，要么在 T1 结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行。</p>
+<p>关于事务的隔离性数据库提供了多种隔离级别，稍后会介绍到。</p>
+<p>⑷ 持久性（Durability）<br>　　<br>持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。</p>
+<p>例如我们在使用 JDBC 操作数据库时，在提交事务方法后，提示用户事务操作完成，当我们程序执行完成直到看到提示后，就可以认定事务以及正确提交，即使这时候数据库出现了问题，也必须要将我们的事务完全执行完成，否则就会造成我们看到提示事务处理完毕，但是数据库因为故障而没有执行事务的重大错误。</p>
+<h2 id="数据库乐观锁悲观锁，以及乐观锁如何实现"><a href="#数据库乐观锁悲观锁，以及乐观锁如何实现" class="headerlink" title="数据库乐观锁悲观锁，以及乐观锁如何实现"></a>数据库乐观锁悲观锁，以及乐观锁如何实现</h2><p>在关系数据库管理系统里，悲观并发控制（又名 “悲观锁”，Pessimistic Concurrency Control，缩写 “PCC”）是一种并发控制的方法。它可以阻止一个事务以影响其他用户的方式来修改数据。如果一个事务执行的操作都某行数据应用了锁，那只有当这个事务把锁释放，其他事务才能够执行与该锁冲突的操作。</p>
+<p>在关系数据库管理系统里，乐观并发控制（又名 “乐观锁”，Optimistic Concurrency Control，缩写 “OCC”）是一种并发控制的方法。它假设多用户并发的事务在处理时不会彼此互相影响，各事务能够在不产生锁的情况下处理各自影响的那部分数据。在提交数据更新之前## ，每个事务会先检查在该事务读取数据后，有没有其他事务又修改了该数据。如果其他事务有更新的话，正在提交的事务会进行回滚。</p>
+<h2 id="数据库索引"><a href="#数据库索引" class="headerlink" title="数据库索引"></a>数据库索引</h2><p>索引是对数据库表中一列或多列的值进行排序的一种结构，使用索引可快速访问数据库表中的特定信息。如果想按特定职员的姓来查找他或她，则与在表中搜索所有的行相比，索引有助于更快地获取信息。</p>
+<h3 id="为什么要用B-树，B-树和B树的区别"><a href="#为什么要用B-树，B-树和B树的区别" class="headerlink" title="为什么要用B+树，B+树和B树的区别"></a>为什么要用B+树，B+树和B树的区别</h3><p>B 树（B-tree）是一种树状数据结构，它能够存储数据、对其进行排序并允许以 O(log n) 的时间复杂度运行进行查找、顺序读取、插入和删除的数据结构。</p>
+<p>B+ 树是对 B 树的一种变形树，它与 B 树的差异在于：</p>
+<p>有 k 个子结点的结点必然有 k 个关键码；<br>非叶结点仅具有索引作用，跟记录有关的信息均存放在叶结点中。<br>树的所有叶结点构成一个有序链表，可以按照关键码排序的次序遍历全部记录。</p>
+<h3 id="联合索引，最左匹配"><a href="#联合索引，最左匹配" class="headerlink" title="联合索引，最左匹配"></a>联合索引，最左匹配</h3><p>mysql 建立多列索引（联合索引）有最左前缀的原则，即最左优先，如：</p>
+<p>如果有一个 2 列的索引 (col1,col2), 则已经对(col1)、(col1,col2) 上建立了索引；<br>如果有一个 3 列索引 (col1,col2,col3)，则已经对(col1)、(col1,col2)、(col1,col2,col3) 上建立了索引；</p>
+<p>总结：<br>1、b + 树的数据项是复合的数据结构，比如 (name,age,sex) 的时候，b + 树是按照从左到右的顺序来建立搜索树的，比如当 (张三, 20,F) 这样的数据来检索的时候，b + 树会优先比较 name 来确定下一步的所搜方向，如果 name 相同再依次比较 age 和 sex，最后得到检索的数据；但当 (20,F) 这样的没有 name 的数据来的时候，b + 树就不知道第一步该查哪个节点，因为建立搜索树的时候 name 就是第一个比较因子，必须要先根据 name 来搜索才能知道下一步去哪里查询。</p>
+<p>2、比如当 (张三, F) 这样的数据来检索时，b + 树可以用 name 来指定搜索方向，但下一个字段 age 的缺失，所以只能把名字等于张三的数据都找到，然后再匹配性别是 F 的数据了， 这个是非常重要的性质，即索引的最左匹配特性。（这种情况无法用到联合索引）</p>
+<h3 id="什么是红黑树"><a href="#什么是红黑树" class="headerlink" title="什么是红黑树"></a>什么是红黑树</h3><p>红黑树（Red Black Tree） 是一种自平衡二叉查找树，是在计算机科学中用到的一种数据结构，典型的用途是实现关联数组。</p>
+<h1 id="网络与服务器"><a href="#网络与服务器" class="headerlink" title="网络与服务器"></a>网络与服务器</h1><p>参照<a href="http://mengrenzi.com/2018/12/02/%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" target="_blank" rel="external">网络原理基础知识</a>一文</p>
+<h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><ul>
+<li>最大连续子数组和</li>
+</ul>
+<p>思路，动态规划，状态转移方程: DP[i] = max{DP[i-1] + A[i],A[i]};</p>
+<ul>
+<li>一个先升后降的整数数组，找出最大的数</li>
+</ul>
+<p>二分一次找到中点，如果中点 Array[mid] 比 Array[mid-1] 和 Array[mid+1] 都大，那么就返回 mid。否则，如果 Array[mid]&gt;Array[mid-1], 则最大值在 mid 右边，如果</p>
+<p>Array[mid]&gt;Array[mid+1], 则最大值在 mid 左边。不断进行下去，直到找到为止。</p>
+<p>LRU Cache</p>
+<ul>
+<li>算法题：二叉树最小公共祖先【一开始问的是一棵树里最远的两个节点间的距离，思考的有点久于是换题了…】</li>
+</ul>
+<ol>
+<li><p>二叉搜索树情况，根据二叉搜索树的特征，从根节点开始查找，若两节点的 val 值都小于当前节点，则他们的最小公共祖先就去左子树找，若两节点的 val 值都大于当前节点，则他们的最小公共祖先就去右子树找。直到一个节点的值小于当前节点，另一个节点的值大于当前节点，那么当前节点为最小公共祖先，即为找到了可以返回了。</p>
+</li>
+<li><p>二叉树有指向父节点的指针：当二叉树中有指向父节点的指针时，可以倒过来看待这个问题，即为求两个链表的公共节点。从当前节点开始往根节点数，记录总共有多少个节点，记下数字。然后大数字的链表上先走几步到数字一样，再两节点都一起往根节点走，第一个相同的节点即为最小公共子节点。</p>
+</li>
+<li><p>简单直接一点。当 root 非空时，不断从其左右子树搜索，①如果两节点都在其左子树，对其左子树节点递归搜索；②如果两节点都在其右子树，对其右子树节点递归搜索；③如果一个节点在左子树一个节点在右子树，则当前节点即为最小公共祖先。</p>
+</li>
+</ol>
+<ul>
+<li>算法题：链表成环判断</li>
+</ul>
+<p>设置Run和Walk，如果run=walk则返回</p>
+<ul>
+<li>算法题：链表交叉判断</li>
+</ul>
+<p>交叉只可能是Y型，记录长度，先让长的节点往后移动比短的节点夺得位置</p>
+<ul>
+<li>算法题：二叉树层级遍历，以及 follow up 是每下一层遍历方向颠倒</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (!queue.isEmpty ()) &#123;</div><div class="line">    <span class="keyword">int</span> size = queue.size ();</div><div class="line">    LinkedList&lt;Integer&gt; list = <span class="keyword">new</span> LinkedList &lt;&gt; (  );</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; size; i++) &#123;</div><div class="line">        TreeNode node = queue.pop ();</div><div class="line">        list.add ( node.val );</div><div class="line">        <span class="keyword">if</span>(node.left != <span class="keyword">null</span>) queue.offer ( node.left );</div><div class="line">        <span class="keyword">if</span>(node.right != <span class="keyword">null</span>) queue.offer ( node.right );</div><div class="line">    &#125;</div><div class="line">    result.add(list);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>单链表奇数位递增，偶数位递减进行排序</li>
+</ul>
+<ol>
+<li>首先根据奇数位和偶数位拆分成两个链表。</li>
+<li>然后对偶数链表进行反转。</li>
+<li>最后将两个有序链表进行合并。</li>
+</ol>
+<ul>
+<li><p>一个矩阵从左到右增从上到下增查找某个数，时间复杂度o(n)</p>
+</li>
+<li><p>top k问题堆排序</p>
+</li>
+</ul>
+<p>1.从 20 亿个数字的文本中，找出最大的前 100 个。</p>
+<blockquote>
+<p>最直观：小顶堆（大顶堆 -&gt; 最小 100 个数）；<br>较高效：Quick Select 算法。</p>
+</blockquote>
+<ul>
+<li>最长递增子序列</li>
+</ul>
+<p>DP</p>
+<ul>
+<li>01背包</li>
+</ul>
+<p>optimal[i][j] = max(optimal[i-1][j],optimal[i-1][j-weight[i]]+value[i]);</p>
+<ul>
+<li><p>最长公共子串</p>
+</li>
+<li><p>二叉树序列化和反序列化</p>
+</li>
+<li><p>二叉树知道前序遍历和中序遍历构造还原</p>
+</li>
+<li><p>LRU算法实现不许用现成的数据结构</p>
+</li>
+<li><p>一个货物八天的价格给出问哪天买哪天卖收益最大，时间复杂度o(n)，要是可以买卖多次呢？</p>
+</li>
+<li><p>下一个大的数字 1423-&gt;1432</p>
+</li>
+<li><p>算法最长递增子序列的个数</p>
+</li>
+<li><p>算法: 树的最长路径（把点存起来）</p>
+</li>
+<li><p>给 n 个数，求这 n 个数组成的集合的所有子集</p>
+</li>
+<li><p>平面上有 n 个点，求最多有多少个点在同一条直线上</p>
+</li>
+<li><p>给 n 个数，求最大的区间和</p>
+</li>
+<li><p>给 n 个非降序的数和一个数 k，求出 k 在 n 个数中第一次出现的位置</p>
+</li>
+<li><p>有两个 TB 级大文件，一个文件每行为 id : name，另一个文件每行为 id : age，要求合并成一个文件 id : name, age （说思路不用写代码）</p>
+</li>
+<li><p>给一个 01 矩阵，求出全为 1 的最大矩形位置和面积</p>
+</li>
+</ul>
+<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><p>秒杀如何实现？</p>
+<p>（1）将请求尽量拦截在系统上游（不要让锁冲突落到数据库上去）。传统秒杀系统之所以挂，请求都压倒了后端数据层，数据读写锁冲突严重，并发高响应慢，几乎所有请求都超时，流量虽大，下单成功的有效流量甚小。以 12306 为例，一趟火车其实只有 2000 张票，200w 个人来买，基本没有人能买成功，请求有效率为 0。</p>
+<p>（2）充分利用缓存，秒杀买票，这是一个典型的读多写少的应用场景，大部分请求是车次查询，票查询，下单和支付才是写请求。一趟火车其实只有 2000 张票，200w 个人来买，最多 2000 个人下单成功，其他人都是查询库存，写比例只有 0.1%，读比例占 99.9%，非常适合使用缓存来优化。好，后续讲讲怎么个 “将请求尽量拦截在系统上游” 法，以及怎么个 “缓存” 法，讲讲细节。</p>
+<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p>Java 的学习路线，看了什么书</p>
+<h1 id="我的面试"><a href="#我的面试" class="headerlink" title="我的面试"></a>我的面试</h1><p>头条的面试比我想象的要简单一些，题目基本上都遇到过了，但自己准备得不太充分，导致面试结果很差，所以好好准备对面试还是很有帮助的。</p>
+<h2 id="复盘"><a href="#复盘" class="headerlink" title="复盘"></a>复盘</h2><h3 id="非代码类"><a href="#非代码类" class="headerlink" title="非代码类"></a>非代码类</h3><h4 id="操作系统概述"><a href="#操作系统概述" class="headerlink" title="操作系统概述"></a>操作系统概述</h4><p>进程与线程的区别</p>
+<p>进程之间如何通信</p>
+<ol>
+<li><p>管道：速度慢，容量有限，只有父子进程能通讯。</p>
+</li>
+<li><p>FIFO：任何进程间都能通讯，但速度慢。</p>
+</li>
+<li><p>消息队列：容量受到系统限制，且要注意第一次读的时候，要考虑上一次没有读完数据的问题。</p>
+</li>
+<li><p>信号量：不能传递复杂消息，只能用来同步。</p>
+</li>
+<li><p>共享内存区：能够很容易控制容量，速度快，但要保持同步，比如一个进程在写的时候，另一个进程要注意读写的问题，相当于线程中的线程安全，当然，共享内存区同样可以用作线程间通讯，不过没这个必要，线程间本来就已经共享了同一进程内的一块内存。</p>
+</li>
+</ol>
+<p>在CMD中按下 Ctrl+c 会出现什么</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	AttachConsole(PID); <span class="comment">// attach to process console</span></div><div class="line">	SetConsoleCtrlHandler(<span class="literal">NULL</span>, TRUE); <span class="comment">// disable Control+C handling for our app</span></div><div class="line">	GenerateConsoleCtrlEvent(CTRL_C_EVENT, <span class="number">0</span>); <span class="comment">// generate Control+C event</span></div><div class="line"></div><div class="line">	HANDLE hProcess = OpenProcess(PROCESS_TERMINATE, FALSE, PID);</div><div class="line">	<span class="keyword">if</span> (INVALID_HANDLE_VALUE == hProcess)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">return</span> ;</div><div class="line">	&#125;</div><div class="line">	WaitForSingleObject(hProcess, INFINITE);</div><div class="line">	CloseHandle(hProcess);</div><div class="line">	Sleep(<span class="number">2000</span>); <span class="comment">//等待2秒，以防止自身被关闭。</span></div><div class="line"></div><div class="line">	FreeConsole();</div><div class="line">	SetConsoleCtrlHandler(<span class="literal">NULL</span>, FALSE);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="网络原理"><a href="#网络原理" class="headerlink" title="网络原理"></a>网络原理</h4><p>三次握手，四次挥手</p>
+<p>如果不进行第四次挥手，会带来什么问题</p>
+<h4 id="数据库原理"><a href="#数据库原理" class="headerlink" title="数据库原理"></a>数据库原理</h4><p>介绍数据的 ACID 四个特性</p>
+<p>数据库如何实现索引</p>
+<p>介绍一下 InnoDB</p>
+<h3 id="代码类"><a href="#代码类" class="headerlink" title="代码类"></a>代码类</h3><ol>
+<li><p>手写两链表相加 1 -&gt; 2 -&gt; 3 -&gt; 4 + 2 -&gt; 3 -&gt; 4 = 1 -&gt; 4 -&gt; 6 -&gt; 8</p>
+</li>
+<li><p>写两线程分别是 [1,3,5,7] [2,4,6,8] 交替打印出， [1,2,3,4,5,6,7,8]</p>
+</li>
+</ol>
+<h2 id="自我总结"><a href="#自我总结" class="headerlink" title="自我总结"></a>自我总结</h2><p>我有4个问题，</p>
+<ol>
+<li><p>表达问题，无论是自我介绍还是在回答问题时，表述十分不流利。</p>
+</li>
+<li><p>项目问题，项目介绍不自信。</p>
+</li>
+<li><p>题目问题，题目不能保证90%的回答。</p>
+</li>
+<li><p>手写题目，手写代码能力偏弱。</p>
+</li>
+</ol>
+<h2 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h2><p>针对以上四个问题，我应该这么去解决</p>
+<ol>
+<li><p>准备面试不仅要看懂原理，也应该学会如何去表达，尝试复述问题的答案。</p>
+</li>
+<li><p>项目没有吃透，我应该围绕着我写的项目去搞懂里面的知识。</p>
+</li>
+<li><p>多留一些时间去准备面试问题，对症下药很重要。</p>
+</li>
+<li><p>我要把Leetcode里重点题目写得滚瓜烂熟。</p>
+</li>
+</ol>
+
+
+    <!-- 显示photos -->
+    
+
+  </div>
+  <div class="post-tags">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+  </div>
+</article>
+  
+    <div class="post-nav">
+      <div class="post-nav-item post-nav-next">
+        
+          <a href="/2018/12/03/Thinking-in-Java/" rel="next" title="【技术向】 Java 编程思想 - 持续更新">
+            <span>〈 </span> 【技术向】 Java 编程思想 - 持续更新
+          </a>
+        
+      </div>
+  
+      <div class="post-nav-item post-nav-prev">
+        
+          <a href="/2018/12/13/OS/" rel="prev" title="【技术向】操作系统原理">
+            【技术向】操作系统原理 <span>〉</span>
+          </a>
+        
+      </div>
+    </div>
+  
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-基础"><span class="toc-text">Java 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#堆与栈的区别"><span class="toc-text">堆与栈的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#volatile-synchronized-关键字"><span class="toc-text">volatile, synchronized 关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hashmap"><span class="toc-text">Hashmap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash-冲突"><span class="toc-text">Hash 冲突</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-Clone复制对象"><span class="toc-text">Java Clone复制对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-的三大特性：多态是怎么实现的"><span class="toc-text">Java 的三大特性：多态是怎么实现的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList-LinkedList-实现对比，使用场景"><span class="toc-text">ArrayList/LinkedList 实现对比，使用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#int-和-Integer-区别"><span class="toc-text">int 和 Integer 区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JVM"><span class="toc-text">JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM原理"><span class="toc-text">JVM原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java内存区域的分配"><span class="toc-text">Java内存区域的分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类加载机制"><span class="toc-text">类加载机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化时机"><span class="toc-text">初始化时机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#加载过程"><span class="toc-text">加载过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GC回收机制"><span class="toc-text">GC回收机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#回收对象"><span class="toc-text">回收对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何回收"><span class="toc-text">如何回收</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Minor-GC条件"><span class="toc-text">Minor GC条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GC-算法"><span class="toc-text">GC 算法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#架构"><span class="toc-text">架构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#进程线程，通信方式，同步方式"><span class="toc-text">进程线程，通信方式，同步方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线程通信"><span class="toc-text">线程通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程通信"><span class="toc-text">进程通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程同步"><span class="toc-text">线程同步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dubbo"><span class="toc-text">Dubbo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RPC"><span class="toc-text">RPC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异步和同步"><span class="toc-text">异步和同步</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#操作系统"><span class="toc-text">操作系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#协程"><span class="toc-text">协程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存管理"><span class="toc-text">内存管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁是啥，死锁产生的条件是什么"><span class="toc-text">死锁是啥，死锁产生的条件是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wait-notify-notifyAll"><span class="toc-text">wait(), notify()/notifyAll()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正在-wait-的线程被唤醒后会发生什么"><span class="toc-text">正在 wait 的线程被唤醒后会发生什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#notifyAll-唤醒所有的等待线程后会发生什么"><span class="toc-text">notifyAll 唤醒所有的等待线程后会发生什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-命令-如何杀死占用指定端口的进程"><span class="toc-text">Linux 命令 如何杀死占用指定端口的进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程之间共享数据的方式"><span class="toc-text">线程之间共享数据的方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程和线程的区别"><span class="toc-text">进程和线程的区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据库"><span class="toc-text">数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库事务隔离级别"><span class="toc-text">数据库事务隔离级别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库的-ACID"><span class="toc-text">数据库的 ACID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库乐观锁悲观锁，以及乐观锁如何实现"><span class="toc-text">数据库乐观锁悲观锁，以及乐观锁如何实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库索引"><span class="toc-text">数据库索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要用B-树，B-树和B树的区别"><span class="toc-text">为什么要用B+树，B+树和B树的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#联合索引，最左匹配"><span class="toc-text">联合索引，最左匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是红黑树"><span class="toc-text">什么是红黑树</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#网络与服务器"><span class="toc-text">网络与服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据结构与算法"><span class="toc-text">数据结构与算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实践"><span class="toc-text">实践</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其它"><span class="toc-text">其它</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的面试"><span class="toc-text">我的面试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#复盘"><span class="toc-text">复盘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#非代码类"><span class="toc-text">非代码类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#操作系统概述"><span class="toc-text">操作系统概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网络原理"><span class="toc-text">网络原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库原理"><span class="toc-text">数据库原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码类"><span class="toc-text">代码类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自我总结"><span class="toc-text">自我总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何解决"><span class="toc-text">如何解决</span></a></li></ol></li></ol>
+  </div>
+
+
+    </div>
+
+    
+
+  </div>
+
+  <footer class="footer text-center">
+    <div id="bottom-inner">
+      
+        <a href="http://hexo.io" target="_blank" class="footer-link">Hexo</a>
+      
+        <a href="https://github.com/microacup/hexo-theme-micorb" target="_blank" class="footer-link">Theme microb</a>
+      
+    </div>
+  </footer>
+  
+
+<!-- <script>
+  var titleTime,originTitle=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="[闷声发大财中...] "+originTitle,clearTimeout(titleTime)):(document.title="[+1s] "+originTitle,titleTime=setTimeout(function(){document.title=originTitle},2e3))});
+</script> -->
+
+<script>
+  (function (window, document) {
+    window.requestAnimationFrame = (function () {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback) {
+          setTimeout(callback, 1000 / 60);
+        }
+    })();
+
+    function init() {
+      addMenuEvent();
+    }
+    init();
+
+    function addMenuEvent() {
+      var menu = document.getElementById('menu-main-post');
+      if (menu) {
+        var toc = document.getElementById('toc');
+        menu.title = toc ? '目录' : '回到顶部';
+        menu.onclick = function () {
+          if (toc) {
+            if (toc.style.display == 'block') {
+              toc.style.display = 'none';
+            } else {
+              toc.style.display = 'block';
+            }
+          } else {
+            returnTop();
+          }
+        };
+      }
+    }
+
+    var timer = null;
+
+    function returnTop() {
+      cancelAnimationFrame(timer);
+      timer = requestAnimationFrame(function fn() {
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (oTop > 0) {
+          document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+          timer = requestAnimationFrame(fn);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      });
+    }
+
+  })(window, document);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+
+</body>
+</html>
